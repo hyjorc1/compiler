@@ -36,11 +36,6 @@ public class TestQueries {
 		String expected = "AddedNullCheck[] = 1\n";
 		File outputDir = new File("test/datagen/Bug-fix_output");
 		String actual = getResults(outputDir);// evaluator.getResults();
-		try {
-			FileUtils.deleteDirectory(outputDir);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		assertEquals(expected, actual);
 	}
 	
