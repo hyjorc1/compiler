@@ -31,7 +31,7 @@ public class TestQueries {
 	                System.out.println(s);
 				 p.waitFor();
 	            }
-		} catch (IOException e1) {
+		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
 		String expected = "AddedNullCheck[] = 1\n";
