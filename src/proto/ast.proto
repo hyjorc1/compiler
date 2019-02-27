@@ -15,9 +15,9 @@ message ASTRoot {
 	/** @exclude */
 	repeated string names = 3;
 	/** */
-	optional int32 key = 4;
+	//optional int32 key = 4;
 	/**The top-level document of an html, css, or xml DOM*/
-	optional Document document = 5;
+	//optional Document document = 5;
 }
 
 /** A namespace (aka, package) in a source file */

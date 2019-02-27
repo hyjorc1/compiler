@@ -374,7 +374,7 @@ public abstract class AbstractCommit {
 			return false;
 		}
 		try {
-			ast.setDocument(visitor.getDocument(doc));
+//			ast.setDocument(visitor.getDocument(doc));
 		} catch (final UnsupportedOperationException e) {
 			return false;
 		} catch (final Throwable e) {
@@ -412,7 +412,7 @@ public abstract class AbstractCommit {
 			return false;
 		}
 		try {
-			ast.setDocument(visitor.getDocument((DOMDocument) doc));
+//			ast.setDocument(visitor.getDocument((DOMDocument) doc));
 		} catch (final UnsupportedOperationException e) {
 			return false;
 		} catch (final Throwable e) {
@@ -450,7 +450,7 @@ public abstract class AbstractCommit {
 			return false;
 		}
 		try {
-			ast.setDocument(visitor.getDocument(sSheet));
+//			ast.setDocument(visitor.getDocument(sSheet));
 		} catch (final UnsupportedOperationException e) {
 			return false;
 		} catch (final Throwable e) {
