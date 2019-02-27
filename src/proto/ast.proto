@@ -29,18 +29,18 @@ message Namespace {
 	/** Declarations contained in this namespace */
 	repeated Declaration declarations = 3;
 	/** Statements contained in this namespace */
-	repeated Statement statements = 4;
+	//repeated Statement statements = 4;
 	/** Methods contained in this namespace */
-	repeated Method methods = 5;
+	//repeated Method methods = 5;
 	/** Expressions contained in this namespace */
-	repeated Expression expressions = 6;
+	//repeated Expression expressions = 6;
 	/** */
-	optional int32 key = 10;
+	//optional int32 key = 10;
 	/** The nested namespaces */
-	repeated Namespace namespaces = 11;
+	//repeated Namespace namespaces = 11;
 	/** The imported namespaces and types */
-	repeated string imports = 12;
-	repeated Variable variables = 13;
+	repeated string imports = 12; // not in 2015
+	//repeated Variable variables = 13;
 }
 
 /** A type declaration, such as a class or interface */

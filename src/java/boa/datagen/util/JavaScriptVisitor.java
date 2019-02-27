@@ -89,18 +89,18 @@ public class JavaScriptVisitor implements NodeVisitor {
 				((Comment) c).visit(this);
 		}
 		for (Node s : node) {
-			if (s instanceof FunctionNode) {
-				methods.push(new ArrayList<boa.types.Ast.Method>());
-				((FunctionNode) s).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
-				((FunctionNode) s).visit(this);
-				for (boa.types.Ast.Method m : methods.pop())
-					b.addMethods(m);
-			} else {
-				statements.push(new ArrayList<boa.types.Ast.Statement>());
-				((AstNode) s).visit(this);
-				for (boa.types.Ast.Statement d : statements.pop())
-					b.addStatements(d);
-			}
+//			if (s instanceof FunctionNode) {
+//				methods.push(new ArrayList<boa.types.Ast.Method>());
+//				((FunctionNode) s).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
+//				((FunctionNode) s).visit(this);
+//				for (boa.types.Ast.Method m : methods.pop())
+//					b.addMethods(m);
+//			} else {
+//				statements.push(new ArrayList<boa.types.Ast.Statement>());
+//				((AstNode) s).visit(this);
+//				for (boa.types.Ast.Statement d : statements.pop())
+//					b.addStatements(d);
+//			}
 		}
 		if (!expressions.isEmpty() || !methods.isEmpty() || !statements.isEmpty())
 			throw new RuntimeException("Stack not empty");

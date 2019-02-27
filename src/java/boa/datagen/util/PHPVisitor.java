@@ -105,16 +105,16 @@ public class PHPVisitor extends AbstractVisitor {
 			b = Namespace.newBuilder(ns.get(0));
 		} else {
 			b.setName("");
-			for (boa.types.Ast.Namespace d : ns)
-				b.addNamespaces(d);
-			for (boa.types.Ast.Statement st : ss)
-				b.addStatements(st);
-			for (boa.types.Ast.Declaration d : ds)
-				b.addDeclarations(d);
-			for (boa.types.Ast.Method m : ms)
-				b.addMethods(m);
-			for (boa.types.Ast.Variable v : fs)
-				b.addVariables(v);
+//			for (boa.types.Ast.Namespace d : ns)
+//				b.addNamespaces(d);
+//			for (boa.types.Ast.Statement st : ss)
+//				b.addStatements(st);
+//			for (boa.types.Ast.Declaration d : ds)
+//				b.addDeclarations(d);
+//			for (boa.types.Ast.Method m : ms)
+//				b.addMethods(m);
+//			for (boa.types.Ast.Variable v : fs)
+//				b.addVariables(v);
 		}
 //		for (Object c : node.comments())
 //			((Comment) c).accept(this);
@@ -157,16 +157,16 @@ public class PHPVisitor extends AbstractVisitor {
 		fields.push(new ArrayList<boa.types.Ast.Variable>());
 		for (org.eclipse.php.internal.core.ast.nodes.Statement s : node.getBody().statements())
 			s.accept(this);
-		for (boa.types.Ast.Namespace d : namespaces.pop())
-			nb.addNamespaces(d);
-		for (boa.types.Ast.Method m : methods.pop())
-			nb.addMethods(m);
-		for (boa.types.Ast.Statement st : statements.pop())
-			nb.addStatements(st);
-		for (boa.types.Ast.Declaration d : declarations.pop())
-			nb.addDeclarations(d);
-		for (boa.types.Ast.Variable v : fields.pop())
-			nb.addVariables(v);
+//		for (boa.types.Ast.Namespace d : namespaces.pop())
+//			nb.addNamespaces(d);
+//		for (boa.types.Ast.Method m : methods.pop())
+//			nb.addMethods(m);
+//		for (boa.types.Ast.Statement st : statements.pop())
+//			nb.addStatements(st);
+//		for (boa.types.Ast.Declaration d : declarations.pop())
+//			nb.addDeclarations(d);
+//		for (boa.types.Ast.Variable v : fields.pop())
+//			nb.addVariables(v);
 		list.add(nb.build());
 		return false;
 	}

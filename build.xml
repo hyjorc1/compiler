@@ -85,7 +85,7 @@
 
 	<target name="-translate-protobuf" depends="-check-protobuf" unless="protobuf.uptodate">
 		<echo level="error" message="Translating Protocol Buffer files to Java" />
-		 <apply executable="protoc" parallel="true"> 
+		 <apply executable="/usr/local/opt/protobuf@2.5/bin/protoc" parallel="true"> 
 			<arg value="--proto_path=${src.proto}" />
 			<arg value="--java_out=src/compiled-proto" />
 			<srcfile />
@@ -187,8 +187,8 @@
 					<!--include name="boa/test/datagen/Test*.class" /-->
 					<!--include name="boa/test/datagen/queries/Test*.class" /-->
 					<include name="boa/test/datagen/java/Test*.class" /> 
-					<include name="boa/test/datagen/js/Test*.class" />  
-					<include name="boa/test/datagen/php/Test*.class" />  
+					<!-- <include name="boa/test/datagen/js/Test*.class" /-->  
+					<!-- include name="boa/test/datagen/php/Test*.class" /--> 
 					<exclude name="**/*$*.class" />
 				</fileset>
 			</batchtest>
