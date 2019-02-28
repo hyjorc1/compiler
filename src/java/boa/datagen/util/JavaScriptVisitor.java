@@ -942,12 +942,12 @@ public class JavaScriptVisitor implements NodeVisitor {
 			fn.visit(this);
 			for (boa.types.Ast.Method m : methods.pop()) {
 				boa.types.Ast.Method.Builder mb = boa.types.Ast.Method.newBuilder(m);
-				if (prop.getLeft() instanceof Name)
-					mb.setName(((Name) prop.getLeft()).getIdentifier());
-				else {
-					prop.getLeft().visit(this);
-					mb.setComputedName(expressions.pop());
-				}
+//				if (prop.getLeft() instanceof Name)
+//					mb.setName(((Name) prop.getLeft()).getIdentifier());
+//				else {
+//					prop.getLeft().visit(this);
+//					mb.setComputedName(expressions.pop());
+//				}
 				methods.peek().add(mb.build());
 			}
 		} else {

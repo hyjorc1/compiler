@@ -1715,12 +1715,12 @@ public class PHPVisitor extends AbstractVisitor {
 		if (node.getFunctionName() != null)
 			b.setMethod(node.getFunctionName().getName());
 		boa.types.Ast.Method.Builder trait = boa.types.Ast.Method.newBuilder();
-		if (node.getTraitMethod() instanceof Identifier) {
-			trait.setName(((Identifier) node.getTraitMethod()).getName());
-		} else {
-			node.getTraitMethod().accept(this);
-			trait.setComputedName(expressions.pop());
-		}
+//		if (node.getTraitMethod() instanceof Identifier) {
+//			trait.setName(((Identifier) node.getTraitMethod()).getName());
+//		} else {
+//			node.getTraitMethod().accept(this);
+//			trait.setComputedName(expressions.pop());
+//		}
 		b.setTrait(trait);
 		expressions.push(b.build());
 		return false;

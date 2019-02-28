@@ -148,11 +148,11 @@ message Method {
 	/** @exclude TODO */
 	repeated Comment comments = 8;
 	/** */
-	optional int32 key = 12;
+	//optional int32 key = 12;
 	/** The key of the type declaration declaring this method in the same AST */
-	optional int32 declaring_type = 13;
+	//optional int32 declaring_type = 13;
 	/** */
-	optional Expression computed_name = 14;
+	//optional Expression computed_name = 14;
 }
 
 /** A variable declaration - can be a field, local, parameter, etc */
