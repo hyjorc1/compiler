@@ -21419,51 +21419,6 @@ public final class Ast {
      */
     boa.types.Ast.TypeOrBuilder getReturnTypeOrBuilder();
 
-    // repeated .boa.types.Method methods = 21;
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    java.util.List<boa.types.Ast.Method> 
-        getMethodsList();
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    boa.types.Ast.Method getMethods(int index);
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    int getMethodsCount();
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    java.util.List<? extends boa.types.Ast.MethodOrBuilder> 
-        getMethodsOrBuilderList();
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    boa.types.Ast.MethodOrBuilder getMethodsOrBuilder(
-        int index);
-
     // repeated .boa.types.Statement statements = 22;
     /**
      * <code>repeated .boa.types.Statement statements = 22;</code>
@@ -21512,84 +21467,30 @@ public final class Ast {
     // optional bool is_member_access = 23;
     /**
      * <code>optional bool is_member_access = 23;</code>
+     *
+     * <pre>
+     *optional bool dollar_sign = 24;
+     *optional Expression computed_variable = 25;
+     *optional Expression computed_method = 26;
+     *optional bool is_static = 27;
+     *optional bool has_from = 28;
+     *optional Method trait = 29;
+     * </pre>
      */
     boolean hasIsMemberAccess();
     /**
      * <code>optional bool is_member_access = 23;</code>
+     *
+     * <pre>
+     *optional bool dollar_sign = 24;
+     *optional Expression computed_variable = 25;
+     *optional Expression computed_method = 26;
+     *optional bool is_static = 27;
+     *optional bool has_from = 28;
+     *optional Method trait = 29;
+     * </pre>
      */
     boolean getIsMemberAccess();
-
-    // optional bool dollar_sign = 24;
-    /**
-     * <code>optional bool dollar_sign = 24;</code>
-     */
-    boolean hasDollarSign();
-    /**
-     * <code>optional bool dollar_sign = 24;</code>
-     */
-    boolean getDollarSign();
-
-    // optional .boa.types.Expression computed_variable = 25;
-    /**
-     * <code>optional .boa.types.Expression computed_variable = 25;</code>
-     */
-    boolean hasComputedVariable();
-    /**
-     * <code>optional .boa.types.Expression computed_variable = 25;</code>
-     */
-    boa.types.Ast.Expression getComputedVariable();
-    /**
-     * <code>optional .boa.types.Expression computed_variable = 25;</code>
-     */
-    boa.types.Ast.ExpressionOrBuilder getComputedVariableOrBuilder();
-
-    // optional .boa.types.Expression computed_method = 26;
-    /**
-     * <code>optional .boa.types.Expression computed_method = 26;</code>
-     */
-    boolean hasComputedMethod();
-    /**
-     * <code>optional .boa.types.Expression computed_method = 26;</code>
-     */
-    boa.types.Ast.Expression getComputedMethod();
-    /**
-     * <code>optional .boa.types.Expression computed_method = 26;</code>
-     */
-    boa.types.Ast.ExpressionOrBuilder getComputedMethodOrBuilder();
-
-    // optional bool is_static = 27;
-    /**
-     * <code>optional bool is_static = 27;</code>
-     */
-    boolean hasIsStatic();
-    /**
-     * <code>optional bool is_static = 27;</code>
-     */
-    boolean getIsStatic();
-
-    // optional bool has_from = 28;
-    /**
-     * <code>optional bool has_from = 28;</code>
-     */
-    boolean hasHasFrom();
-    /**
-     * <code>optional bool has_from = 28;</code>
-     */
-    boolean getHasFrom();
-
-    // optional .boa.types.Method trait = 29;
-    /**
-     * <code>optional .boa.types.Method trait = 29;</code>
-     */
-    boolean hasTrait();
-    /**
-     * <code>optional .boa.types.Method trait = 29;</code>
-     */
-    boa.types.Ast.Method getTrait();
-    /**
-     * <code>optional .boa.types.Method trait = 29;</code>
-     */
-    boa.types.Ast.MethodOrBuilder getTraitOrBuilder();
   }
   /**
    * Protobuf type {@code boa.types.Expression}
@@ -21784,18 +21685,10 @@ public final class Ast {
               bitField0_ |= 0x00000800;
               break;
             }
-            case 170: {
-              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
-                methods_ = new java.util.ArrayList<boa.types.Ast.Method>();
-                mutable_bitField0_ |= 0x00010000;
-              }
-              methods_.add(input.readMessage(boa.types.Ast.Method.PARSER, extensionRegistry));
-              break;
-            }
             case 178: {
-              if (!((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
                 statements_ = new java.util.ArrayList<boa.types.Ast.Statement>();
-                mutable_bitField0_ |= 0x00020000;
+                mutable_bitField0_ |= 0x00010000;
               }
               statements_.add(input.readMessage(boa.types.Ast.Statement.PARSER, extensionRegistry));
               break;
@@ -21803,60 +21696,6 @@ public final class Ast {
             case 184: {
               bitField0_ |= 0x00001000;
               isMemberAccess_ = input.readBool();
-              break;
-            }
-            case 192: {
-              bitField0_ |= 0x00002000;
-              dollarSign_ = input.readBool();
-              break;
-            }
-            case 202: {
-              boa.types.Ast.Expression.Builder subBuilder = null;
-              if (((bitField0_ & 0x00004000) == 0x00004000)) {
-                subBuilder = computedVariable_.toBuilder();
-              }
-              computedVariable_ = input.readMessage(boa.types.Ast.Expression.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(computedVariable_);
-                computedVariable_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00004000;
-              break;
-            }
-            case 210: {
-              boa.types.Ast.Expression.Builder subBuilder = null;
-              if (((bitField0_ & 0x00008000) == 0x00008000)) {
-                subBuilder = computedMethod_.toBuilder();
-              }
-              computedMethod_ = input.readMessage(boa.types.Ast.Expression.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(computedMethod_);
-                computedMethod_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00008000;
-              break;
-            }
-            case 216: {
-              bitField0_ |= 0x00010000;
-              isStatic_ = input.readBool();
-              break;
-            }
-            case 224: {
-              bitField0_ |= 0x00020000;
-              hasFrom_ = input.readBool();
-              break;
-            }
-            case 234: {
-              boa.types.Ast.Method.Builder subBuilder = null;
-              if (((bitField0_ & 0x00040000) == 0x00040000)) {
-                subBuilder = trait_.toBuilder();
-              }
-              trait_ = input.readMessage(boa.types.Ast.Method.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(trait_);
-                trait_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00040000;
               break;
             }
           }
@@ -21880,9 +21719,6 @@ public final class Ast {
           methodArgs_ = java.util.Collections.unmodifiableList(methodArgs_);
         }
         if (((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
-          methods_ = java.util.Collections.unmodifiableList(methods_);
-        }
-        if (((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
           statements_ = java.util.Collections.unmodifiableList(statements_);
         }
         this.unknownFields = unknownFields.build();
@@ -23467,62 +23303,6 @@ public final class Ast {
       return returnType_;
     }
 
-    // repeated .boa.types.Method methods = 21;
-    public static final int METHODS_FIELD_NUMBER = 21;
-    private java.util.List<boa.types.Ast.Method> methods_;
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    public java.util.List<boa.types.Ast.Method> getMethodsList() {
-      return methods_;
-    }
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    public java.util.List<? extends boa.types.Ast.MethodOrBuilder> 
-        getMethodsOrBuilderList() {
-      return methods_;
-    }
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    public int getMethodsCount() {
-      return methods_.size();
-    }
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    public boa.types.Ast.Method getMethods(int index) {
-      return methods_.get(index);
-    }
-    /**
-     * <code>repeated .boa.types.Method methods = 21;</code>
-     *
-     * <pre>
-     ** Declared methods/functions 
-     * </pre>
-     */
-    public boa.types.Ast.MethodOrBuilder getMethodsOrBuilder(
-        int index) {
-      return methods_.get(index);
-    }
-
     // repeated .boa.types.Statement statements = 22;
     public static final int STATEMENTS_FIELD_NUMBER = 22;
     private java.util.List<boa.types.Ast.Statement> statements_;
@@ -23584,129 +23364,33 @@ public final class Ast {
     private boolean isMemberAccess_;
     /**
      * <code>optional bool is_member_access = 23;</code>
+     *
+     * <pre>
+     *optional bool dollar_sign = 24;
+     *optional Expression computed_variable = 25;
+     *optional Expression computed_method = 26;
+     *optional bool is_static = 27;
+     *optional bool has_from = 28;
+     *optional Method trait = 29;
+     * </pre>
      */
     public boolean hasIsMemberAccess() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional bool is_member_access = 23;</code>
+     *
+     * <pre>
+     *optional bool dollar_sign = 24;
+     *optional Expression computed_variable = 25;
+     *optional Expression computed_method = 26;
+     *optional bool is_static = 27;
+     *optional bool has_from = 28;
+     *optional Method trait = 29;
+     * </pre>
      */
     public boolean getIsMemberAccess() {
       return isMemberAccess_;
-    }
-
-    // optional bool dollar_sign = 24;
-    public static final int DOLLAR_SIGN_FIELD_NUMBER = 24;
-    private boolean dollarSign_;
-    /**
-     * <code>optional bool dollar_sign = 24;</code>
-     */
-    public boolean hasDollarSign() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
-    }
-    /**
-     * <code>optional bool dollar_sign = 24;</code>
-     */
-    public boolean getDollarSign() {
-      return dollarSign_;
-    }
-
-    // optional .boa.types.Expression computed_variable = 25;
-    public static final int COMPUTED_VARIABLE_FIELD_NUMBER = 25;
-    private boa.types.Ast.Expression computedVariable_;
-    /**
-     * <code>optional .boa.types.Expression computed_variable = 25;</code>
-     */
-    public boolean hasComputedVariable() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
-    }
-    /**
-     * <code>optional .boa.types.Expression computed_variable = 25;</code>
-     */
-    public boa.types.Ast.Expression getComputedVariable() {
-      return computedVariable_;
-    }
-    /**
-     * <code>optional .boa.types.Expression computed_variable = 25;</code>
-     */
-    public boa.types.Ast.ExpressionOrBuilder getComputedVariableOrBuilder() {
-      return computedVariable_;
-    }
-
-    // optional .boa.types.Expression computed_method = 26;
-    public static final int COMPUTED_METHOD_FIELD_NUMBER = 26;
-    private boa.types.Ast.Expression computedMethod_;
-    /**
-     * <code>optional .boa.types.Expression computed_method = 26;</code>
-     */
-    public boolean hasComputedMethod() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
-    }
-    /**
-     * <code>optional .boa.types.Expression computed_method = 26;</code>
-     */
-    public boa.types.Ast.Expression getComputedMethod() {
-      return computedMethod_;
-    }
-    /**
-     * <code>optional .boa.types.Expression computed_method = 26;</code>
-     */
-    public boa.types.Ast.ExpressionOrBuilder getComputedMethodOrBuilder() {
-      return computedMethod_;
-    }
-
-    // optional bool is_static = 27;
-    public static final int IS_STATIC_FIELD_NUMBER = 27;
-    private boolean isStatic_;
-    /**
-     * <code>optional bool is_static = 27;</code>
-     */
-    public boolean hasIsStatic() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
-    }
-    /**
-     * <code>optional bool is_static = 27;</code>
-     */
-    public boolean getIsStatic() {
-      return isStatic_;
-    }
-
-    // optional bool has_from = 28;
-    public static final int HAS_FROM_FIELD_NUMBER = 28;
-    private boolean hasFrom_;
-    /**
-     * <code>optional bool has_from = 28;</code>
-     */
-    public boolean hasHasFrom() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
-    }
-    /**
-     * <code>optional bool has_from = 28;</code>
-     */
-    public boolean getHasFrom() {
-      return hasFrom_;
-    }
-
-    // optional .boa.types.Method trait = 29;
-    public static final int TRAIT_FIELD_NUMBER = 29;
-    private boa.types.Ast.Method trait_;
-    /**
-     * <code>optional .boa.types.Method trait = 29;</code>
-     */
-    public boolean hasTrait() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
-    }
-    /**
-     * <code>optional .boa.types.Method trait = 29;</code>
-     */
-    public boa.types.Ast.Method getTrait() {
-      return trait_;
-    }
-    /**
-     * <code>optional .boa.types.Method trait = 29;</code>
-     */
-    public boa.types.Ast.MethodOrBuilder getTraitOrBuilder() {
-      return trait_;
     }
 
     private void initFields() {
@@ -23726,15 +23410,8 @@ public final class Ast {
       key_ = 0;
       declaringType_ = boa.types.Ast.Type.getDefaultInstance();
       returnType_ = boa.types.Ast.Type.getDefaultInstance();
-      methods_ = java.util.Collections.emptyList();
       statements_ = java.util.Collections.emptyList();
       isMemberAccess_ = false;
-      dollarSign_ = false;
-      computedVariable_ = boa.types.Ast.Expression.getDefaultInstance();
-      computedMethod_ = boa.types.Ast.Expression.getDefaultInstance();
-      isStatic_ = false;
-      hasFrom_ = false;
-      trait_ = boa.types.Ast.Method.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -23799,32 +23476,8 @@ public final class Ast {
           return false;
         }
       }
-      for (int i = 0; i < getMethodsCount(); i++) {
-        if (!getMethods(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       for (int i = 0; i < getStatementsCount(); i++) {
         if (!getStatements(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasComputedVariable()) {
-        if (!getComputedVariable().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasComputedMethod()) {
-        if (!getComputedMethod().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasTrait()) {
-        if (!getTrait().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -23884,32 +23537,11 @@ public final class Ast {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeMessage(20, returnType_);
       }
-      for (int i = 0; i < methods_.size(); i++) {
-        output.writeMessage(21, methods_.get(i));
-      }
       for (int i = 0; i < statements_.size(); i++) {
         output.writeMessage(22, statements_.get(i));
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeBool(23, isMemberAccess_);
-      }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeBool(24, dollarSign_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        output.writeMessage(25, computedVariable_);
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        output.writeMessage(26, computedMethod_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeBool(27, isStatic_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        output.writeBool(28, hasFrom_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        output.writeMessage(29, trait_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -23984,10 +23616,6 @@ public final class Ast {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(20, returnType_);
       }
-      for (int i = 0; i < methods_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(21, methods_.get(i));
-      }
       for (int i = 0; i < statements_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, statements_.get(i));
@@ -23995,30 +23623,6 @@ public final class Ast {
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(23, isMemberAccess_);
-      }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(24, dollarSign_);
-      }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, computedVariable_);
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(26, computedMethod_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(27, isStatic_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(28, hasFrom_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(29, trait_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -24141,11 +23745,7 @@ public final class Ast {
           getAnnotationFieldBuilder();
           getDeclaringTypeFieldBuilder();
           getReturnTypeFieldBuilder();
-          getMethodsFieldBuilder();
           getStatementsFieldBuilder();
-          getComputedVariableFieldBuilder();
-          getComputedMethodFieldBuilder();
-          getTraitFieldBuilder();
         }
       }
       private static Builder create() {
@@ -24222,44 +23822,14 @@ public final class Ast {
           returnTypeBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00008000);
-        if (methodsBuilder_ == null) {
-          methods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00010000);
-        } else {
-          methodsBuilder_.clear();
-        }
         if (statementsBuilder_ == null) {
           statements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           statementsBuilder_.clear();
         }
         isMemberAccess_ = false;
-        bitField0_ = (bitField0_ & ~0x00040000);
-        dollarSign_ = false;
-        bitField0_ = (bitField0_ & ~0x00080000);
-        if (computedVariableBuilder_ == null) {
-          computedVariable_ = boa.types.Ast.Expression.getDefaultInstance();
-        } else {
-          computedVariableBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00100000);
-        if (computedMethodBuilder_ == null) {
-          computedMethod_ = boa.types.Ast.Expression.getDefaultInstance();
-        } else {
-          computedMethodBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00200000);
-        isStatic_ = false;
-        bitField0_ = (bitField0_ & ~0x00400000);
-        hasFrom_ = false;
-        bitField0_ = (bitField0_ & ~0x00800000);
-        if (traitBuilder_ == null) {
-          trait_ = boa.types.Ast.Method.getDefaultInstance();
-        } else {
-          traitBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         return this;
       }
 
@@ -24392,64 +23962,19 @@ public final class Ast {
         } else {
           result.returnType_ = returnTypeBuilder_.build();
         }
-        if (methodsBuilder_ == null) {
-          if (((bitField0_ & 0x00010000) == 0x00010000)) {
-            methods_ = java.util.Collections.unmodifiableList(methods_);
-            bitField0_ = (bitField0_ & ~0x00010000);
-          }
-          result.methods_ = methods_;
-        } else {
-          result.methods_ = methodsBuilder_.build();
-        }
         if (statementsBuilder_ == null) {
-          if (((bitField0_ & 0x00020000) == 0x00020000)) {
+          if (((bitField0_ & 0x00010000) == 0x00010000)) {
             statements_ = java.util.Collections.unmodifiableList(statements_);
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           }
           result.statements_ = statements_;
         } else {
           result.statements_ = statementsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00001000;
         }
         result.isMemberAccess_ = isMemberAccess_;
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
-          to_bitField0_ |= 0x00002000;
-        }
-        result.dollarSign_ = dollarSign_;
-        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
-          to_bitField0_ |= 0x00004000;
-        }
-        if (computedVariableBuilder_ == null) {
-          result.computedVariable_ = computedVariable_;
-        } else {
-          result.computedVariable_ = computedVariableBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
-          to_bitField0_ |= 0x00008000;
-        }
-        if (computedMethodBuilder_ == null) {
-          result.computedMethod_ = computedMethod_;
-        } else {
-          result.computedMethod_ = computedMethodBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
-          to_bitField0_ |= 0x00010000;
-        }
-        result.isStatic_ = isStatic_;
-        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
-          to_bitField0_ |= 0x00020000;
-        }
-        result.hasFrom_ = hasFrom_;
-        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
-          to_bitField0_ |= 0x00040000;
-        }
-        if (traitBuilder_ == null) {
-          result.trait_ = trait_;
-        } else {
-          result.trait_ = traitBuilder_.build();
-        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -24612,37 +24137,11 @@ public final class Ast {
         if (other.hasReturnType()) {
           mergeReturnType(other.getReturnType());
         }
-        if (methodsBuilder_ == null) {
-          if (!other.methods_.isEmpty()) {
-            if (methods_.isEmpty()) {
-              methods_ = other.methods_;
-              bitField0_ = (bitField0_ & ~0x00010000);
-            } else {
-              ensureMethodsIsMutable();
-              methods_.addAll(other.methods_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.methods_.isEmpty()) {
-            if (methodsBuilder_.isEmpty()) {
-              methodsBuilder_.dispose();
-              methodsBuilder_ = null;
-              methods_ = other.methods_;
-              bitField0_ = (bitField0_ & ~0x00010000);
-              methodsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getMethodsFieldBuilder() : null;
-            } else {
-              methodsBuilder_.addAllMessages(other.methods_);
-            }
-          }
-        }
         if (statementsBuilder_ == null) {
           if (!other.statements_.isEmpty()) {
             if (statements_.isEmpty()) {
               statements_ = other.statements_;
-              bitField0_ = (bitField0_ & ~0x00020000);
+              bitField0_ = (bitField0_ & ~0x00010000);
             } else {
               ensureStatementsIsMutable();
               statements_.addAll(other.statements_);
@@ -24655,7 +24154,7 @@ public final class Ast {
               statementsBuilder_.dispose();
               statementsBuilder_ = null;
               statements_ = other.statements_;
-              bitField0_ = (bitField0_ & ~0x00020000);
+              bitField0_ = (bitField0_ & ~0x00010000);
               statementsBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getStatementsFieldBuilder() : null;
@@ -24666,24 +24165,6 @@ public final class Ast {
         }
         if (other.hasIsMemberAccess()) {
           setIsMemberAccess(other.getIsMemberAccess());
-        }
-        if (other.hasDollarSign()) {
-          setDollarSign(other.getDollarSign());
-        }
-        if (other.hasComputedVariable()) {
-          mergeComputedVariable(other.getComputedVariable());
-        }
-        if (other.hasComputedMethod()) {
-          mergeComputedMethod(other.getComputedMethod());
-        }
-        if (other.hasIsStatic()) {
-          setIsStatic(other.getIsStatic());
-        }
-        if (other.hasHasFrom()) {
-          setHasFrom(other.getHasFrom());
-        }
-        if (other.hasTrait()) {
-          mergeTrait(other.getTrait());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -24748,32 +24229,8 @@ public final class Ast {
             return false;
           }
         }
-        for (int i = 0; i < getMethodsCount(); i++) {
-          if (!getMethods(i).isInitialized()) {
-            
-            return false;
-          }
-        }
         for (int i = 0; i < getStatementsCount(); i++) {
           if (!getStatements(i).isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasComputedVariable()) {
-          if (!getComputedVariable().isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasComputedMethod()) {
-          if (!getComputedMethod().isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasTrait()) {
-          if (!getTrait().isInitialized()) {
             
             return false;
           }
@@ -26858,325 +26315,13 @@ public final class Ast {
         return returnTypeBuilder_;
       }
 
-      // repeated .boa.types.Method methods = 21;
-      private java.util.List<boa.types.Ast.Method> methods_ =
-        java.util.Collections.emptyList();
-      private void ensureMethodsIsMutable() {
-        if (!((bitField0_ & 0x00010000) == 0x00010000)) {
-          methods_ = new java.util.ArrayList<boa.types.Ast.Method>(methods_);
-          bitField0_ |= 0x00010000;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          boa.types.Ast.Method, boa.types.Ast.Method.Builder, boa.types.Ast.MethodOrBuilder> methodsBuilder_;
-
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public java.util.List<boa.types.Ast.Method> getMethodsList() {
-        if (methodsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(methods_);
-        } else {
-          return methodsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public int getMethodsCount() {
-        if (methodsBuilder_ == null) {
-          return methods_.size();
-        } else {
-          return methodsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public boa.types.Ast.Method getMethods(int index) {
-        if (methodsBuilder_ == null) {
-          return methods_.get(index);
-        } else {
-          return methodsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder setMethods(
-          int index, boa.types.Ast.Method value) {
-        if (methodsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMethodsIsMutable();
-          methods_.set(index, value);
-          onChanged();
-        } else {
-          methodsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder setMethods(
-          int index, boa.types.Ast.Method.Builder builderForValue) {
-        if (methodsBuilder_ == null) {
-          ensureMethodsIsMutable();
-          methods_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          methodsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder addMethods(boa.types.Ast.Method value) {
-        if (methodsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMethodsIsMutable();
-          methods_.add(value);
-          onChanged();
-        } else {
-          methodsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder addMethods(
-          int index, boa.types.Ast.Method value) {
-        if (methodsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureMethodsIsMutable();
-          methods_.add(index, value);
-          onChanged();
-        } else {
-          methodsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder addMethods(
-          boa.types.Ast.Method.Builder builderForValue) {
-        if (methodsBuilder_ == null) {
-          ensureMethodsIsMutable();
-          methods_.add(builderForValue.build());
-          onChanged();
-        } else {
-          methodsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder addMethods(
-          int index, boa.types.Ast.Method.Builder builderForValue) {
-        if (methodsBuilder_ == null) {
-          ensureMethodsIsMutable();
-          methods_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          methodsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder addAllMethods(
-          java.lang.Iterable<? extends boa.types.Ast.Method> values) {
-        if (methodsBuilder_ == null) {
-          ensureMethodsIsMutable();
-          super.addAll(values, methods_);
-          onChanged();
-        } else {
-          methodsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder clearMethods() {
-        if (methodsBuilder_ == null) {
-          methods_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00010000);
-          onChanged();
-        } else {
-          methodsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public Builder removeMethods(int index) {
-        if (methodsBuilder_ == null) {
-          ensureMethodsIsMutable();
-          methods_.remove(index);
-          onChanged();
-        } else {
-          methodsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public boa.types.Ast.Method.Builder getMethodsBuilder(
-          int index) {
-        return getMethodsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public boa.types.Ast.MethodOrBuilder getMethodsOrBuilder(
-          int index) {
-        if (methodsBuilder_ == null) {
-          return methods_.get(index);  } else {
-          return methodsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public java.util.List<? extends boa.types.Ast.MethodOrBuilder> 
-           getMethodsOrBuilderList() {
-        if (methodsBuilder_ != null) {
-          return methodsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(methods_);
-        }
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public boa.types.Ast.Method.Builder addMethodsBuilder() {
-        return getMethodsFieldBuilder().addBuilder(
-            boa.types.Ast.Method.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public boa.types.Ast.Method.Builder addMethodsBuilder(
-          int index) {
-        return getMethodsFieldBuilder().addBuilder(
-            index, boa.types.Ast.Method.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .boa.types.Method methods = 21;</code>
-       *
-       * <pre>
-       ** Declared methods/functions 
-       * </pre>
-       */
-      public java.util.List<boa.types.Ast.Method.Builder> 
-           getMethodsBuilderList() {
-        return getMethodsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          boa.types.Ast.Method, boa.types.Ast.Method.Builder, boa.types.Ast.MethodOrBuilder> 
-          getMethodsFieldBuilder() {
-        if (methodsBuilder_ == null) {
-          methodsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              boa.types.Ast.Method, boa.types.Ast.Method.Builder, boa.types.Ast.MethodOrBuilder>(
-                  methods_,
-                  ((bitField0_ & 0x00010000) == 0x00010000),
-                  getParentForChildren(),
-                  isClean());
-          methods_ = null;
-        }
-        return methodsBuilder_;
-      }
-
       // repeated .boa.types.Statement statements = 22;
       private java.util.List<boa.types.Ast.Statement> statements_ =
         java.util.Collections.emptyList();
       private void ensureStatementsIsMutable() {
-        if (!((bitField0_ & 0x00020000) == 0x00020000)) {
+        if (!((bitField0_ & 0x00010000) == 0x00010000)) {
           statements_ = new java.util.ArrayList<boa.types.Ast.Statement>(statements_);
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00010000;
          }
       }
 
@@ -27369,7 +26514,7 @@ public final class Ast {
       public Builder clearStatements() {
         if (statementsBuilder_ == null) {
           statements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00010000);
           onChanged();
         } else {
           statementsBuilder_.clear();
@@ -27474,7 +26619,7 @@ public final class Ast {
           statementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               boa.types.Ast.Statement, boa.types.Ast.Statement.Builder, boa.types.Ast.StatementOrBuilder>(
                   statements_,
-                  ((bitField0_ & 0x00020000) == 0x00020000),
+                  ((bitField0_ & 0x00010000) == 0x00010000),
                   getParentForChildren(),
                   isClean());
           statements_ = null;
@@ -27486,483 +26631,69 @@ public final class Ast {
       private boolean isMemberAccess_ ;
       /**
        * <code>optional bool is_member_access = 23;</code>
+       *
+       * <pre>
+       *optional bool dollar_sign = 24;
+       *optional Expression computed_variable = 25;
+       *optional Expression computed_method = 26;
+       *optional bool is_static = 27;
+       *optional bool has_from = 28;
+       *optional Method trait = 29;
+       * </pre>
        */
       public boolean hasIsMemberAccess() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
        * <code>optional bool is_member_access = 23;</code>
+       *
+       * <pre>
+       *optional bool dollar_sign = 24;
+       *optional Expression computed_variable = 25;
+       *optional Expression computed_method = 26;
+       *optional bool is_static = 27;
+       *optional bool has_from = 28;
+       *optional Method trait = 29;
+       * </pre>
        */
       public boolean getIsMemberAccess() {
         return isMemberAccess_;
       }
       /**
        * <code>optional bool is_member_access = 23;</code>
+       *
+       * <pre>
+       *optional bool dollar_sign = 24;
+       *optional Expression computed_variable = 25;
+       *optional Expression computed_method = 26;
+       *optional bool is_static = 27;
+       *optional bool has_from = 28;
+       *optional Method trait = 29;
+       * </pre>
        */
       public Builder setIsMemberAccess(boolean value) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         isMemberAccess_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional bool is_member_access = 23;</code>
+       *
+       * <pre>
+       *optional bool dollar_sign = 24;
+       *optional Expression computed_variable = 25;
+       *optional Expression computed_method = 26;
+       *optional bool is_static = 27;
+       *optional bool has_from = 28;
+       *optional Method trait = 29;
+       * </pre>
        */
       public Builder clearIsMemberAccess() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         isMemberAccess_ = false;
         onChanged();
         return this;
-      }
-
-      // optional bool dollar_sign = 24;
-      private boolean dollarSign_ ;
-      /**
-       * <code>optional bool dollar_sign = 24;</code>
-       */
-      public boolean hasDollarSign() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
-      }
-      /**
-       * <code>optional bool dollar_sign = 24;</code>
-       */
-      public boolean getDollarSign() {
-        return dollarSign_;
-      }
-      /**
-       * <code>optional bool dollar_sign = 24;</code>
-       */
-      public Builder setDollarSign(boolean value) {
-        bitField0_ |= 0x00080000;
-        dollarSign_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool dollar_sign = 24;</code>
-       */
-      public Builder clearDollarSign() {
-        bitField0_ = (bitField0_ & ~0x00080000);
-        dollarSign_ = false;
-        onChanged();
-        return this;
-      }
-
-      // optional .boa.types.Expression computed_variable = 25;
-      private boa.types.Ast.Expression computedVariable_ = boa.types.Ast.Expression.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Expression, boa.types.Ast.Expression.Builder, boa.types.Ast.ExpressionOrBuilder> computedVariableBuilder_;
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public boolean hasComputedVariable() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public boa.types.Ast.Expression getComputedVariable() {
-        if (computedVariableBuilder_ == null) {
-          return computedVariable_;
-        } else {
-          return computedVariableBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public Builder setComputedVariable(boa.types.Ast.Expression value) {
-        if (computedVariableBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          computedVariable_ = value;
-          onChanged();
-        } else {
-          computedVariableBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00100000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public Builder setComputedVariable(
-          boa.types.Ast.Expression.Builder builderForValue) {
-        if (computedVariableBuilder_ == null) {
-          computedVariable_ = builderForValue.build();
-          onChanged();
-        } else {
-          computedVariableBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00100000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public Builder mergeComputedVariable(boa.types.Ast.Expression value) {
-        if (computedVariableBuilder_ == null) {
-          if (((bitField0_ & 0x00100000) == 0x00100000) &&
-              computedVariable_ != boa.types.Ast.Expression.getDefaultInstance()) {
-            computedVariable_ =
-              boa.types.Ast.Expression.newBuilder(computedVariable_).mergeFrom(value).buildPartial();
-          } else {
-            computedVariable_ = value;
-          }
-          onChanged();
-        } else {
-          computedVariableBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00100000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public Builder clearComputedVariable() {
-        if (computedVariableBuilder_ == null) {
-          computedVariable_ = boa.types.Ast.Expression.getDefaultInstance();
-          onChanged();
-        } else {
-          computedVariableBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00100000);
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public boa.types.Ast.Expression.Builder getComputedVariableBuilder() {
-        bitField0_ |= 0x00100000;
-        onChanged();
-        return getComputedVariableFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      public boa.types.Ast.ExpressionOrBuilder getComputedVariableOrBuilder() {
-        if (computedVariableBuilder_ != null) {
-          return computedVariableBuilder_.getMessageOrBuilder();
-        } else {
-          return computedVariable_;
-        }
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_variable = 25;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Expression, boa.types.Ast.Expression.Builder, boa.types.Ast.ExpressionOrBuilder> 
-          getComputedVariableFieldBuilder() {
-        if (computedVariableBuilder_ == null) {
-          computedVariableBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              boa.types.Ast.Expression, boa.types.Ast.Expression.Builder, boa.types.Ast.ExpressionOrBuilder>(
-                  computedVariable_,
-                  getParentForChildren(),
-                  isClean());
-          computedVariable_ = null;
-        }
-        return computedVariableBuilder_;
-      }
-
-      // optional .boa.types.Expression computed_method = 26;
-      private boa.types.Ast.Expression computedMethod_ = boa.types.Ast.Expression.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Expression, boa.types.Ast.Expression.Builder, boa.types.Ast.ExpressionOrBuilder> computedMethodBuilder_;
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public boolean hasComputedMethod() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public boa.types.Ast.Expression getComputedMethod() {
-        if (computedMethodBuilder_ == null) {
-          return computedMethod_;
-        } else {
-          return computedMethodBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public Builder setComputedMethod(boa.types.Ast.Expression value) {
-        if (computedMethodBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          computedMethod_ = value;
-          onChanged();
-        } else {
-          computedMethodBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00200000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public Builder setComputedMethod(
-          boa.types.Ast.Expression.Builder builderForValue) {
-        if (computedMethodBuilder_ == null) {
-          computedMethod_ = builderForValue.build();
-          onChanged();
-        } else {
-          computedMethodBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00200000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public Builder mergeComputedMethod(boa.types.Ast.Expression value) {
-        if (computedMethodBuilder_ == null) {
-          if (((bitField0_ & 0x00200000) == 0x00200000) &&
-              computedMethod_ != boa.types.Ast.Expression.getDefaultInstance()) {
-            computedMethod_ =
-              boa.types.Ast.Expression.newBuilder(computedMethod_).mergeFrom(value).buildPartial();
-          } else {
-            computedMethod_ = value;
-          }
-          onChanged();
-        } else {
-          computedMethodBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00200000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public Builder clearComputedMethod() {
-        if (computedMethodBuilder_ == null) {
-          computedMethod_ = boa.types.Ast.Expression.getDefaultInstance();
-          onChanged();
-        } else {
-          computedMethodBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00200000);
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public boa.types.Ast.Expression.Builder getComputedMethodBuilder() {
-        bitField0_ |= 0x00200000;
-        onChanged();
-        return getComputedMethodFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      public boa.types.Ast.ExpressionOrBuilder getComputedMethodOrBuilder() {
-        if (computedMethodBuilder_ != null) {
-          return computedMethodBuilder_.getMessageOrBuilder();
-        } else {
-          return computedMethod_;
-        }
-      }
-      /**
-       * <code>optional .boa.types.Expression computed_method = 26;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Expression, boa.types.Ast.Expression.Builder, boa.types.Ast.ExpressionOrBuilder> 
-          getComputedMethodFieldBuilder() {
-        if (computedMethodBuilder_ == null) {
-          computedMethodBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              boa.types.Ast.Expression, boa.types.Ast.Expression.Builder, boa.types.Ast.ExpressionOrBuilder>(
-                  computedMethod_,
-                  getParentForChildren(),
-                  isClean());
-          computedMethod_ = null;
-        }
-        return computedMethodBuilder_;
-      }
-
-      // optional bool is_static = 27;
-      private boolean isStatic_ ;
-      /**
-       * <code>optional bool is_static = 27;</code>
-       */
-      public boolean hasIsStatic() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
-      }
-      /**
-       * <code>optional bool is_static = 27;</code>
-       */
-      public boolean getIsStatic() {
-        return isStatic_;
-      }
-      /**
-       * <code>optional bool is_static = 27;</code>
-       */
-      public Builder setIsStatic(boolean value) {
-        bitField0_ |= 0x00400000;
-        isStatic_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool is_static = 27;</code>
-       */
-      public Builder clearIsStatic() {
-        bitField0_ = (bitField0_ & ~0x00400000);
-        isStatic_ = false;
-        onChanged();
-        return this;
-      }
-
-      // optional bool has_from = 28;
-      private boolean hasFrom_ ;
-      /**
-       * <code>optional bool has_from = 28;</code>
-       */
-      public boolean hasHasFrom() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
-      }
-      /**
-       * <code>optional bool has_from = 28;</code>
-       */
-      public boolean getHasFrom() {
-        return hasFrom_;
-      }
-      /**
-       * <code>optional bool has_from = 28;</code>
-       */
-      public Builder setHasFrom(boolean value) {
-        bitField0_ |= 0x00800000;
-        hasFrom_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool has_from = 28;</code>
-       */
-      public Builder clearHasFrom() {
-        bitField0_ = (bitField0_ & ~0x00800000);
-        hasFrom_ = false;
-        onChanged();
-        return this;
-      }
-
-      // optional .boa.types.Method trait = 29;
-      private boa.types.Ast.Method trait_ = boa.types.Ast.Method.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Method, boa.types.Ast.Method.Builder, boa.types.Ast.MethodOrBuilder> traitBuilder_;
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public boolean hasTrait() {
-        return ((bitField0_ & 0x01000000) == 0x01000000);
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public boa.types.Ast.Method getTrait() {
-        if (traitBuilder_ == null) {
-          return trait_;
-        } else {
-          return traitBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public Builder setTrait(boa.types.Ast.Method value) {
-        if (traitBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          trait_ = value;
-          onChanged();
-        } else {
-          traitBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x01000000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public Builder setTrait(
-          boa.types.Ast.Method.Builder builderForValue) {
-        if (traitBuilder_ == null) {
-          trait_ = builderForValue.build();
-          onChanged();
-        } else {
-          traitBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x01000000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public Builder mergeTrait(boa.types.Ast.Method value) {
-        if (traitBuilder_ == null) {
-          if (((bitField0_ & 0x01000000) == 0x01000000) &&
-              trait_ != boa.types.Ast.Method.getDefaultInstance()) {
-            trait_ =
-              boa.types.Ast.Method.newBuilder(trait_).mergeFrom(value).buildPartial();
-          } else {
-            trait_ = value;
-          }
-          onChanged();
-        } else {
-          traitBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x01000000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public Builder clearTrait() {
-        if (traitBuilder_ == null) {
-          trait_ = boa.types.Ast.Method.getDefaultInstance();
-          onChanged();
-        } else {
-          traitBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x01000000);
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public boa.types.Ast.Method.Builder getTraitBuilder() {
-        bitField0_ |= 0x01000000;
-        onChanged();
-        return getTraitFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      public boa.types.Ast.MethodOrBuilder getTraitOrBuilder() {
-        if (traitBuilder_ != null) {
-          return traitBuilder_.getMessageOrBuilder();
-        } else {
-          return trait_;
-        }
-      }
-      /**
-       * <code>optional .boa.types.Method trait = 29;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Method, boa.types.Ast.Method.Builder, boa.types.Ast.MethodOrBuilder> 
-          getTraitFieldBuilder() {
-        if (traitBuilder_ == null) {
-          traitBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              boa.types.Ast.Method, boa.types.Ast.Method.Builder, boa.types.Ast.MethodOrBuilder>(
-                  trait_,
-                  getParentForChildren(),
-                  isClean());
-          trait_ = null;
-        }
-        return traitBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:boa.types.Expression)
@@ -38369,7 +37100,7 @@ public final class Ast {
       "ATIC\020\037\022\010\n\004ECHO\020 \022\021\n\rUSE_NAMESPACE\020!\022\020\n\014U",
       "SE_CONSTANT\020\"\022\020\n\014USE_FUNCTION\020#\022\017\n\013TRAIT" +
       "_ALIAS\020$\022\024\n\020TRAIT_PRECEDENCE\020%\022\r\n\tTRAIT_" +
-      "USE\020&\032\002\020\001\"\350\022\n\nExpression\0222\n\004kind\030\001 \002(\0162$" +
+      "USE\020&\032\002\020\001\"\206\021\n\nExpression\0222\n\004kind\030\001 \002(\0162$" +
       ".boa.types.Expression.ExpressionKind\022*\n\013" +
       "expressions\030\002 \003(\0132\025.boa.types.Expression" +
       "\022+\n\016variable_decls\030\003 \003(\0132\023.boa.types.Var" +
@@ -38383,103 +37114,97 @@ public final class Ast {
       "es.Modifier\022\021\n\tno_parens\030\016 \001(\010\022\013\n\003key\030\022 " +
       "\001(\005\022\'\n\016declaring_type\030\023 \001(\0132\017.boa.types." +
       "Type\022$\n\013return_type\030\024 \001(\0132\017.boa.types.Ty" +
-      "pe\022\"\n\007methods\030\025 \003(\0132\021.boa.types.Method\022(" +
-      "\n\nstatements\030\026 \003(\0132\024.boa.types.Statement" +
-      "\022\030\n\020is_member_access\030\027 \001(\010\022\023\n\013dollar_sig" +
-      "n\030\030 \001(\010\0220\n\021computed_variable\030\031 \001(\0132\025.boa",
-      ".types.Expression\022.\n\017computed_method\030\032 \001" +
-      "(\0132\025.boa.types.Expression\022\021\n\tis_static\030\033" +
-      " \001(\010\022\020\n\010has_from\030\034 \001(\010\022 \n\005trait\030\035 \001(\0132\021." +
-      "boa.types.Method\"\231\014\n\016ExpressionKind\022\t\n\005O" +
-      "THER\020\000\022\013\n\007LITERAL\020\001\022\r\n\tVARACCESS\020\002\022\013\n\007VA" +
-      "RDECL\020\003\022\016\n\nMETHODCALL\020\004\022\010\n\004CAST\020\005\022\017\n\013ARR" +
-      "AYACCESS\020\006\022\r\n\tARRAYINIT\020\007\022\020\n\014ARRAYLITERA" +
-      "L\020\007\022\017\n\013TYPECOMPARE\020\010\022\007\n\003NEW\020\t\022\014\n\010NEWARRA" +
-      "Y\020\n\022\n\n\006OP_ADD\020\013\022\n\n\006OP_SUB\020\014\022\013\n\007OP_MULT\020\r" +
-      "\022\n\n\006OP_DIV\020\016\022\n\n\006OP_MOD\020\017\022\n\n\006OP_INC\020\020\022\n\n\006",
-      "OP_DEC\020\021\022\016\n\nBIT_LSHIFT\020\022\022\016\n\nBIT_RSHIFT\020\023" +
-      "\022\026\n\022BIT_UNSIGNEDRSHIFT\020\024\022\013\n\007BIT_AND\020\025\022\n\n" +
-      "\006BIT_OR\020\026\022\013\n\007BIT_NOT\020\027\022\013\n\007BIT_XOR\020\030\022\017\n\013L" +
-      "OGICAL_NOT\020\031\022\017\n\013LOGICAL_AND\020\032\022\016\n\nLOGICAL" +
-      "_OR\020\033\022\006\n\002EQ\020\034\022\007\n\003NEQ\020\035\022\006\n\002LT\020\036\022\006\n\002GT\020\037\022\010" +
-      "\n\004LTEQ\020 \022\010\n\004GTEQ\020!\022\017\n\013CONDITIONAL\020\"\022\020\n\014N" +
-      "ULLCOALESCE\020#\022\n\n\006ASSIGN\020$\022\016\n\nASSIGN_ADD\020" +
-      "%\022\016\n\nASSIGN_SUB\020&\022\017\n\013ASSIGN_MULT\020\'\022\016\n\nAS" +
-      "SIGN_DIV\020(\022\016\n\nASSIGN_MOD\020)\022\021\n\rASSIGN_BIT" +
-      "XOR\020*\022\021\n\rASSIGN_BITAND\020+\022\020\n\014ASSIGN_BITOR",
-      "\020,\022\021\n\rASSIGN_LSHIFT\020-\022\021\n\rASSIGN_RSHIFT\020." +
-      "\022\031\n\025ASSIGN_UNSIGNEDRSHIFT\020/\022\016\n\nANNOTATIO" +
-      "N\0200\022\t\n\005PAREN\0201\022\024\n\020METHOD_REFERENCE\0202\022\n\n\006" +
-      "LAMBDA\0203\022\017\n\013ANON_METHOD\0204\022\t\n\005YIELD\0205\022\027\n\023" +
-      "ARRAY_COMPREHENSION\0206\022\t\n\005EMPTY\0207\022\010\n\004SHEQ" +
-      "\0208\022\t\n\005SHNEQ\0209\022\020\n\014XML_DOTQUERY\020:\022\022\n\016OBJEC" +
-      "T_LITERAL\020;\022\016\n\nMETHODDECL\020<\022\010\n\004LOOP\020=\022\r\n" +
-      "\tGENERATOR\020>\022\017\n\013XML_LITERAL\020?\022\022\n\016XML_EXP" +
-      "RESSION\020@\022\023\n\017XML_PROPERTYREF\020A\022\021\n\rXML_ME" +
-      "MBERREF\020B\022\013\n\007XML_DOT\020C\022\016\n\nXML_DOTDOT\020D\022\006",
-      "\n\002IN\020E\022\n\n\006TYPEOF\020F\022\021\n\rREGEXPLITERAL\020G\022\n\n" +
-      "\006DELETE\020H\022\010\n\004VOID\020I\022\023\n\017HASHTABLEACCESS\020J" +
-      "\022\020\n\014ARRAYELEMENT\020K\022\r\n\tOP_CONCAT\020L\022\n\n\006OP_" +
-      "POW\020M\022\021\n\rASSIGN_CONCAT\020N\022\016\n\nASSIGN_POW\020O" +
-      "\022\014\n\010BACKTICK\020P\022\r\n\tIDENTICAL\020Q\022\020\n\014NOTIDEN" +
-      "TICAL\020R\022\016\n\nSTRING_AND\020S\022\r\n\tSTRING_OR\020T\022\016" +
-      "\n\nSTRING_XOR\020U\022\030\n\024OP_THREE_WAY_COMPARE\020V" +
-      "\022\r\n\tOP_UNPACK\020W\022\t\n\005QUOTE\020X\022\020\n\014IGNORE_ERR" +
-      "OR\020Y\022\013\n\007REQUIRE\020Z\022\020\n\014REQUIRE_ONCE\020[\022\013\n\007I" +
-      "NCLUDE\020\\\022\020\n\014INCLUDE_ONCE\020]\022\010\n\004LIST\020^\022\r\n\t",
-      "REFERENCE\020_\022\016\n\nREFLECTION\020`\022\t\n\005CLONE\020a\022\017" +
-      "\n\013TRAIT_ALIAS\020b\022\024\n\020TRAIT_PRECEDENCE\020c\022\021\n" +
-      "\rNAMESPACENAME\020d\032\002\020\001\"\215\005\n\010Modifier\022.\n\004kin" +
-      "d\030\001 \002(\0162 .boa.types.Modifier.ModifierKin" +
-      "d\0222\n\nvisibility\030\002 \001(\0162\036.boa.types.Modifi" +
-      "er.Visibility\022\027\n\017annotation_name\030\003 \001(\t\022\032" +
-      "\n\022annotation_members\030\004 \003(\t\0220\n\021annotation" +
-      "_values\030\005 \003(\0132\025.boa.types.Expression\022\r\n\005" +
-      "other\030\006 \001(\t\022\013\n\003key\030\n \001(\005\022(\n\005scope\030\013 \001(\0162" +
-      "\031.boa.types.Modifier.Scope\"\346\001\n\014ModifierK",
-      "ind\022\t\n\005OTHER\020\000\022\016\n\nVISIBILITY\020\001\022\016\n\nANNOTA" +
-      "TION\020\002\022\t\n\005FINAL\020\003\022\014\n\010CONSTANT\020\003\022\n\n\006STATI" +
-      "C\020\004\022\020\n\014SYNCHRONIZED\020\005\022\010\n\004SYNC\020\005\022\014\n\010ABSTR" +
-      "ACT\020\006\022\t\n\005SCOPE\020\007\022\n\n\006GETTER\020\010\022\n\n\006SETTER\020\t" +
-      "\022\n\n\006NATIVE\020\n\022\014\n\010STRICTFP\020\013\022\r\n\tTRANSIENT\020" +
-      "\014\022\014\n\010VOLATILE\020\r\032\002\020\001\"a\n\nVisibility\022\n\n\006PUB" +
-      "LIC\020\001\022\013\n\007PRIVATE\020\002\022\r\n\tPROTECTED\020\003\022\r\n\tNAM" +
-      "ESPACE\020\004\022\013\n\007PACKAGE\020\004\022\013\n\007DEFAULT\020\005\032\002\020\001\"$" +
-      "\n\005Scope\022\007\n\003VAR\020\001\022\007\n\003LET\020\002\022\t\n\005CONST\020\003\"\352\001\n" +
-      "\007Comment\022,\n\004kind\030\001 \002(\0162\036.boa.types.Comme",
-      "nt.CommentKind\022\r\n\005value\030\002 \002(\t\022)\n\010positio" +
-      "n\030\003 \002(\0132\027.boa.types.PositionInfo\022\013\n\003key\030" +
-      "\007 \001(\005\"j\n\013CommentKind\022\t\n\005OTHER\020\000\022\010\n\004LINE\020" +
-      "\001\022\t\n\005BLOCK\020\002\022\007\n\003DOC\020\003\022\021\n\rDOCUMENTATION\020\003" +
-      "\022\010\n\004SPEC\020\004\022\021\n\rSPECIFICATION\020\004\032\002\020\001\"{\n\014Pos" +
-      "itionInfo\022\021\n\tstart_pos\030\001 \002(\005\022\016\n\006length\030\002" +
-      " \002(\005\022\022\n\nstart_line\030\003 \002(\005\022\021\n\tstart_col\030\004 " +
-      "\002(\005\022\020\n\010end_line\030\005 \002(\005\022\017\n\007end_col\030\006 \002(\005\"\233" +
-      "\001\n\010Document\022\r\n\005title\030\001 \001(\t\022$\n\010elements\030\002" +
-      " \003(\0132\022.boa.types.Element\022$\n\010doc_type\030\003 \001",
-      "(\0132\022.boa.types.Element\0224\n\026processing_ins" +
-      "truction\030\013 \003(\0132\024.boa.types.Attribute\"\267\004\n" +
-      "\007Element\022\013\n\003tag\030\001 \002(\t\022,\n\004kind\030\002 \002(\0162\036.bo" +
-      "a.types.Element.ElementKind\022$\n\010elements\030" +
-      "\003 \003(\0132\022.boa.types.Element\022\014\n\004text\030\004 \003(\t\022" +
-      "\014\n\004data\030\005 \003(\t\022(\n\nattributes\030\006 \003(\0132\024.boa." +
-      "types.Attribute\022$\n\006script\030\007 \001(\0132\024.boa.ty" +
-      "pes.Namespace\022!\n\003php\030\010 \001(\0132\024.boa.types.N" +
-      "amespace\022%\n\010var_decl\030\t \003(\0132\023.boa.types.V" +
-      "ariable\022\r\n\005title\030\n \001(\t\0224\n\026processing_ins",
-      "truction\030\013 \003(\0132\024.boa.types.Attribute\"\317\001\n" +
-      "\013ElementKind\022\t\n\005OTHER\020\000\022\t\n\005BLOCK\020\001\022\013\n\007IN" +
-      "_LINE\020\002\022\010\n\004FORM\020\003\022\014\n\010DOC_TYPE\020\004\022\017\n\013STYLE" +
-      "_SHEET\020\005\022\r\n\tPAGE_RULE\020\006\022\016\n\nSTYLE_RULE\020\007\022" +
-      "\022\n\016FONT_FACE_RULE\020\010\022\016\n\nMEDIA_RULE\020\t\022\017\n\013M" +
-      "EDIA_QUERY\020\n\022\017\n\013IMPORT_RULE\020\013\022\017\n\013XML_ELE" +
-      "MENT\020\014\"\'\n\tAttribute\022\013\n\003key\030\001 \002(\t\022\r\n\005valu" +
-      "e\030\002 \002(\t*\303\001\n\010TypeKind\022\t\n\005OTHER\020\000\022\t\n\005CLASS" +
-      "\020\001\022\r\n\tINTERFACE\020\002\022\r\n\tANONYMOUS\020\003\022\010\n\004ANON" +
-      "\020\003\022\n\n\006STRUCT\020\004\022\010\n\004ENUM\020\005\022\017\n\013ENUMERATION\020",
-      "\005\022\016\n\nANNOTATION\020\006\022\014\n\010DELEGATE\020\007\022\013\n\007GENER" +
-      "IC\020\010\022\t\n\005TRAIT\020\t\022\r\n\tPRIMITIVE\020\n\022\t\n\005ARRAY\020" +
-      "\013\032\002\020\001B\002H\001"
+      "pe\022(\n\nstatements\030\026 \003(\0132\024.boa.types.State" +
+      "ment\022\030\n\020is_member_access\030\027 \001(\010\"\231\014\n\016Expre" +
+      "ssionKind\022\t\n\005OTHER\020\000\022\013\n\007LITERAL\020\001\022\r\n\tVAR" +
+      "ACCESS\020\002\022\013\n\007VARDECL\020\003\022\016\n\nMETHODCALL\020\004\022\010\n",
+      "\004CAST\020\005\022\017\n\013ARRAYACCESS\020\006\022\r\n\tARRAYINIT\020\007\022" +
+      "\020\n\014ARRAYLITERAL\020\007\022\017\n\013TYPECOMPARE\020\010\022\007\n\003NE" +
+      "W\020\t\022\014\n\010NEWARRAY\020\n\022\n\n\006OP_ADD\020\013\022\n\n\006OP_SUB\020" +
+      "\014\022\013\n\007OP_MULT\020\r\022\n\n\006OP_DIV\020\016\022\n\n\006OP_MOD\020\017\022\n" +
+      "\n\006OP_INC\020\020\022\n\n\006OP_DEC\020\021\022\016\n\nBIT_LSHIFT\020\022\022\016" +
+      "\n\nBIT_RSHIFT\020\023\022\026\n\022BIT_UNSIGNEDRSHIFT\020\024\022\013" +
+      "\n\007BIT_AND\020\025\022\n\n\006BIT_OR\020\026\022\013\n\007BIT_NOT\020\027\022\013\n\007" +
+      "BIT_XOR\020\030\022\017\n\013LOGICAL_NOT\020\031\022\017\n\013LOGICAL_AN" +
+      "D\020\032\022\016\n\nLOGICAL_OR\020\033\022\006\n\002EQ\020\034\022\007\n\003NEQ\020\035\022\006\n\002" +
+      "LT\020\036\022\006\n\002GT\020\037\022\010\n\004LTEQ\020 \022\010\n\004GTEQ\020!\022\017\n\013COND",
+      "ITIONAL\020\"\022\020\n\014NULLCOALESCE\020#\022\n\n\006ASSIGN\020$\022" +
+      "\016\n\nASSIGN_ADD\020%\022\016\n\nASSIGN_SUB\020&\022\017\n\013ASSIG" +
+      "N_MULT\020\'\022\016\n\nASSIGN_DIV\020(\022\016\n\nASSIGN_MOD\020)" +
+      "\022\021\n\rASSIGN_BITXOR\020*\022\021\n\rASSIGN_BITAND\020+\022\020" +
+      "\n\014ASSIGN_BITOR\020,\022\021\n\rASSIGN_LSHIFT\020-\022\021\n\rA" +
+      "SSIGN_RSHIFT\020.\022\031\n\025ASSIGN_UNSIGNEDRSHIFT\020" +
+      "/\022\016\n\nANNOTATION\0200\022\t\n\005PAREN\0201\022\024\n\020METHOD_R" +
+      "EFERENCE\0202\022\n\n\006LAMBDA\0203\022\017\n\013ANON_METHOD\0204\022" +
+      "\t\n\005YIELD\0205\022\027\n\023ARRAY_COMPREHENSION\0206\022\t\n\005E" +
+      "MPTY\0207\022\010\n\004SHEQ\0208\022\t\n\005SHNEQ\0209\022\020\n\014XML_DOTQU",
+      "ERY\020:\022\022\n\016OBJECT_LITERAL\020;\022\016\n\nMETHODDECL\020" +
+      "<\022\010\n\004LOOP\020=\022\r\n\tGENERATOR\020>\022\017\n\013XML_LITERA" +
+      "L\020?\022\022\n\016XML_EXPRESSION\020@\022\023\n\017XML_PROPERTYR" +
+      "EF\020A\022\021\n\rXML_MEMBERREF\020B\022\013\n\007XML_DOT\020C\022\016\n\n" +
+      "XML_DOTDOT\020D\022\006\n\002IN\020E\022\n\n\006TYPEOF\020F\022\021\n\rREGE" +
+      "XPLITERAL\020G\022\n\n\006DELETE\020H\022\010\n\004VOID\020I\022\023\n\017HAS" +
+      "HTABLEACCESS\020J\022\020\n\014ARRAYELEMENT\020K\022\r\n\tOP_C" +
+      "ONCAT\020L\022\n\n\006OP_POW\020M\022\021\n\rASSIGN_CONCAT\020N\022\016" +
+      "\n\nASSIGN_POW\020O\022\014\n\010BACKTICK\020P\022\r\n\tIDENTICA" +
+      "L\020Q\022\020\n\014NOTIDENTICAL\020R\022\016\n\nSTRING_AND\020S\022\r\n",
+      "\tSTRING_OR\020T\022\016\n\nSTRING_XOR\020U\022\030\n\024OP_THREE" +
+      "_WAY_COMPARE\020V\022\r\n\tOP_UNPACK\020W\022\t\n\005QUOTE\020X" +
+      "\022\020\n\014IGNORE_ERROR\020Y\022\013\n\007REQUIRE\020Z\022\020\n\014REQUI" +
+      "RE_ONCE\020[\022\013\n\007INCLUDE\020\\\022\020\n\014INCLUDE_ONCE\020]" +
+      "\022\010\n\004LIST\020^\022\r\n\tREFERENCE\020_\022\016\n\nREFLECTION\020" +
+      "`\022\t\n\005CLONE\020a\022\017\n\013TRAIT_ALIAS\020b\022\024\n\020TRAIT_P" +
+      "RECEDENCE\020c\022\021\n\rNAMESPACENAME\020d\032\002\020\001\"\215\005\n\010M" +
+      "odifier\022.\n\004kind\030\001 \002(\0162 .boa.types.Modifi" +
+      "er.ModifierKind\0222\n\nvisibility\030\002 \001(\0162\036.bo" +
+      "a.types.Modifier.Visibility\022\027\n\017annotatio",
+      "n_name\030\003 \001(\t\022\032\n\022annotation_members\030\004 \003(\t" +
+      "\0220\n\021annotation_values\030\005 \003(\0132\025.boa.types." +
+      "Expression\022\r\n\005other\030\006 \001(\t\022\013\n\003key\030\n \001(\005\022(" +
+      "\n\005scope\030\013 \001(\0162\031.boa.types.Modifier.Scope" +
+      "\"\346\001\n\014ModifierKind\022\t\n\005OTHER\020\000\022\016\n\nVISIBILI" +
+      "TY\020\001\022\016\n\nANNOTATION\020\002\022\t\n\005FINAL\020\003\022\014\n\010CONST" +
+      "ANT\020\003\022\n\n\006STATIC\020\004\022\020\n\014SYNCHRONIZED\020\005\022\010\n\004S" +
+      "YNC\020\005\022\014\n\010ABSTRACT\020\006\022\t\n\005SCOPE\020\007\022\n\n\006GETTER" +
+      "\020\010\022\n\n\006SETTER\020\t\022\n\n\006NATIVE\020\n\022\014\n\010STRICTFP\020\013" +
+      "\022\r\n\tTRANSIENT\020\014\022\014\n\010VOLATILE\020\r\032\002\020\001\"a\n\nVis",
+      "ibility\022\n\n\006PUBLIC\020\001\022\013\n\007PRIVATE\020\002\022\r\n\tPROT" +
+      "ECTED\020\003\022\r\n\tNAMESPACE\020\004\022\013\n\007PACKAGE\020\004\022\013\n\007D" +
+      "EFAULT\020\005\032\002\020\001\"$\n\005Scope\022\007\n\003VAR\020\001\022\007\n\003LET\020\002\022" +
+      "\t\n\005CONST\020\003\"\352\001\n\007Comment\022,\n\004kind\030\001 \002(\0162\036.b" +
+      "oa.types.Comment.CommentKind\022\r\n\005value\030\002 " +
+      "\002(\t\022)\n\010position\030\003 \002(\0132\027.boa.types.Positi" +
+      "onInfo\022\013\n\003key\030\007 \001(\005\"j\n\013CommentKind\022\t\n\005OT" +
+      "HER\020\000\022\010\n\004LINE\020\001\022\t\n\005BLOCK\020\002\022\007\n\003DOC\020\003\022\021\n\rD" +
+      "OCUMENTATION\020\003\022\010\n\004SPEC\020\004\022\021\n\rSPECIFICATIO" +
+      "N\020\004\032\002\020\001\"{\n\014PositionInfo\022\021\n\tstart_pos\030\001 \002",
+      "(\005\022\016\n\006length\030\002 \002(\005\022\022\n\nstart_line\030\003 \002(\005\022\021" +
+      "\n\tstart_col\030\004 \002(\005\022\020\n\010end_line\030\005 \002(\005\022\017\n\007e" +
+      "nd_col\030\006 \002(\005\"\233\001\n\010Document\022\r\n\005title\030\001 \001(\t" +
+      "\022$\n\010elements\030\002 \003(\0132\022.boa.types.Element\022$" +
+      "\n\010doc_type\030\003 \001(\0132\022.boa.types.Element\0224\n\026" +
+      "processing_instruction\030\013 \003(\0132\024.boa.types" +
+      ".Attribute\"\267\004\n\007Element\022\013\n\003tag\030\001 \002(\t\022,\n\004k" +
+      "ind\030\002 \002(\0162\036.boa.types.Element.ElementKin" +
+      "d\022$\n\010elements\030\003 \003(\0132\022.boa.types.Element\022" +
+      "\014\n\004text\030\004 \003(\t\022\014\n\004data\030\005 \003(\t\022(\n\nattribute",
+      "s\030\006 \003(\0132\024.boa.types.Attribute\022$\n\006script\030" +
+      "\007 \001(\0132\024.boa.types.Namespace\022!\n\003php\030\010 \001(\013" +
+      "2\024.boa.types.Namespace\022%\n\010var_decl\030\t \003(\013" +
+      "2\023.boa.types.Variable\022\r\n\005title\030\n \001(\t\0224\n\026" +
+      "processing_instruction\030\013 \003(\0132\024.boa.types" +
+      ".Attribute\"\317\001\n\013ElementKind\022\t\n\005OTHER\020\000\022\t\n" +
+      "\005BLOCK\020\001\022\013\n\007IN_LINE\020\002\022\010\n\004FORM\020\003\022\014\n\010DOC_T" +
+      "YPE\020\004\022\017\n\013STYLE_SHEET\020\005\022\r\n\tPAGE_RULE\020\006\022\016\n" +
+      "\nSTYLE_RULE\020\007\022\022\n\016FONT_FACE_RULE\020\010\022\016\n\nMED" +
+      "IA_RULE\020\t\022\017\n\013MEDIA_QUERY\020\n\022\017\n\013IMPORT_RUL",
+      "E\020\013\022\017\n\013XML_ELEMENT\020\014\"\'\n\tAttribute\022\013\n\003key" +
+      "\030\001 \002(\t\022\r\n\005value\030\002 \002(\t*\303\001\n\010TypeKind\022\t\n\005OT" +
+      "HER\020\000\022\t\n\005CLASS\020\001\022\r\n\tINTERFACE\020\002\022\r\n\tANONY" +
+      "MOUS\020\003\022\010\n\004ANON\020\003\022\n\n\006STRUCT\020\004\022\010\n\004ENUM\020\005\022\017" +
+      "\n\013ENUMERATION\020\005\022\016\n\nANNOTATION\020\006\022\014\n\010DELEG" +
+      "ATE\020\007\022\013\n\007GENERIC\020\010\022\t\n\005TRAIT\020\t\022\r\n\tPRIMITI" +
+      "VE\020\n\022\t\n\005ARRAY\020\013\032\002\020\001B\002H\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -38539,7 +37264,7 @@ public final class Ast {
           internal_static_boa_types_Expression_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_Expression_descriptor,
-              new java.lang.String[] { "Kind", "Expressions", "VariableDecls", "NewType", "GenericParameters", "IsPostfix", "Literal", "Variable", "Method", "MethodArgs", "AnonDeclaration", "Annotation", "NoParens", "Key", "DeclaringType", "ReturnType", "Methods", "Statements", "IsMemberAccess", "DollarSign", "ComputedVariable", "ComputedMethod", "IsStatic", "HasFrom", "Trait", });
+              new java.lang.String[] { "Kind", "Expressions", "VariableDecls", "NewType", "GenericParameters", "IsPostfix", "Literal", "Variable", "Method", "MethodArgs", "AnonDeclaration", "Annotation", "NoParens", "Key", "DeclaringType", "ReturnType", "Statements", "IsMemberAccess", });
           internal_static_boa_types_Modifier_descriptor =
             getDescriptor().getMessageTypes().get(9);
           internal_static_boa_types_Modifier_fieldAccessorTable = new

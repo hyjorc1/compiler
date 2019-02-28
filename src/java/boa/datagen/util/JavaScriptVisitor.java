@@ -228,7 +228,7 @@ public class JavaScriptVisitor implements NodeVisitor {
 		} else {
 			Expression.Builder eb = Expression.newBuilder();
 			eb.setKind(ExpressionKind.METHODDECL);
-			eb.addMethods(b.build());
+//			eb.addMethods(b.build());
 			expressions.push(eb.build());
 		}
 		return false;
@@ -926,8 +926,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 		fields.push(new ArrayList<boa.types.Ast.Variable>());
 		for (ObjectProperty prop : node.getElements())
 			prop.visit(this);
-		for (boa.types.Ast.Method m : methods.pop())
-			b.addMethods(m);
+//		for (boa.types.Ast.Method m : methods.pop())
+//			b.addMethods(m);
 		for (boa.types.Ast.Variable v : fields.pop())
 			b.addVariableDecls(v);
 		expressions.push(b.build());
