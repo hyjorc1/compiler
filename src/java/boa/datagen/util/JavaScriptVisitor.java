@@ -162,8 +162,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 					methods.push(new ArrayList<boa.types.Ast.Method>());
 					((FunctionNode) node.getBody()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 					node.getBody().visit(this);
-					for (boa.types.Ast.Method m : methods.pop())
-						sb.addMethods(m);
+//					for (boa.types.Ast.Method m : methods.pop())
+//						sb.addMethods(m);
 				} else {
 					statements.push(new ArrayList<boa.types.Ast.Statement>());
 					node.getBody().visit(this);
@@ -246,8 +246,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 				methods.push(new ArrayList<boa.types.Ast.Method>());
 				((FunctionNode) s).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 				((AstNode) s).visit(this);
-				for (Method m : methods.pop())
-					b.addMethods(m);
+//				for (Method m : methods.pop())
+//					b.addMethods(m);
 			} else {
 				statements.push(new ArrayList<boa.types.Ast.Statement>());
 				((AstNode) s).visit(this);
@@ -320,8 +320,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			methods.push(new ArrayList<boa.types.Ast.Method>());
 			((FunctionNode) node.getBody()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			node.getBody().visit(this);
-			for (boa.types.Ast.Method m : methods.pop())
-				b.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				b.addMethods(m);
 		} else {
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getBody().visit(this);
@@ -358,8 +358,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			methods.push(new ArrayList<boa.types.Ast.Method>());
 			((FunctionNode) node.getBody()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			node.getBody().visit(this);
-			for (boa.types.Ast.Method m : methods.pop())
-				s.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				s.addMethods(m);
 		} else {
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getBody().visit(this);
@@ -388,8 +388,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			methods.push(new ArrayList<boa.types.Ast.Method>());
 			((FunctionNode) node.getBody()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			node.getBody().visit(this);
-			for (boa.types.Ast.Method m : methods.pop())
-				s.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				s.addMethods(m);
 		} else {
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getBody().visit(this);
@@ -444,8 +444,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			methods.push(new ArrayList<boa.types.Ast.Method>());
 			((FunctionNode) node.getStatement()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			node.getStatement().visit(this);
-			for (boa.types.Ast.Method m : methods.pop())
-				b.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				b.addMethods(m);
 		} else {
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getStatement().visit(this);
@@ -466,8 +466,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			methods.push(new ArrayList<boa.types.Ast.Method>());
 			((FunctionNode) node.getThenPart()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			node.getThenPart().visit(this);
-			for (boa.types.Ast.Method m : methods.pop())
-				b.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				b.addMethods(m);
 		} else {
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getThenPart().visit(this);
@@ -479,8 +479,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 				methods.push(new ArrayList<boa.types.Ast.Method>());
 				((FunctionNode) node.getElsePart()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 				node.getElsePart().visit(this);
-				for (boa.types.Ast.Method m : methods.pop())
-					b.addMethods(m);
+//				for (boa.types.Ast.Method m : methods.pop())
+//					b.addMethods(m);
 			} else {
 				statements.push(new ArrayList<boa.types.Ast.Statement>());
 				node.getElsePart().visit(this);
@@ -506,8 +506,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			methods.push(new ArrayList<boa.types.Ast.Method>());
 			((FunctionNode) node.getStatement()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			node.getStatement().visit(this);
-			for (boa.types.Ast.Method m : methods.pop())
-				b.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				b.addMethods(m);
 		} else {
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getStatement().visit(this);
@@ -548,8 +548,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 					((FunctionNode) s).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 				s.visit(this);
 			}
-			for (boa.types.Ast.Method m : methods.pop())
-				b.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				b.addMethods(m);
 			for (boa.types.Ast.Statement st : statements.pop())
 				b.addStatements(st);
 		}
@@ -593,8 +593,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			c.visit(this);
 		if (node.getFinallyBlock() != null)
 			visitFinally(node.getFinallyBlock());
-		for (boa.types.Ast.Method m : methods.pop())
-			b.addMethods(m);
+//		for (boa.types.Ast.Method m : methods.pop())
+//			b.addMethods(m);
 		for (boa.types.Ast.Statement s : statements.pop())
 			b.addStatements(s);
 		list.add(b.build());
@@ -612,8 +612,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 				((FunctionNode) node).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			((AstNode) node).visit(this);
 		}
-		for (boa.types.Ast.Method m : methods.pop())
-			b.addMethods(m);
+//		for (boa.types.Ast.Method m : methods.pop())
+//			b.addMethods(m);
 		for (boa.types.Ast.Statement s : statements.pop())
 			b.addStatements(s);
 		list.add(b.build());
@@ -629,8 +629,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 			methods.push(new ArrayList<boa.types.Ast.Method>());
 			((FunctionNode) node.getBody()).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 			node.getBody().visit(this);
-			for (boa.types.Ast.Method m : methods.pop())
-				b.addMethods(m);
+//			for (boa.types.Ast.Method m : methods.pop())
+//				b.addMethods(m);
 		} else {
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getBody().visit(this);
@@ -1139,8 +1139,8 @@ public class JavaScriptVisitor implements NodeVisitor {
 				methods.push(new ArrayList<boa.types.Ast.Method>());
 				((FunctionNode) s).setFunctionType(FunctionNode.FUNCTION_STATEMENT);
 				((AstNode) s).visit(this);
-				for (Method m : methods.pop())
-					b.addMethods(m);
+//				for (Method m : methods.pop())
+//					b.addMethods(m);
 			} else {
 				statements.push(new ArrayList<boa.types.Ast.Statement>());
 				((AstNode) s).visit(this);

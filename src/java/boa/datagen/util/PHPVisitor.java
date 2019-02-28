@@ -118,18 +118,18 @@ public class PHPVisitor extends AbstractVisitor {
 		}
 //		for (Object c : node.comments())
 //			((Comment) c).accept(this);
-		if (!expressions.isEmpty())
-			throw new RuntimeException("expressions not empty");
-		if (!statements.isEmpty())
-			throw new RuntimeException("statements not empty");
-		if (!fields.isEmpty())
-			throw new RuntimeException("fields not empty");
-		if (!methods.isEmpty())
-			throw new RuntimeException("methods not empty");
-		if (!namespaces.isEmpty())
-			throw new RuntimeException("namespaces not empty");
-		if (!declarations.isEmpty())
-			throw new RuntimeException("declarations not empty");
+//		if (!expressions.isEmpty())
+//			throw new RuntimeException("expressions not empty");
+//		if (!statements.isEmpty())
+//			throw new RuntimeException("statements not empty");
+//		if (!fields.isEmpty())
+//			throw new RuntimeException("fields not empty");
+//		if (!methods.isEmpty())
+//			throw new RuntimeException("methods not empty");
+//		if (!namespaces.isEmpty())
+//			throw new RuntimeException("namespaces not empty");
+//		if (!declarations.isEmpty())
+//			throw new RuntimeException("declarations not empty");
 		return false;
 	}
 
@@ -273,14 +273,14 @@ public class PHPVisitor extends AbstractVisitor {
 		statements.push(new ArrayList<boa.types.Ast.Statement>());
 		for (org.eclipse.php.internal.core.ast.nodes.Statement s : node.statements())
 			s.accept(this);
-		for (boa.types.Ast.Method m : methods.pop())
-			b.addMethods(m);
-		for (Declaration decl : declarations.pop())
-			b.addTypeDeclarations(decl);
+//		for (boa.types.Ast.Method m : methods.pop())
+//			b.addMethods(m);
+//		for (Declaration decl : declarations.pop())
+//			b.addTypeDeclarations(decl);
 		for (boa.types.Ast.Statement st : statements.pop())
 			b.addStatements(st);
-		for (boa.types.Ast.Variable v : fields.pop())
-			b.addVariableDeclarations(v);
+//		for (boa.types.Ast.Variable v : fields.pop())
+//			b.addVariableDeclarations(v);
 		if (!expressions.isEmpty())
 			b.addExpressions(expressions.pop());
 		statements.peek().add(b.build());
@@ -345,14 +345,14 @@ public class PHPVisitor extends AbstractVisitor {
 		declarations.push(new ArrayList<boa.types.Ast.Declaration>());
 		statements.push(new ArrayList<boa.types.Ast.Statement>());
 		node.getBody().accept(this);
-		for (boa.types.Ast.Method m : methods.pop())
-			b.addMethods(m);
-		for (Declaration decl : declarations.pop())
-			b.addTypeDeclarations(decl);
+//		for (boa.types.Ast.Method m : methods.pop())
+//			b.addMethods(m);
+//		for (Declaration decl : declarations.pop())
+//			b.addTypeDeclarations(decl);
 		for (boa.types.Ast.Statement st : statements.pop())
 			b.addStatements(st);
-		for (boa.types.Ast.Variable v : fields.pop())
-			b.addVariableDeclarations(v);
+//		for (boa.types.Ast.Variable v : fields.pop())
+//			b.addVariableDeclarations(v);
 		if (!expressions.isEmpty())
 			b.addExpressions(expressions.pop()); 
 		list.add(b.build());
@@ -633,7 +633,7 @@ public class PHPVisitor extends AbstractVisitor {
 			vb.setName(directiveNames.get(i).getName());
 			directiveValues.get(i).accept(this);
 			vb.setInitializer(expressions.pop());
-			b.addVariableDeclarations(vb.build());
+//			b.addVariableDeclarations(vb.build());
 		}
 		statements.push(new ArrayList<Statement>());
 		node.getBody().accept(this);
@@ -656,14 +656,14 @@ public class PHPVisitor extends AbstractVisitor {
 		methods.push(new ArrayList<Method>());
 		statements.push(new ArrayList<boa.types.Ast.Statement>());
 		node.getBody().accept(this);
-		for (boa.types.Ast.Declaration d : declarations.pop())
-			b.addTypeDeclarations(d);
-		for (boa.types.Ast.Variable v : fields.pop())
-			b.addVariableDeclarations(v);
+//		for (boa.types.Ast.Declaration d : declarations.pop())
+//			b.addTypeDeclarations(d);
+//		for (boa.types.Ast.Variable v : fields.pop())
+//			b.addVariableDeclarations(v);
 		for (boa.types.Ast.Statement s : statements.pop())
 			b.addStatements(s);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		if (!expressions.isEmpty())
 			b.addExpressions(expressions.pop());
 		list.add(b.build());
@@ -794,14 +794,14 @@ public class PHPVisitor extends AbstractVisitor {
 		methods.push(new ArrayList<Method>());
 		statements.push(new ArrayList<boa.types.Ast.Statement>());
 		node.getStatement().accept(this);
-		for (boa.types.Ast.Declaration d : declarations.pop())
-			b.addTypeDeclarations(d);
-		for (boa.types.Ast.Variable v : fields.pop())
-			b.addVariableDeclarations(v);
+//		for (boa.types.Ast.Declaration d : declarations.pop())
+//			b.addTypeDeclarations(d);
+//		for (boa.types.Ast.Variable v : fields.pop())
+//			b.addVariableDeclarations(v);
 		for (Statement s : statements.pop())
 			b.addStatements(s);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		if (!expressions.isEmpty())
 			b.addExpressions(expressions.pop());
 		list.add(b.build());
@@ -854,8 +854,8 @@ public class PHPVisitor extends AbstractVisitor {
 		node.getBody().accept(this);
 		for (Statement s : statements.pop())
 			b.addStatements(s);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		list.add(b.build());
 		return false;
 	}
@@ -989,16 +989,16 @@ public class PHPVisitor extends AbstractVisitor {
 		node.getTrueStatement().accept(this);
 		for (boa.types.Ast.Statement s : statements.pop())
 			b.addStatements(s);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		if (node.getFalseStatement() != null) {
 			methods.push(new ArrayList<Method>());
 			statements.push(new ArrayList<boa.types.Ast.Statement>());
 			node.getFalseStatement().accept(this);
 			for (boa.types.Ast.Statement s : statements.pop())
 				b.addStatements(s);
-			for (Method m : methods.pop())
-				b.addMethods(m);
+//			for (Method m : methods.pop())
+//				b.addMethods(m);
 		}
 		list.add(b.build());
 		return false;
@@ -1533,8 +1533,8 @@ public class PHPVisitor extends AbstractVisitor {
 			s.accept(this);
 		for (Statement st : statements.pop())
 			b.addStatements(st);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		list.add(b.build());
 		return false;
 	}
@@ -1553,8 +1553,8 @@ public class PHPVisitor extends AbstractVisitor {
 		node.getBody().accept(this);
 		for (boa.types.Ast.Statement s : statements.pop())
 			b.addStatements(s);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		list.add(b.build());
 		return false;
 	}
@@ -1597,8 +1597,8 @@ public class PHPVisitor extends AbstractVisitor {
 		node.getBody().accept(this);
 		for (Statement s : statements.pop())
 			b.addStatements(s);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		list.add(b.build());
 		return false;
 	}
@@ -1652,9 +1652,9 @@ public class PHPVisitor extends AbstractVisitor {
 			b.setKind(boa.types.Ast.Statement.StatementKind.USE_FUNCTION);
 		else
 			b.setKind(boa.types.Ast.Statement.StatementKind.USE_NAMESPACE);
-		b.addNames(node.getName().getName());
-		if (node.getAlias() != null)
-			b.addNames(node.getAlias().getName());
+//		b.addNames(node.getName().getName());
+//		if (node.getAlias() != null)
+//			b.addNames(node.getAlias().getName());
 		statements.peek().add(b.build());
 		return false;
 	}
@@ -1673,8 +1673,8 @@ public class PHPVisitor extends AbstractVisitor {
 		node.getBody().accept(this);
 		for (boa.types.Ast.Statement s : statements.pop())
 			b.addStatements(s);
-		for (Method m : methods.pop())
-			b.addMethods(m);
+//		for (Method m : methods.pop())
+//			b.addMethods(m);
 		list.add(b.build());
 		return false;
 	}
@@ -1807,9 +1807,9 @@ public class PHPVisitor extends AbstractVisitor {
 	public boolean visit(TraitUseStatement node) {
 		Statement.Builder b = Statement.newBuilder();
 		b.setKind(StatementKind.TRAIT_USE);
-		if (node.getTraitList() != null)
-			for (NamespaceName n : node.getTraitList())
-				b.addNames(n.getName());
+//		if (node.getTraitList() != null)
+//			for (NamespaceName n : node.getTraitList())
+//				b.addNames(n.getName());
 		statements.push(new ArrayList<Statement>());
 		if (node.getTsList() != null)
 			for (TraitStatement ts : node.getTsList())

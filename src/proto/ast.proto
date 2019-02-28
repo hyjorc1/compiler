@@ -70,7 +70,7 @@ message Declaration {
 	/** the key of the declaring class in the same AST */
 	//optional int32 declaring_type = 15;
 	/** Nested statements */
-	repeated Statement statements = 16; // not in 2015
+	repeated Statement statements = 16; 
 }
 
 /** The kinds of types in an AST */
@@ -239,11 +239,11 @@ message Statement {
 	optional Declaration type_declaration = 8;
 	repeated Expression expressions = 9;
 	/** */
-	optional int32 key = 12;
-	repeated Method methods = 13;
-	repeated Variable variable_declarations = 14;
-	repeated Declaration type_declarations = 15;
-	repeated string names = 16;
+	//optional int32 key = 12;
+	//repeated Method methods = 13;
+	//repeated Variable variable_declarations = 14;
+	//repeated Declaration type_declarations = 15;
+	//repeated string names = 16;
 }
 
 /** A single expression */
