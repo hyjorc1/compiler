@@ -331,12 +331,12 @@ public class PHPVisitor extends AbstractVisitor {
 		}
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		org.eclipse.php.internal.core.ast.nodes.Expression en = node.getClassNames().get(0);
-		if (en instanceof Identifier)
-			tb.setName(((Identifier) en).getName());
-		else {
-			en.accept(this);
-			tb.setComputedName(expressions.pop());
-		}
+//		if (en instanceof Identifier)
+//			tb.setName(((Identifier) en).getName());
+//		else {
+//			en.accept(this);
+//			tb.setComputedName(expressions.pop());
+//		}
 		tb.setKind(boa.types.Ast.TypeKind.CLASS);
 		vb.setVariableType(tb.build());
 		b.setVariableDeclaration(vb.build());
@@ -428,12 +428,12 @@ public class PHPVisitor extends AbstractVisitor {
 		if (node.getSuperClass() != null) {
 			Type.Builder tb = Type.newBuilder();
 			tb.setKind(TypeKind.CLASS);
-			if (node.getSuperClass() instanceof Identifier) {
-				tb.setName(((Identifier) node.getSuperClass()).getName());
-			} else {
-				node.getSuperClass().accept(this);
-				tb.setComputedName(expressions.pop());
-			}
+//			if (node.getSuperClass() instanceof Identifier) {
+//				tb.setName(((Identifier) node.getSuperClass()).getName());
+//			} else {
+//				node.getSuperClass().accept(this);
+//				tb.setComputedName(expressions.pop());
+//			}
 			b.addParents(tb.build());
 		}
 		if (node.getInterfaces() != null) {
@@ -497,12 +497,12 @@ public class PHPVisitor extends AbstractVisitor {
 		if (node.getSuperClass() != null) {
 			Type.Builder tb = Type.newBuilder();
 			tb.setKind(TypeKind.CLASS);
-			if (node.getSuperClass() instanceof Identifier) {
-				tb.setName(((Identifier) node.getSuperClass()).getName());
-			} else {
-				node.getSuperClass().accept(this);
-				tb.setComputedName(expressions.pop());
-			}
+//			if (node.getSuperClass() instanceof Identifier) {
+//				tb.setName(((Identifier) node.getSuperClass()).getName());
+//			} else {
+//				node.getSuperClass().accept(this);
+//				tb.setComputedName(expressions.pop());
+//			}
 			b.addParents(tb.build());
 		}
 		for (Identifier i : node.interfaces()) {
@@ -542,12 +542,12 @@ public class PHPVisitor extends AbstractVisitor {
 		b.setKind(boa.types.Ast.Expression.ExpressionKind.NEW);
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		tb.setKind(boa.types.Ast.TypeKind.CLASS);
-		if (node.getClassName().getName() instanceof Identifier)
-			tb.setName(((Identifier) node.getClassName().getName()).getName());
-		else {
-			node.getClassName().getName().accept(this);
-			tb.setComputedName(expressions.pop());
-		}
+//		if (node.getClassName().getName() instanceof Identifier)
+//			tb.setName(((Identifier) node.getClassName().getName()).getName());
+//		else {
+//			node.getClassName().getName().accept(this);
+//			tb.setComputedName(expressions.pop());
+//		}
 		b.setNewType(tb.build());
 		for (org.eclipse.php.internal.core.ast.nodes.Expression a : node.ctorParams()) {
 			a.accept(this);
@@ -814,12 +814,12 @@ public class PHPVisitor extends AbstractVisitor {
 		List<Variable> list = fields.peek();
 		if (node.getParameterType() != null) {
 			Type.Builder tb = Type.newBuilder();
-			if (node.getParameterType() instanceof Identifier)
-				tb.setName(((Identifier) node.getParameterType()).getName());
-			else {
-				node.getParameterType().accept(this);
-				tb.setComputedName(expressions.pop());
-			}
+//			if (node.getParameterType() instanceof Identifier)
+//				tb.setName(((Identifier) node.getParameterType()).getName());
+//			else {
+//				node.getParameterType().accept(this);
+//				tb.setComputedName(expressions.pop());
+//			}
 			tb.setKind(boa.types.Ast.TypeKind.OTHER);
 			b.setVariableType(tb.build());
 		}
@@ -1119,12 +1119,12 @@ public class PHPVisitor extends AbstractVisitor {
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		tb.setKind(boa.types.Ast.TypeKind.OTHER);
 		org.eclipse.php.internal.core.ast.nodes.Expression name = node.getClassName().getName();
-		if (name instanceof Identifier) {
-			tb.setName(((Identifier) name).getName());
-		} else {
-			name.accept(this);
-			tb.setComputedName(expressions.pop());
-		}
+//		if (name instanceof Identifier) {
+//			tb.setName(((Identifier) name).getName());
+//		} else {
+//			name.accept(this);
+//			tb.setComputedName(expressions.pop());
+//		}
 		b.setNewType(tb.build());
 		expressions.push(b.build());
 		return false;
@@ -1427,12 +1427,12 @@ public class PHPVisitor extends AbstractVisitor {
 		org.eclipse.php.internal.core.ast.nodes.Expression qual = node.getClassName();
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		tb.setKind(TypeKind.OTHER);
-		if (qual instanceof Identifier)
-			tb.setName(((Identifier) qual).getName());
-		else {
-			qual.accept(this);
-			tb.setComputedName(expressions.pop());
-		}
+//		if (qual instanceof Identifier)
+//			tb.setName(((Identifier) qual).getName());
+//		else {
+//			qual.accept(this);
+//			tb.setComputedName(expressions.pop());
+//		}
 		b.setDeclaringType(tb);
 		b.setVariable(node.getConstant().getName());
 		expressions.push(b.build());
@@ -1448,12 +1448,12 @@ public class PHPVisitor extends AbstractVisitor {
 		org.eclipse.php.internal.core.ast.nodes.Expression qual = node.getClassName();
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		tb.setKind(TypeKind.OTHER);
-		if (qual instanceof Identifier)
-			tb.setName(((Identifier) qual).getName());
-		else {
-			qual.accept(this);
-			tb.setComputedName(expressions.pop());
-		}
+//		if (qual instanceof Identifier)
+//			tb.setName(((Identifier) qual).getName());
+//		else {
+//			qual.accept(this);
+//			tb.setComputedName(expressions.pop());
+//		}
 		b.setDeclaringType(tb);
 		if (node.getField().getName() instanceof Identifier)
 			b.setVariable(((Identifier) node.getField().getName()).getName());
@@ -1473,12 +1473,12 @@ public class PHPVisitor extends AbstractVisitor {
 		org.eclipse.php.internal.core.ast.nodes.Expression qual = node.getClassName();
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		tb.setKind(TypeKind.OTHER);
-		if (qual instanceof Identifier)
-			tb.setName(((Identifier) qual).getName());
-		else {
-			qual.accept(this);
-			tb.setComputedName(expressions.pop());
-		}
+//		if (qual instanceof Identifier)
+//			tb.setName(((Identifier) qual).getName());
+//		else {
+//			qual.accept(this);
+//			tb.setComputedName(expressions.pop());
+//		}
 		b.setDeclaringType(tb);
 		FunctionName fn = node.getMethod().getFunctionName();
 		if (fn.getName() instanceof Identifier)

@@ -498,14 +498,14 @@ public class JavaVisitor extends ASTVisitor {
 					
 				}
 				b.setFullyQualifiedName(name);
-				if (declarationFile != null && !tb.isArray()) {
-					String key = tb.getKey();
-					Integer index = declarationFile.get(key);
-					if (index != null) {
-						b.setDeclarationFile(index);
-						b.setDeclaration(declarationNode.get(key));
-					}
-				}
+//				if (declarationFile != null && !tb.isArray()) {
+//					String key = tb.getKey();
+//					Integer index = declarationFile.get(key);
+//					if (index != null) {
+//						b.setDeclarationFile(index);
+//						b.setDeclaration(declarationNode.get(key));
+//					}
+//				}
 			}
 		}
 	}
@@ -540,14 +540,14 @@ public class JavaVisitor extends ASTVisitor {
 					ex.printStackTrace();
 				}
 				b.setFullyQualifiedName(name);
-				if (declarationFile != null && !tb.isArray()) {
-					String key = tb.getKey();
-					Integer index = declarationFile.get(key);
-					if (index != null) {
-						b.setDeclarationFile(index);
-						b.setDeclaration(declarationNode.get(key));
-					}
-				}
+//				if (declarationFile != null && !tb.isArray()) {
+//					String key = tb.getKey();
+//					Integer index = declarationFile.get(key);
+//					if (index != null) {
+//						b.setDeclarationFile(index);
+//						b.setDeclaration(declarationNode.get(key));
+//					}
+//				}
 			}
 		}
 	}
@@ -589,14 +589,14 @@ public class JavaVisitor extends ASTVisitor {
 				e.printStackTrace();
 			}
 			tb.setFullyQualifiedName(name);
-			if (declarationFile != null && !itb.isArray()) {
-				String key = itb.getKey();
-				Integer index = declarationFile.get(key);
-				if (index != null) {
-					tb.setDeclarationFile(index);
-					tb.setDeclaration(declarationNode.get(key));
-				}
-			}
+//			if (declarationFile != null && !itb.isArray()) {
+//				String key = itb.getKey();
+//				Integer index = declarationFile.get(key);
+//				if (index != null) {
+//					tb.setDeclarationFile(index);
+//					tb.setDeclaration(declarationNode.get(key));
+//				}
+//			}
 		}
 		return tb.build();
 	}
