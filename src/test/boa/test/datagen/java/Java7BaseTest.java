@@ -180,16 +180,16 @@ public class Java7BaseTest extends BaseTest {
 						if (found)
 							return false;
 						if (message instanceof Declaration) {
-							Declaration temp = (Declaration) message;
-							Declaration type = declarations.get(temp.getKey());
-							if (type == null) {
-								type = Declaration.newBuilder(temp).build();
-								declarations.put(type.getKey(), type);
-							}
-							if (type.getKey() == nodeId) {
-								found = true;
-								return false;
-							}
+//							Declaration temp = (Declaration) message;
+//							Declaration type = declarations.get(temp.getKey());
+//							if (type == null) {
+//								type = Declaration.newBuilder(temp).build();
+//								declarations.put(type.getKey(), type);
+//							}
+//							if (type.getKey() == nodeId) {
+//								found = true;
+//								return false;
+//							}
 						}
 						return true;
 					};
@@ -272,7 +272,7 @@ public class Java7BaseTest extends BaseTest {
 	protected static HashMap<Integer, Declaration> collectDeclarations(Message message) {
 		HashMap<Integer, Declaration> nodeDeclaration = new HashMap<Integer, Declaration>();
 		if (message instanceof Declaration) {
-			nodeDeclaration.put(((Declaration) message).getKey(), (Declaration) message);
+//			nodeDeclaration.put(((Declaration) message).getKey(), (Declaration) message);
 		}
 		for (Iterator<Map.Entry<FieldDescriptor, Object>> iter = message.getAllFields().entrySet().iterator(); iter.hasNext();) {
 			Map.Entry<FieldDescriptor, Object> field = iter.next();

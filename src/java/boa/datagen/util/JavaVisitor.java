@@ -436,8 +436,8 @@ public class JavaVisitor extends ASTVisitor {
 				tb = tb.getTypeDeclaration();
 			String key = tb.getKey();
 			Integer index = declarationNode.get(key);
-			if (index != null)
-				db.setDeclaringType(index);
+//			if (index != null)
+//				db.setDeclaringType(index);
 		}
 	}
 
