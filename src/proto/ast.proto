@@ -493,7 +493,7 @@ message Comment {
 	required string value = 2;
 	required PositionInfo position = 3;
 	/** */
-	optional int32 key = 7;
+	//optional int32 key = 7;
 }
 
 /** @exclude */
