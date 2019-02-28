@@ -168,13 +168,13 @@ message Variable {
 	/** @exclude TODO */
 	repeated Comment comments = 5;
 	/** */
-	optional int32 key = 9;
+	//optional int32 key = 9;
 	/** the key of the node containing the type declaration (in the same AST) declaring this field. null if this is a local variable */
-	optional int32 declaring_type = 10;
+	//optional int32 declaring_type = 10;
 	/** */
-	optional Expression computed_name = 11;
-	optional bool dollar_sign = 12;
-	repeated Expression expressions = 13;
+	//optional Expression computed_name = 11;
+	//optional bool dollar_sign = 12;
+	repeated Expression expressions = 13; // not in 2015
 }
 
 /** A single statement */

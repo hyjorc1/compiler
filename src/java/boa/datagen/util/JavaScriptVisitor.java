@@ -201,12 +201,12 @@ public class JavaScriptVisitor implements NodeVisitor {
 			mb1.setKind(Modifier.ModifierKind.SCOPE);
 			mb1.setScope(Modifier.Scope.LET);
 			vb.addModifiers(mb1.build());
-			if (p instanceof Name) {
-				vb.setName(((Name) p).getIdentifier());
-			} else {
-				p.visit(this);
-				vb.setComputedName(expressions.pop());
-			}
+//			if (p instanceof Name) {
+//				vb.setName(((Name) p).getIdentifier());
+//			} else {
+//				p.visit(this);
+//				vb.setComputedName(expressions.pop());
+//			}
 			b.addArguments(vb.build());
 		}
 		if (node.isExpressionClosure()) {
@@ -728,12 +728,12 @@ public class JavaScriptVisitor implements NodeVisitor {
 
 	public boolean accept(VariableInitializer node) {
 		Variable.Builder b = Variable.newBuilder();
-		if (node.getTarget() instanceof Name) {
-			b.setName(((Name) node.getTarget()).getIdentifier());
-		} else {
-			node.getTarget().visit(this);
-			b.setComputedName(expressions.pop());
-		}
+//		if (node.getTarget() instanceof Name) {
+//			b.setName(((Name) node.getTarget()).getIdentifier());
+//		} else {
+//			node.getTarget().visit(this);
+//			b.setComputedName(expressions.pop());
+//		}
 		Modifier.Builder mb = Modifier.newBuilder();
 		mb.setKind(Modifier.ModifierKind.SCOPE);
 		AstNode p = node.getParent();
@@ -952,12 +952,12 @@ public class JavaScriptVisitor implements NodeVisitor {
 			}
 		} else {
 			boa.types.Ast.Variable.Builder vb = boa.types.Ast.Variable.newBuilder();
-			if (prop.getLeft() instanceof Name)
-				vb.setName(((Name) prop.getLeft()).getIdentifier());
-			else {
-				prop.getLeft().visit(this);
-				vb.setComputedName(expressions.pop());
-			}
+//			if (prop.getLeft() instanceof Name)
+//				vb.setName(((Name) prop.getLeft()).getIdentifier());
+//			else {
+//				prop.getLeft().visit(this);
+//				vb.setComputedName(expressions.pop());
+//			}
 			if (prop.getRight() != null) {
 				prop.getRight().visit(this);
 				vb.setInitializer(expressions.pop());

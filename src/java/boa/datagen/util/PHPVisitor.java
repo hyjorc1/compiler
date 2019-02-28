@@ -321,14 +321,14 @@ public class PHPVisitor extends AbstractVisitor {
 		b.setKind(Statement.StatementKind.CATCH);
 		org.eclipse.php.internal.core.ast.nodes.Variable ex = node.getVariable();
 		boa.types.Ast.Variable.Builder vb = boa.types.Ast.Variable.newBuilder();
-		if (ex.isDollared())
-			vb.setDollarSign(true);
-		if (ex.getName() instanceof Identifier) {
-			vb.setName(((Identifier) ex.getName()).getName());
-		} else {
-			ex.getName().accept(this);
-			vb.setComputedName(expressions.pop());
-		}
+//		if (ex.isDollared())
+//			vb.setDollarSign(true);
+//		if (ex.getName() instanceof Identifier) {
+//			vb.setName(((Identifier) ex.getName()).getName());
+//		} else {
+//			ex.getName().accept(this);
+//			vb.setComputedName(expressions.pop());
+//		}
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		org.eclipse.php.internal.core.ast.nodes.Expression en = node.getClassNames().get(0);
 //		if (en instanceof Identifier)
@@ -757,14 +757,14 @@ public class PHPVisitor extends AbstractVisitor {
 				mb.setKind(boa.types.Ast.Modifier.ModifierKind.ABSTRACT);
 				b.addModifiers(mb.build());
 			}
-			if (variableNames[i].isDollared())
-				b.setDollarSign(true);
-			if (variableNames[i].getName() instanceof Identifier) {
-				b.setName(((Identifier) variableNames[i].getName()).getName());
-			} else {
-				variableNames[i].accept(this);
-				b.setComputedName(expressions.pop());
-			}
+//			if (variableNames[i].isDollared())
+//				b.setDollarSign(true);
+//			if (variableNames[i].getName() instanceof Identifier) {
+//				b.setName(((Identifier) variableNames[i].getName()).getName());
+//			} else {
+//				variableNames[i].accept(this);
+//				b.setComputedName(expressions.pop());
+//			}
 			if (initialValues[i] != null) {
 				initialValues[i].accept(this);
 				b.setInitializer(expressions.pop());
@@ -928,14 +928,14 @@ public class PHPVisitor extends AbstractVisitor {
 		eb.setKind(ExpressionKind.VARDECL);
 		for (org.eclipse.php.internal.core.ast.nodes.Variable v : node.variables()) {
 			Variable.Builder vb = Variable.newBuilder();
-			if (v.isDollared())
-				vb.setDollarSign(true);
-			if (v.getName() instanceof Identifier) {
-				vb.setName(((Identifier) v.getName()).getName());
-			} else {
-				v.accept(this);
-				vb.setComputedName(expressions.pop());
-			}
+//			if (v.isDollared())
+//				vb.setDollarSign(true);
+//			if (v.getName() instanceof Identifier) {
+//				vb.setName(((Identifier) v.getName()).getName());
+//			} else {
+//				v.accept(this);
+//				vb.setComputedName(expressions.pop());
+//			}
 			eb.addVariableDecls(vb.build());
 		}
 		b.addExpressions(eb.build());
@@ -1194,15 +1194,15 @@ public class PHPVisitor extends AbstractVisitor {
 		b.setKind(Expression.ExpressionKind.LIST);
 		for (org.eclipse.php.internal.core.ast.nodes.Expression v : node.variables()) {
 			Variable.Builder vb = Variable.newBuilder();
-			if (v instanceof org.eclipse.php.internal.core.ast.nodes.Variable
-					&& ((org.eclipse.php.internal.core.ast.nodes.Variable) v).getName() instanceof Identifier) {
-				if (((org.eclipse.php.internal.core.ast.nodes.Variable) v).isDollared())
-					vb.setDollarSign(true);
-				vb.setName(((Identifier) ((org.eclipse.php.internal.core.ast.nodes.Variable) v).getName()).getName());
-			} else {
-				v.accept(this);
-				vb.setComputedName(expressions.pop());
-			}
+//			if (v instanceof org.eclipse.php.internal.core.ast.nodes.Variable
+//					&& ((org.eclipse.php.internal.core.ast.nodes.Variable) v).getName() instanceof Identifier) {
+//				if (((org.eclipse.php.internal.core.ast.nodes.Variable) v).isDollared())
+//					vb.setDollarSign(true);
+//				vb.setName(((Identifier) ((org.eclipse.php.internal.core.ast.nodes.Variable) v).getName()).getName());
+//			} else {
+//				v.accept(this);
+//				vb.setComputedName(expressions.pop());
+//			}
 			b.addVariableDecls(vb.build());
 		}
 		expressions.push(b.build());
@@ -1404,12 +1404,12 @@ public class PHPVisitor extends AbstractVisitor {
 	@Override
 	public boolean visit(SingleFieldDeclaration node) {
 		Variable.Builder vb = Variable.newBuilder();
-		if (node.getName().getName() instanceof Identifier)
-			vb.setName(((Identifier) node.getName().getName()).getName());
-		else {
-			node.getName().accept(this);
-			vb.setComputedName(expressions.pop());
-		}
+//		if (node.getName().getName() instanceof Identifier)
+//			vb.setName(((Identifier) node.getName().getName()).getName());
+//		else {
+//			node.getName().accept(this);
+//			vb.setComputedName(expressions.pop());
+//		}
 		if (node.getValue() != null) {
 			node.getValue().accept(this);
 			vb.setInitializer(expressions.pop());
