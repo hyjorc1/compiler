@@ -457,14 +457,14 @@ public class PHPVisitor extends AbstractVisitor {
 				b.addMethods(m);
 			for (boa.types.Ast.Declaration d : declarations.pop())
 				b.addNestedDeclarations(d);
-			for (boa.types.Ast.Statement st : statements.pop())
-				b.addStatements(st);
-			if (!expressions.isEmpty()) {
-				Statement.Builder sb = Statement.newBuilder();
-				sb.setKind(StatementKind.EXPRESSION);
-				sb.addExpressions(expressions.pop());
-				b.addStatements(sb.build());
-			}
+//			for (boa.types.Ast.Statement st : statements.pop())
+//				b.addStatements(st);
+//			if (!expressions.isEmpty()) {
+//				Statement.Builder sb = Statement.newBuilder();
+//				sb.setKind(StatementKind.EXPRESSION);
+//				sb.addExpressions(expressions.pop());
+//				b.addStatements(sb.build());
+//			}
 				
 		}
 		declarations.peek().add(b.build());
@@ -523,14 +523,14 @@ public class PHPVisitor extends AbstractVisitor {
 			b.addMethods(m);
 		for (boa.types.Ast.Declaration d : declarations.pop())
 			b.addNestedDeclarations(d);
-		for (boa.types.Ast.Statement st : statements.pop())
-			b.addStatements(st);
-		if (!expressions.isEmpty()){
-			Statement.Builder sb = Statement.newBuilder();
-			sb.setKind(StatementKind.EXPRESSION);
-			sb.addExpressions(expressions.pop());
-			b.addStatements(sb.build());
-		}
+//		for (boa.types.Ast.Statement st : statements.pop())
+//			b.addStatements(st);
+//		if (!expressions.isEmpty()){
+//			Statement.Builder sb = Statement.newBuilder();
+//			sb.setKind(StatementKind.EXPRESSION);
+//			sb.addExpressions(expressions.pop());
+//			b.addStatements(sb.build());
+//		}
 			
 		declarations.peek().add(b.build());
 		return false;
@@ -1153,14 +1153,14 @@ public class PHPVisitor extends AbstractVisitor {
 			b.addMethods(m);
 		for (boa.types.Ast.Declaration d : declarations.pop())
 			b.addNestedDeclarations(d);
-		for (boa.types.Ast.Statement st : statements.pop())
-			b.addStatements(st);
-		if (!expressions.isEmpty()){
-			Statement.Builder sb = Statement.newBuilder();
-			sb.setKind(StatementKind.EXPRESSION);
-			sb.addExpressions(expressions.pop());
-			b.addStatements(sb.build());
-		}
+//		for (boa.types.Ast.Statement st : statements.pop())
+//			b.addStatements(st);
+//		if (!expressions.isEmpty()){
+//			Statement.Builder sb = Statement.newBuilder();
+//			sb.setKind(StatementKind.EXPRESSION);
+//			sb.addExpressions(expressions.pop());
+//			b.addStatements(sb.build());
+//		}
 		declarations.peek().add(b.build());
 		return false;
 	}
@@ -1771,8 +1771,8 @@ public class PHPVisitor extends AbstractVisitor {
 			b.addMethods(m);
 		for (boa.types.Ast.Declaration d : declarations.pop())
 			b.addNestedDeclarations(d);
-		for (boa.types.Ast.Statement st : statements.pop())
-			b.addStatements(st);
+//		for (boa.types.Ast.Statement st : statements.pop())
+//			b.addStatements(st);
 		declarations.peek().add(b.build());
 		return false;
 	}

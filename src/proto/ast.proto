@@ -70,7 +70,7 @@ message Declaration {
 	/** the key of the declaring class in the same AST */
 	//optional int32 declaring_type = 15;
 	/** Nested statements */
-	repeated Statement statements = 16; 
+	//repeated Statement statements = 16; 
 }
 
 /** The kinds of types in an AST */
