@@ -1097,7 +1097,7 @@ public class JavaScriptVisitor implements NodeVisitor {
 	public boolean accept(XmlPropRef node) {
 		boa.types.Ast.Expression.Builder b = boa.types.Ast.Expression.newBuilder();
 		b.setKind(boa.types.Ast.Expression.ExpressionKind.XML_PROPERTYREF);
-		b.setIsMemberAccess(node.isAttributeAccess());
+//		b.setIsMemberAccess(node.isAttributeAccess());
 		if (node.getNamespace() != null) {
 			node.getNamespace().visit(this);
 			b.addExpressions(expressions.pop());
@@ -1119,7 +1119,7 @@ public class JavaScriptVisitor implements NodeVisitor {
 	public boolean accept(XmlElemRef node) {
 		boa.types.Ast.Expression.Builder b = boa.types.Ast.Expression.newBuilder();
 		b.setKind(boa.types.Ast.Expression.ExpressionKind.XML_MEMBERREF);
-		b.setIsMemberAccess(node.isAttributeAccess());
+//		b.setIsMemberAccess(node.isAttributeAccess());
 		if (node.getNamespace() != null) {
 			node.getNamespace().visit(this);
 			b.addExpressions(expressions.pop());

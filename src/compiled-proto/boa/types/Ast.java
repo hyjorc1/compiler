@@ -19329,76 +19329,6 @@ public final class Ast {
      */
     boolean getNoParens();
 
-    // optional int32 key = 18;
-    /**
-     * <code>optional int32 key = 18;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    boolean hasKey();
-    /**
-     * <code>optional int32 key = 18;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    int getKey();
-
-    // optional .boa.types.Type declaring_type = 19;
-    /**
-     * <code>optional .boa.types.Type declaring_type = 19;</code>
-     *
-     * <pre>
-     ** The type declaring this method call or field access 
-     * </pre>
-     */
-    boolean hasDeclaringType();
-    /**
-     * <code>optional .boa.types.Type declaring_type = 19;</code>
-     *
-     * <pre>
-     ** The type declaring this method call or field access 
-     * </pre>
-     */
-    boa.types.Ast.Type getDeclaringType();
-    /**
-     * <code>optional .boa.types.Type declaring_type = 19;</code>
-     *
-     * <pre>
-     ** The type declaring this method call or field access 
-     * </pre>
-     */
-    boa.types.Ast.TypeOrBuilder getDeclaringTypeOrBuilder();
-
-    // optional .boa.types.Type return_type = 20;
-    /**
-     * <code>optional .boa.types.Type return_type = 20;</code>
-     *
-     * <pre>
-     ** Type of the return value 
-     * </pre>
-     */
-    boolean hasReturnType();
-    /**
-     * <code>optional .boa.types.Type return_type = 20;</code>
-     *
-     * <pre>
-     ** Type of the return value 
-     * </pre>
-     */
-    boa.types.Ast.Type getReturnType();
-    /**
-     * <code>optional .boa.types.Type return_type = 20;</code>
-     *
-     * <pre>
-     ** Type of the return value 
-     * </pre>
-     */
-    boa.types.Ast.TypeOrBuilder getReturnTypeOrBuilder();
-
     // repeated .boa.types.Statement statements = 22;
     /**
      * <code>repeated .boa.types.Statement statements = 22;</code>
@@ -19443,24 +19373,6 @@ public final class Ast {
      */
     boa.types.Ast.StatementOrBuilder getStatementsOrBuilder(
         int index);
-
-    // optional bool is_member_access = 23;
-    /**
-     * <code>optional bool is_member_access = 23;</code>
-     *
-     * <pre>
-     * not in 2015
-     * </pre>
-     */
-    boolean hasIsMemberAccess();
-    /**
-     * <code>optional bool is_member_access = 23;</code>
-     *
-     * <pre>
-     * not in 2015
-     * </pre>
-     */
-    boolean getIsMemberAccess();
   }
   /**
    * Protobuf type {@code boa.types.Expression}
@@ -19624,48 +19536,12 @@ public final class Ast {
               noParens_ = input.readBool();
               break;
             }
-            case 144: {
-              bitField0_ |= 0x00000200;
-              key_ = input.readInt32();
-              break;
-            }
-            case 154: {
-              boa.types.Ast.Type.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000400) == 0x00000400)) {
-                subBuilder = declaringType_.toBuilder();
-              }
-              declaringType_ = input.readMessage(boa.types.Ast.Type.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(declaringType_);
-                declaringType_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000400;
-              break;
-            }
-            case 162: {
-              boa.types.Ast.Type.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000800) == 0x00000800)) {
-                subBuilder = returnType_.toBuilder();
-              }
-              returnType_ = input.readMessage(boa.types.Ast.Type.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(returnType_);
-                returnType_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000800;
-              break;
-            }
             case 178: {
-              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
                 statements_ = new java.util.ArrayList<boa.types.Ast.Statement>();
-                mutable_bitField0_ |= 0x00010000;
+                mutable_bitField0_ |= 0x00002000;
               }
               statements_.add(input.readMessage(boa.types.Ast.Statement.PARSER, extensionRegistry));
-              break;
-            }
-            case 184: {
-              bitField0_ |= 0x00001000;
-              isMemberAccess_ = input.readBool();
               break;
             }
           }
@@ -19688,7 +19564,7 @@ public final class Ast {
         if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
           methodArgs_ = java.util.Collections.unmodifiableList(methodArgs_);
         }
-        if (((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
           statements_ = java.util.Collections.unmodifiableList(statements_);
         }
         this.unknownFields = unknownFields.build();
@@ -21181,98 +21057,6 @@ public final class Ast {
       return noParens_;
     }
 
-    // optional int32 key = 18;
-    public static final int KEY_FIELD_NUMBER = 18;
-    private int key_;
-    /**
-     * <code>optional int32 key = 18;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    public boolean hasKey() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <code>optional int32 key = 18;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    public int getKey() {
-      return key_;
-    }
-
-    // optional .boa.types.Type declaring_type = 19;
-    public static final int DECLARING_TYPE_FIELD_NUMBER = 19;
-    private boa.types.Ast.Type declaringType_;
-    /**
-     * <code>optional .boa.types.Type declaring_type = 19;</code>
-     *
-     * <pre>
-     ** The type declaring this method call or field access 
-     * </pre>
-     */
-    public boolean hasDeclaringType() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
-    }
-    /**
-     * <code>optional .boa.types.Type declaring_type = 19;</code>
-     *
-     * <pre>
-     ** The type declaring this method call or field access 
-     * </pre>
-     */
-    public boa.types.Ast.Type getDeclaringType() {
-      return declaringType_;
-    }
-    /**
-     * <code>optional .boa.types.Type declaring_type = 19;</code>
-     *
-     * <pre>
-     ** The type declaring this method call or field access 
-     * </pre>
-     */
-    public boa.types.Ast.TypeOrBuilder getDeclaringTypeOrBuilder() {
-      return declaringType_;
-    }
-
-    // optional .boa.types.Type return_type = 20;
-    public static final int RETURN_TYPE_FIELD_NUMBER = 20;
-    private boa.types.Ast.Type returnType_;
-    /**
-     * <code>optional .boa.types.Type return_type = 20;</code>
-     *
-     * <pre>
-     ** Type of the return value 
-     * </pre>
-     */
-    public boolean hasReturnType() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
-    }
-    /**
-     * <code>optional .boa.types.Type return_type = 20;</code>
-     *
-     * <pre>
-     ** Type of the return value 
-     * </pre>
-     */
-    public boa.types.Ast.Type getReturnType() {
-      return returnType_;
-    }
-    /**
-     * <code>optional .boa.types.Type return_type = 20;</code>
-     *
-     * <pre>
-     ** Type of the return value 
-     * </pre>
-     */
-    public boa.types.Ast.TypeOrBuilder getReturnTypeOrBuilder() {
-      return returnType_;
-    }
-
     // repeated .boa.types.Statement statements = 22;
     public static final int STATEMENTS_FIELD_NUMBER = 22;
     private java.util.List<boa.types.Ast.Statement> statements_;
@@ -21329,30 +21113,6 @@ public final class Ast {
       return statements_.get(index);
     }
 
-    // optional bool is_member_access = 23;
-    public static final int IS_MEMBER_ACCESS_FIELD_NUMBER = 23;
-    private boolean isMemberAccess_;
-    /**
-     * <code>optional bool is_member_access = 23;</code>
-     *
-     * <pre>
-     * not in 2015
-     * </pre>
-     */
-    public boolean hasIsMemberAccess() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
-    }
-    /**
-     * <code>optional bool is_member_access = 23;</code>
-     *
-     * <pre>
-     * not in 2015
-     * </pre>
-     */
-    public boolean getIsMemberAccess() {
-      return isMemberAccess_;
-    }
-
     private void initFields() {
       kind_ = boa.types.Ast.Expression.ExpressionKind.OTHER;
       expressions_ = java.util.Collections.emptyList();
@@ -21367,11 +21127,7 @@ public final class Ast {
       anonDeclaration_ = boa.types.Ast.Declaration.getDefaultInstance();
       annotation_ = boa.types.Ast.Modifier.getDefaultInstance();
       noParens_ = false;
-      key_ = 0;
-      declaringType_ = boa.types.Ast.Type.getDefaultInstance();
-      returnType_ = boa.types.Ast.Type.getDefaultInstance();
       statements_ = java.util.Collections.emptyList();
-      isMemberAccess_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -21420,18 +21176,6 @@ public final class Ast {
       }
       if (hasAnnotation()) {
         if (!getAnnotation().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasDeclaringType()) {
-        if (!getDeclaringType().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      if (hasReturnType()) {
-        if (!getReturnType().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -21488,20 +21232,8 @@ public final class Ast {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBool(14, noParens_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeInt32(18, key_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeMessage(19, declaringType_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeMessage(20, returnType_);
-      }
       for (int i = 0; i < statements_.size(); i++) {
         output.writeMessage(22, statements_.get(i));
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeBool(23, isMemberAccess_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -21564,25 +21296,9 @@ public final class Ast {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, noParens_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(18, key_);
-      }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, declaringType_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(20, returnType_);
-      }
       for (int i = 0; i < statements_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, statements_.get(i));
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(23, isMemberAccess_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -21703,8 +21419,6 @@ public final class Ast {
           getMethodArgsFieldBuilder();
           getAnonDeclarationFieldBuilder();
           getAnnotationFieldBuilder();
-          getDeclaringTypeFieldBuilder();
-          getReturnTypeFieldBuilder();
           getStatementsFieldBuilder();
         }
       }
@@ -21768,28 +21482,12 @@ public final class Ast {
         bitField0_ = (bitField0_ & ~0x00000800);
         noParens_ = false;
         bitField0_ = (bitField0_ & ~0x00001000);
-        key_ = 0;
-        bitField0_ = (bitField0_ & ~0x00002000);
-        if (declaringTypeBuilder_ == null) {
-          declaringType_ = boa.types.Ast.Type.getDefaultInstance();
-        } else {
-          declaringTypeBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00004000);
-        if (returnTypeBuilder_ == null) {
-          returnType_ = boa.types.Ast.Type.getDefaultInstance();
-        } else {
-          returnTypeBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00008000);
         if (statementsBuilder_ == null) {
           statements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           statementsBuilder_.clear();
         }
-        isMemberAccess_ = false;
-        bitField0_ = (bitField0_ & ~0x00020000);
         return this;
       }
 
@@ -21902,39 +21600,15 @@ public final class Ast {
           to_bitField0_ |= 0x00000100;
         }
         result.noParens_ = noParens_;
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        result.key_ = key_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00000400;
-        }
-        if (declaringTypeBuilder_ == null) {
-          result.declaringType_ = declaringType_;
-        } else {
-          result.declaringType_ = declaringTypeBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00000800;
-        }
-        if (returnTypeBuilder_ == null) {
-          result.returnType_ = returnType_;
-        } else {
-          result.returnType_ = returnTypeBuilder_.build();
-        }
         if (statementsBuilder_ == null) {
-          if (((bitField0_ & 0x00010000) == 0x00010000)) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
             statements_ = java.util.Collections.unmodifiableList(statements_);
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           }
           result.statements_ = statements_;
         } else {
           result.statements_ = statementsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
-          to_bitField0_ |= 0x00001000;
-        }
-        result.isMemberAccess_ = isMemberAccess_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -22088,20 +21762,11 @@ public final class Ast {
         if (other.hasNoParens()) {
           setNoParens(other.getNoParens());
         }
-        if (other.hasKey()) {
-          setKey(other.getKey());
-        }
-        if (other.hasDeclaringType()) {
-          mergeDeclaringType(other.getDeclaringType());
-        }
-        if (other.hasReturnType()) {
-          mergeReturnType(other.getReturnType());
-        }
         if (statementsBuilder_ == null) {
           if (!other.statements_.isEmpty()) {
             if (statements_.isEmpty()) {
               statements_ = other.statements_;
-              bitField0_ = (bitField0_ & ~0x00010000);
+              bitField0_ = (bitField0_ & ~0x00002000);
             } else {
               ensureStatementsIsMutable();
               statements_.addAll(other.statements_);
@@ -22114,7 +21779,7 @@ public final class Ast {
               statementsBuilder_.dispose();
               statementsBuilder_ = null;
               statements_ = other.statements_;
-              bitField0_ = (bitField0_ & ~0x00010000);
+              bitField0_ = (bitField0_ & ~0x00002000);
               statementsBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getStatementsFieldBuilder() : null;
@@ -22122,9 +21787,6 @@ public final class Ast {
               statementsBuilder_.addAllMessages(other.statements_);
             }
           }
-        }
-        if (other.hasIsMemberAccess()) {
-          setIsMemberAccess(other.getIsMemberAccess());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -22173,18 +21835,6 @@ public final class Ast {
         }
         if (hasAnnotation()) {
           if (!getAnnotation().isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasDeclaringType()) {
-          if (!getDeclaringType().isInitialized()) {
-            
-            return false;
-          }
-        }
-        if (hasReturnType()) {
-          if (!getReturnType().isInitialized()) {
             
             return false;
           }
@@ -23920,368 +23570,13 @@ public final class Ast {
         return this;
       }
 
-      // optional int32 key = 18;
-      private int key_ ;
-      /**
-       * <code>optional int32 key = 18;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public boolean hasKey() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
-      }
-      /**
-       * <code>optional int32 key = 18;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public int getKey() {
-        return key_;
-      }
-      /**
-       * <code>optional int32 key = 18;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public Builder setKey(int value) {
-        bitField0_ |= 0x00002000;
-        key_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 key = 18;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public Builder clearKey() {
-        bitField0_ = (bitField0_ & ~0x00002000);
-        key_ = 0;
-        onChanged();
-        return this;
-      }
-
-      // optional .boa.types.Type declaring_type = 19;
-      private boa.types.Ast.Type declaringType_ = boa.types.Ast.Type.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Type, boa.types.Ast.Type.Builder, boa.types.Ast.TypeOrBuilder> declaringTypeBuilder_;
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public boolean hasDeclaringType() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public boa.types.Ast.Type getDeclaringType() {
-        if (declaringTypeBuilder_ == null) {
-          return declaringType_;
-        } else {
-          return declaringTypeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public Builder setDeclaringType(boa.types.Ast.Type value) {
-        if (declaringTypeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          declaringType_ = value;
-          onChanged();
-        } else {
-          declaringTypeBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00004000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public Builder setDeclaringType(
-          boa.types.Ast.Type.Builder builderForValue) {
-        if (declaringTypeBuilder_ == null) {
-          declaringType_ = builderForValue.build();
-          onChanged();
-        } else {
-          declaringTypeBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00004000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public Builder mergeDeclaringType(boa.types.Ast.Type value) {
-        if (declaringTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00004000) == 0x00004000) &&
-              declaringType_ != boa.types.Ast.Type.getDefaultInstance()) {
-            declaringType_ =
-              boa.types.Ast.Type.newBuilder(declaringType_).mergeFrom(value).buildPartial();
-          } else {
-            declaringType_ = value;
-          }
-          onChanged();
-        } else {
-          declaringTypeBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00004000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public Builder clearDeclaringType() {
-        if (declaringTypeBuilder_ == null) {
-          declaringType_ = boa.types.Ast.Type.getDefaultInstance();
-          onChanged();
-        } else {
-          declaringTypeBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00004000);
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public boa.types.Ast.Type.Builder getDeclaringTypeBuilder() {
-        bitField0_ |= 0x00004000;
-        onChanged();
-        return getDeclaringTypeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      public boa.types.Ast.TypeOrBuilder getDeclaringTypeOrBuilder() {
-        if (declaringTypeBuilder_ != null) {
-          return declaringTypeBuilder_.getMessageOrBuilder();
-        } else {
-          return declaringType_;
-        }
-      }
-      /**
-       * <code>optional .boa.types.Type declaring_type = 19;</code>
-       *
-       * <pre>
-       ** The type declaring this method call or field access 
-       * </pre>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Type, boa.types.Ast.Type.Builder, boa.types.Ast.TypeOrBuilder> 
-          getDeclaringTypeFieldBuilder() {
-        if (declaringTypeBuilder_ == null) {
-          declaringTypeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              boa.types.Ast.Type, boa.types.Ast.Type.Builder, boa.types.Ast.TypeOrBuilder>(
-                  declaringType_,
-                  getParentForChildren(),
-                  isClean());
-          declaringType_ = null;
-        }
-        return declaringTypeBuilder_;
-      }
-
-      // optional .boa.types.Type return_type = 20;
-      private boa.types.Ast.Type returnType_ = boa.types.Ast.Type.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Type, boa.types.Ast.Type.Builder, boa.types.Ast.TypeOrBuilder> returnTypeBuilder_;
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public boolean hasReturnType() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public boa.types.Ast.Type getReturnType() {
-        if (returnTypeBuilder_ == null) {
-          return returnType_;
-        } else {
-          return returnTypeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public Builder setReturnType(boa.types.Ast.Type value) {
-        if (returnTypeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          returnType_ = value;
-          onChanged();
-        } else {
-          returnTypeBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00008000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public Builder setReturnType(
-          boa.types.Ast.Type.Builder builderForValue) {
-        if (returnTypeBuilder_ == null) {
-          returnType_ = builderForValue.build();
-          onChanged();
-        } else {
-          returnTypeBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00008000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public Builder mergeReturnType(boa.types.Ast.Type value) {
-        if (returnTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) == 0x00008000) &&
-              returnType_ != boa.types.Ast.Type.getDefaultInstance()) {
-            returnType_ =
-              boa.types.Ast.Type.newBuilder(returnType_).mergeFrom(value).buildPartial();
-          } else {
-            returnType_ = value;
-          }
-          onChanged();
-        } else {
-          returnTypeBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00008000;
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public Builder clearReturnType() {
-        if (returnTypeBuilder_ == null) {
-          returnType_ = boa.types.Ast.Type.getDefaultInstance();
-          onChanged();
-        } else {
-          returnTypeBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00008000);
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public boa.types.Ast.Type.Builder getReturnTypeBuilder() {
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return getReturnTypeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      public boa.types.Ast.TypeOrBuilder getReturnTypeOrBuilder() {
-        if (returnTypeBuilder_ != null) {
-          return returnTypeBuilder_.getMessageOrBuilder();
-        } else {
-          return returnType_;
-        }
-      }
-      /**
-       * <code>optional .boa.types.Type return_type = 20;</code>
-       *
-       * <pre>
-       ** Type of the return value 
-       * </pre>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          boa.types.Ast.Type, boa.types.Ast.Type.Builder, boa.types.Ast.TypeOrBuilder> 
-          getReturnTypeFieldBuilder() {
-        if (returnTypeBuilder_ == null) {
-          returnTypeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              boa.types.Ast.Type, boa.types.Ast.Type.Builder, boa.types.Ast.TypeOrBuilder>(
-                  returnType_,
-                  getParentForChildren(),
-                  isClean());
-          returnType_ = null;
-        }
-        return returnTypeBuilder_;
-      }
-
       // repeated .boa.types.Statement statements = 22;
       private java.util.List<boa.types.Ast.Statement> statements_ =
         java.util.Collections.emptyList();
       private void ensureStatementsIsMutable() {
-        if (!((bitField0_ & 0x00010000) == 0x00010000)) {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
           statements_ = new java.util.ArrayList<boa.types.Ast.Statement>(statements_);
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00002000;
          }
       }
 
@@ -24474,7 +23769,7 @@ public final class Ast {
       public Builder clearStatements() {
         if (statementsBuilder_ == null) {
           statements_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00002000);
           onChanged();
         } else {
           statementsBuilder_.clear();
@@ -24579,61 +23874,12 @@ public final class Ast {
           statementsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               boa.types.Ast.Statement, boa.types.Ast.Statement.Builder, boa.types.Ast.StatementOrBuilder>(
                   statements_,
-                  ((bitField0_ & 0x00010000) == 0x00010000),
+                  ((bitField0_ & 0x00002000) == 0x00002000),
                   getParentForChildren(),
                   isClean());
           statements_ = null;
         }
         return statementsBuilder_;
-      }
-
-      // optional bool is_member_access = 23;
-      private boolean isMemberAccess_ ;
-      /**
-       * <code>optional bool is_member_access = 23;</code>
-       *
-       * <pre>
-       * not in 2015
-       * </pre>
-       */
-      public boolean hasIsMemberAccess() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
-      }
-      /**
-       * <code>optional bool is_member_access = 23;</code>
-       *
-       * <pre>
-       * not in 2015
-       * </pre>
-       */
-      public boolean getIsMemberAccess() {
-        return isMemberAccess_;
-      }
-      /**
-       * <code>optional bool is_member_access = 23;</code>
-       *
-       * <pre>
-       * not in 2015
-       * </pre>
-       */
-      public Builder setIsMemberAccess(boolean value) {
-        bitField0_ |= 0x00020000;
-        isMemberAccess_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool is_member_access = 23;</code>
-       *
-       * <pre>
-       * not in 2015
-       * </pre>
-       */
-      public Builder clearIsMemberAccess() {
-        bitField0_ = (bitField0_ & ~0x00020000);
-        isMemberAccess_ = false;
-        onChanged();
-        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:boa.types.Expression)
@@ -34746,7 +33992,7 @@ public final class Ast {
       "\022\010\n\004ECHO\020 \022\021\n\rUSE_NAMESPACE\020!\022\020\n\014USE_CON" +
       "STANT\020\"\022\020\n\014USE_FUNCTION\020#\022\017\n\013TRAIT_ALIAS" +
       "\020$\022\024\n\020TRAIT_PRECEDENCE\020%\022\r\n\tTRAIT_USE\020&\032" +
-      "\002\020\001\"\206\021\n\nExpression\0222\n\004kind\030\001 \002(\0162$.boa.t" +
+      "\002\020\001\"\220\020\n\nExpression\0222\n\004kind\030\001 \002(\0162$.boa.t" +
       "ypes.Expression.ExpressionKind\022*\n\013expres" +
       "sions\030\002 \003(\0132\025.boa.types.Expression\022+\n\016va" +
       "riable_decls\030\003 \003(\0132\023.boa.types.Variable\022",
@@ -34757,98 +34003,95 @@ public final class Ast {
       "_args\030\n \003(\0132\025.boa.types.Expression\0220\n\020an" +
       "on_declaration\030\013 \001(\0132\026.boa.types.Declara" +
       "tion\022\'\n\nannotation\030\014 \001(\0132\023.boa.types.Mod" +
-      "ifier\022\021\n\tno_parens\030\016 \001(\010\022\013\n\003key\030\022 \001(\005\022\'\n" +
-      "\016declaring_type\030\023 \001(\0132\017.boa.types.Type\022$" +
-      "\n\013return_type\030\024 \001(\0132\017.boa.types.Type\022(\n\n",
-      "statements\030\026 \003(\0132\024.boa.types.Statement\022\030" +
-      "\n\020is_member_access\030\027 \001(\010\"\231\014\n\016ExpressionK" +
-      "ind\022\t\n\005OTHER\020\000\022\013\n\007LITERAL\020\001\022\r\n\tVARACCESS" +
-      "\020\002\022\013\n\007VARDECL\020\003\022\016\n\nMETHODCALL\020\004\022\010\n\004CAST\020" +
-      "\005\022\017\n\013ARRAYACCESS\020\006\022\r\n\tARRAYINIT\020\007\022\020\n\014ARR" +
-      "AYLITERAL\020\007\022\017\n\013TYPECOMPARE\020\010\022\007\n\003NEW\020\t\022\014\n" +
-      "\010NEWARRAY\020\n\022\n\n\006OP_ADD\020\013\022\n\n\006OP_SUB\020\014\022\013\n\007O" +
-      "P_MULT\020\r\022\n\n\006OP_DIV\020\016\022\n\n\006OP_MOD\020\017\022\n\n\006OP_I" +
-      "NC\020\020\022\n\n\006OP_DEC\020\021\022\016\n\nBIT_LSHIFT\020\022\022\016\n\nBIT_" +
-      "RSHIFT\020\023\022\026\n\022BIT_UNSIGNEDRSHIFT\020\024\022\013\n\007BIT_",
-      "AND\020\025\022\n\n\006BIT_OR\020\026\022\013\n\007BIT_NOT\020\027\022\013\n\007BIT_XO" +
-      "R\020\030\022\017\n\013LOGICAL_NOT\020\031\022\017\n\013LOGICAL_AND\020\032\022\016\n" +
-      "\nLOGICAL_OR\020\033\022\006\n\002EQ\020\034\022\007\n\003NEQ\020\035\022\006\n\002LT\020\036\022\006" +
-      "\n\002GT\020\037\022\010\n\004LTEQ\020 \022\010\n\004GTEQ\020!\022\017\n\013CONDITIONA" +
-      "L\020\"\022\020\n\014NULLCOALESCE\020#\022\n\n\006ASSIGN\020$\022\016\n\nASS" +
-      "IGN_ADD\020%\022\016\n\nASSIGN_SUB\020&\022\017\n\013ASSIGN_MULT" +
-      "\020\'\022\016\n\nASSIGN_DIV\020(\022\016\n\nASSIGN_MOD\020)\022\021\n\rAS" +
-      "SIGN_BITXOR\020*\022\021\n\rASSIGN_BITAND\020+\022\020\n\014ASSI" +
-      "GN_BITOR\020,\022\021\n\rASSIGN_LSHIFT\020-\022\021\n\rASSIGN_" +
-      "RSHIFT\020.\022\031\n\025ASSIGN_UNSIGNEDRSHIFT\020/\022\016\n\nA",
-      "NNOTATION\0200\022\t\n\005PAREN\0201\022\024\n\020METHOD_REFEREN" +
-      "CE\0202\022\n\n\006LAMBDA\0203\022\017\n\013ANON_METHOD\0204\022\t\n\005YIE" +
-      "LD\0205\022\027\n\023ARRAY_COMPREHENSION\0206\022\t\n\005EMPTY\0207" +
-      "\022\010\n\004SHEQ\0208\022\t\n\005SHNEQ\0209\022\020\n\014XML_DOTQUERY\020:\022" +
-      "\022\n\016OBJECT_LITERAL\020;\022\016\n\nMETHODDECL\020<\022\010\n\004L" +
-      "OOP\020=\022\r\n\tGENERATOR\020>\022\017\n\013XML_LITERAL\020?\022\022\n" +
-      "\016XML_EXPRESSION\020@\022\023\n\017XML_PROPERTYREF\020A\022\021" +
-      "\n\rXML_MEMBERREF\020B\022\013\n\007XML_DOT\020C\022\016\n\nXML_DO" +
-      "TDOT\020D\022\006\n\002IN\020E\022\n\n\006TYPEOF\020F\022\021\n\rREGEXPLITE" +
-      "RAL\020G\022\n\n\006DELETE\020H\022\010\n\004VOID\020I\022\023\n\017HASHTABLE",
-      "ACCESS\020J\022\020\n\014ARRAYELEMENT\020K\022\r\n\tOP_CONCAT\020" +
-      "L\022\n\n\006OP_POW\020M\022\021\n\rASSIGN_CONCAT\020N\022\016\n\nASSI" +
-      "GN_POW\020O\022\014\n\010BACKTICK\020P\022\r\n\tIDENTICAL\020Q\022\020\n" +
-      "\014NOTIDENTICAL\020R\022\016\n\nSTRING_AND\020S\022\r\n\tSTRIN" +
-      "G_OR\020T\022\016\n\nSTRING_XOR\020U\022\030\n\024OP_THREE_WAY_C" +
-      "OMPARE\020V\022\r\n\tOP_UNPACK\020W\022\t\n\005QUOTE\020X\022\020\n\014IG" +
-      "NORE_ERROR\020Y\022\013\n\007REQUIRE\020Z\022\020\n\014REQUIRE_ONC" +
-      "E\020[\022\013\n\007INCLUDE\020\\\022\020\n\014INCLUDE_ONCE\020]\022\010\n\004LI" +
-      "ST\020^\022\r\n\tREFERENCE\020_\022\016\n\nREFLECTION\020`\022\t\n\005C" +
-      "LONE\020a\022\017\n\013TRAIT_ALIAS\020b\022\024\n\020TRAIT_PRECEDE",
-      "NCE\020c\022\021\n\rNAMESPACENAME\020d\032\002\020\001\"\326\004\n\010Modifie" +
-      "r\022.\n\004kind\030\001 \002(\0162 .boa.types.Modifier.Mod" +
-      "ifierKind\0222\n\nvisibility\030\002 \001(\0162\036.boa.type" +
-      "s.Modifier.Visibility\022\027\n\017annotation_name" +
-      "\030\003 \001(\t\022\032\n\022annotation_members\030\004 \003(\t\0220\n\021an" +
-      "notation_values\030\005 \003(\0132\025.boa.types.Expres" +
-      "sion\022\r\n\005other\030\006 \001(\t\"\346\001\n\014ModifierKind\022\t\n\005" +
-      "OTHER\020\000\022\016\n\nVISIBILITY\020\001\022\016\n\nANNOTATION\020\002\022" +
-      "\t\n\005FINAL\020\003\022\014\n\010CONSTANT\020\003\022\n\n\006STATIC\020\004\022\020\n\014" +
-      "SYNCHRONIZED\020\005\022\010\n\004SYNC\020\005\022\014\n\010ABSTRACT\020\006\022\t",
-      "\n\005SCOPE\020\007\022\n\n\006GETTER\020\010\022\n\n\006SETTER\020\t\022\n\n\006NAT" +
-      "IVE\020\n\022\014\n\010STRICTFP\020\013\022\r\n\tTRANSIENT\020\014\022\014\n\010VO" +
-      "LATILE\020\r\032\002\020\001\"a\n\nVisibility\022\n\n\006PUBLIC\020\001\022\013" +
-      "\n\007PRIVATE\020\002\022\r\n\tPROTECTED\020\003\022\r\n\tNAMESPACE\020" +
-      "\004\022\013\n\007PACKAGE\020\004\022\013\n\007DEFAULT\020\005\032\002\020\001\"$\n\005Scope" +
-      "\022\007\n\003VAR\020\001\022\007\n\003LET\020\002\022\t\n\005CONST\020\003\"\335\001\n\007Commen" +
-      "t\022,\n\004kind\030\001 \002(\0162\036.boa.types.Comment.Comm" +
-      "entKind\022\r\n\005value\030\002 \002(\t\022)\n\010position\030\003 \002(\013" +
-      "2\027.boa.types.PositionInfo\"j\n\013CommentKind" +
-      "\022\t\n\005OTHER\020\000\022\010\n\004LINE\020\001\022\t\n\005BLOCK\020\002\022\007\n\003DOC\020",
-      "\003\022\021\n\rDOCUMENTATION\020\003\022\010\n\004SPEC\020\004\022\021\n\rSPECIF" +
-      "ICATION\020\004\032\002\020\001\"{\n\014PositionInfo\022\021\n\tstart_p" +
-      "os\030\001 \002(\005\022\016\n\006length\030\002 \002(\005\022\022\n\nstart_line\030\003" +
-      " \002(\005\022\021\n\tstart_col\030\004 \002(\005\022\020\n\010end_line\030\005 \002(" +
-      "\005\022\017\n\007end_col\030\006 \002(\005\"\233\001\n\010Document\022\r\n\005title" +
-      "\030\001 \001(\t\022$\n\010elements\030\002 \003(\0132\022.boa.types.Ele" +
-      "ment\022$\n\010doc_type\030\003 \001(\0132\022.boa.types.Eleme" +
-      "nt\0224\n\026processing_instruction\030\013 \003(\0132\024.boa" +
-      ".types.Attribute\"\267\004\n\007Element\022\013\n\003tag\030\001 \002(" +
-      "\t\022,\n\004kind\030\002 \002(\0162\036.boa.types.Element.Elem",
-      "entKind\022$\n\010elements\030\003 \003(\0132\022.boa.types.El" +
-      "ement\022\014\n\004text\030\004 \003(\t\022\014\n\004data\030\005 \003(\t\022(\n\natt" +
-      "ributes\030\006 \003(\0132\024.boa.types.Attribute\022$\n\006s" +
-      "cript\030\007 \001(\0132\024.boa.types.Namespace\022!\n\003php" +
-      "\030\010 \001(\0132\024.boa.types.Namespace\022%\n\010var_decl" +
-      "\030\t \003(\0132\023.boa.types.Variable\022\r\n\005title\030\n \001" +
-      "(\t\0224\n\026processing_instruction\030\013 \003(\0132\024.boa" +
-      ".types.Attribute\"\317\001\n\013ElementKind\022\t\n\005OTHE" +
-      "R\020\000\022\t\n\005BLOCK\020\001\022\013\n\007IN_LINE\020\002\022\010\n\004FORM\020\003\022\014\n" +
-      "\010DOC_TYPE\020\004\022\017\n\013STYLE_SHEET\020\005\022\r\n\tPAGE_RUL",
-      "E\020\006\022\016\n\nSTYLE_RULE\020\007\022\022\n\016FONT_FACE_RULE\020\010\022" +
-      "\016\n\nMEDIA_RULE\020\t\022\017\n\013MEDIA_QUERY\020\n\022\017\n\013IMPO" +
-      "RT_RULE\020\013\022\017\n\013XML_ELEMENT\020\014\"\'\n\tAttribute\022" +
-      "\013\n\003key\030\001 \002(\t\022\r\n\005value\030\002 \002(\t*\303\001\n\010TypeKind" +
-      "\022\t\n\005OTHER\020\000\022\t\n\005CLASS\020\001\022\r\n\tINTERFACE\020\002\022\r\n" +
-      "\tANONYMOUS\020\003\022\010\n\004ANON\020\003\022\n\n\006STRUCT\020\004\022\010\n\004EN" +
-      "UM\020\005\022\017\n\013ENUMERATION\020\005\022\016\n\nANNOTATION\020\006\022\014\n" +
-      "\010DELEGATE\020\007\022\013\n\007GENERIC\020\010\022\t\n\005TRAIT\020\t\022\r\n\tP" +
-      "RIMITIVE\020\n\022\t\n\005ARRAY\020\013\032\002\020\001B\002H\001"
+      "ifier\022\021\n\tno_parens\030\016 \001(\010\022(\n\nstatements\030\026" +
+      " \003(\0132\024.boa.types.Statement\"\231\014\n\016Expressio" +
+      "nKind\022\t\n\005OTHER\020\000\022\013\n\007LITERAL\020\001\022\r\n\tVARACCE",
+      "SS\020\002\022\013\n\007VARDECL\020\003\022\016\n\nMETHODCALL\020\004\022\010\n\004CAS" +
+      "T\020\005\022\017\n\013ARRAYACCESS\020\006\022\r\n\tARRAYINIT\020\007\022\020\n\014A" +
+      "RRAYLITERAL\020\007\022\017\n\013TYPECOMPARE\020\010\022\007\n\003NEW\020\t\022" +
+      "\014\n\010NEWARRAY\020\n\022\n\n\006OP_ADD\020\013\022\n\n\006OP_SUB\020\014\022\013\n" +
+      "\007OP_MULT\020\r\022\n\n\006OP_DIV\020\016\022\n\n\006OP_MOD\020\017\022\n\n\006OP" +
+      "_INC\020\020\022\n\n\006OP_DEC\020\021\022\016\n\nBIT_LSHIFT\020\022\022\016\n\nBI" +
+      "T_RSHIFT\020\023\022\026\n\022BIT_UNSIGNEDRSHIFT\020\024\022\013\n\007BI" +
+      "T_AND\020\025\022\n\n\006BIT_OR\020\026\022\013\n\007BIT_NOT\020\027\022\013\n\007BIT_" +
+      "XOR\020\030\022\017\n\013LOGICAL_NOT\020\031\022\017\n\013LOGICAL_AND\020\032\022" +
+      "\016\n\nLOGICAL_OR\020\033\022\006\n\002EQ\020\034\022\007\n\003NEQ\020\035\022\006\n\002LT\020\036",
+      "\022\006\n\002GT\020\037\022\010\n\004LTEQ\020 \022\010\n\004GTEQ\020!\022\017\n\013CONDITIO" +
+      "NAL\020\"\022\020\n\014NULLCOALESCE\020#\022\n\n\006ASSIGN\020$\022\016\n\nA" +
+      "SSIGN_ADD\020%\022\016\n\nASSIGN_SUB\020&\022\017\n\013ASSIGN_MU" +
+      "LT\020\'\022\016\n\nASSIGN_DIV\020(\022\016\n\nASSIGN_MOD\020)\022\021\n\r" +
+      "ASSIGN_BITXOR\020*\022\021\n\rASSIGN_BITAND\020+\022\020\n\014AS" +
+      "SIGN_BITOR\020,\022\021\n\rASSIGN_LSHIFT\020-\022\021\n\rASSIG" +
+      "N_RSHIFT\020.\022\031\n\025ASSIGN_UNSIGNEDRSHIFT\020/\022\016\n" +
+      "\nANNOTATION\0200\022\t\n\005PAREN\0201\022\024\n\020METHOD_REFER" +
+      "ENCE\0202\022\n\n\006LAMBDA\0203\022\017\n\013ANON_METHOD\0204\022\t\n\005Y" +
+      "IELD\0205\022\027\n\023ARRAY_COMPREHENSION\0206\022\t\n\005EMPTY",
+      "\0207\022\010\n\004SHEQ\0208\022\t\n\005SHNEQ\0209\022\020\n\014XML_DOTQUERY\020" +
+      ":\022\022\n\016OBJECT_LITERAL\020;\022\016\n\nMETHODDECL\020<\022\010\n" +
+      "\004LOOP\020=\022\r\n\tGENERATOR\020>\022\017\n\013XML_LITERAL\020?\022" +
+      "\022\n\016XML_EXPRESSION\020@\022\023\n\017XML_PROPERTYREF\020A" +
+      "\022\021\n\rXML_MEMBERREF\020B\022\013\n\007XML_DOT\020C\022\016\n\nXML_" +
+      "DOTDOT\020D\022\006\n\002IN\020E\022\n\n\006TYPEOF\020F\022\021\n\rREGEXPLI" +
+      "TERAL\020G\022\n\n\006DELETE\020H\022\010\n\004VOID\020I\022\023\n\017HASHTAB" +
+      "LEACCESS\020J\022\020\n\014ARRAYELEMENT\020K\022\r\n\tOP_CONCA" +
+      "T\020L\022\n\n\006OP_POW\020M\022\021\n\rASSIGN_CONCAT\020N\022\016\n\nAS" +
+      "SIGN_POW\020O\022\014\n\010BACKTICK\020P\022\r\n\tIDENTICAL\020Q\022",
+      "\020\n\014NOTIDENTICAL\020R\022\016\n\nSTRING_AND\020S\022\r\n\tSTR" +
+      "ING_OR\020T\022\016\n\nSTRING_XOR\020U\022\030\n\024OP_THREE_WAY" +
+      "_COMPARE\020V\022\r\n\tOP_UNPACK\020W\022\t\n\005QUOTE\020X\022\020\n\014" +
+      "IGNORE_ERROR\020Y\022\013\n\007REQUIRE\020Z\022\020\n\014REQUIRE_O" +
+      "NCE\020[\022\013\n\007INCLUDE\020\\\022\020\n\014INCLUDE_ONCE\020]\022\010\n\004" +
+      "LIST\020^\022\r\n\tREFERENCE\020_\022\016\n\nREFLECTION\020`\022\t\n" +
+      "\005CLONE\020a\022\017\n\013TRAIT_ALIAS\020b\022\024\n\020TRAIT_PRECE" +
+      "DENCE\020c\022\021\n\rNAMESPACENAME\020d\032\002\020\001\"\326\004\n\010Modif" +
+      "ier\022.\n\004kind\030\001 \002(\0162 .boa.types.Modifier.M" +
+      "odifierKind\0222\n\nvisibility\030\002 \001(\0162\036.boa.ty",
+      "pes.Modifier.Visibility\022\027\n\017annotation_na" +
+      "me\030\003 \001(\t\022\032\n\022annotation_members\030\004 \003(\t\0220\n\021" +
+      "annotation_values\030\005 \003(\0132\025.boa.types.Expr" +
+      "ession\022\r\n\005other\030\006 \001(\t\"\346\001\n\014ModifierKind\022\t" +
+      "\n\005OTHER\020\000\022\016\n\nVISIBILITY\020\001\022\016\n\nANNOTATION\020" +
+      "\002\022\t\n\005FINAL\020\003\022\014\n\010CONSTANT\020\003\022\n\n\006STATIC\020\004\022\020" +
+      "\n\014SYNCHRONIZED\020\005\022\010\n\004SYNC\020\005\022\014\n\010ABSTRACT\020\006" +
+      "\022\t\n\005SCOPE\020\007\022\n\n\006GETTER\020\010\022\n\n\006SETTER\020\t\022\n\n\006N" +
+      "ATIVE\020\n\022\014\n\010STRICTFP\020\013\022\r\n\tTRANSIENT\020\014\022\014\n\010" +
+      "VOLATILE\020\r\032\002\020\001\"a\n\nVisibility\022\n\n\006PUBLIC\020\001",
+      "\022\013\n\007PRIVATE\020\002\022\r\n\tPROTECTED\020\003\022\r\n\tNAMESPAC" +
+      "E\020\004\022\013\n\007PACKAGE\020\004\022\013\n\007DEFAULT\020\005\032\002\020\001\"$\n\005Sco" +
+      "pe\022\007\n\003VAR\020\001\022\007\n\003LET\020\002\022\t\n\005CONST\020\003\"\335\001\n\007Comm" +
+      "ent\022,\n\004kind\030\001 \002(\0162\036.boa.types.Comment.Co" +
+      "mmentKind\022\r\n\005value\030\002 \002(\t\022)\n\010position\030\003 \002" +
+      "(\0132\027.boa.types.PositionInfo\"j\n\013CommentKi" +
+      "nd\022\t\n\005OTHER\020\000\022\010\n\004LINE\020\001\022\t\n\005BLOCK\020\002\022\007\n\003DO" +
+      "C\020\003\022\021\n\rDOCUMENTATION\020\003\022\010\n\004SPEC\020\004\022\021\n\rSPEC" +
+      "IFICATION\020\004\032\002\020\001\"{\n\014PositionInfo\022\021\n\tstart" +
+      "_pos\030\001 \002(\005\022\016\n\006length\030\002 \002(\005\022\022\n\nstart_line",
+      "\030\003 \002(\005\022\021\n\tstart_col\030\004 \002(\005\022\020\n\010end_line\030\005 " +
+      "\002(\005\022\017\n\007end_col\030\006 \002(\005\"\233\001\n\010Document\022\r\n\005tit" +
+      "le\030\001 \001(\t\022$\n\010elements\030\002 \003(\0132\022.boa.types.E" +
+      "lement\022$\n\010doc_type\030\003 \001(\0132\022.boa.types.Ele" +
+      "ment\0224\n\026processing_instruction\030\013 \003(\0132\024.b" +
+      "oa.types.Attribute\"\267\004\n\007Element\022\013\n\003tag\030\001 " +
+      "\002(\t\022,\n\004kind\030\002 \002(\0162\036.boa.types.Element.El" +
+      "ementKind\022$\n\010elements\030\003 \003(\0132\022.boa.types." +
+      "Element\022\014\n\004text\030\004 \003(\t\022\014\n\004data\030\005 \003(\t\022(\n\na" +
+      "ttributes\030\006 \003(\0132\024.boa.types.Attribute\022$\n",
+      "\006script\030\007 \001(\0132\024.boa.types.Namespace\022!\n\003p" +
+      "hp\030\010 \001(\0132\024.boa.types.Namespace\022%\n\010var_de" +
+      "cl\030\t \003(\0132\023.boa.types.Variable\022\r\n\005title\030\n" +
+      " \001(\t\0224\n\026processing_instruction\030\013 \003(\0132\024.b" +
+      "oa.types.Attribute\"\317\001\n\013ElementKind\022\t\n\005OT" +
+      "HER\020\000\022\t\n\005BLOCK\020\001\022\013\n\007IN_LINE\020\002\022\010\n\004FORM\020\003\022" +
+      "\014\n\010DOC_TYPE\020\004\022\017\n\013STYLE_SHEET\020\005\022\r\n\tPAGE_R" +
+      "ULE\020\006\022\016\n\nSTYLE_RULE\020\007\022\022\n\016FONT_FACE_RULE\020" +
+      "\010\022\016\n\nMEDIA_RULE\020\t\022\017\n\013MEDIA_QUERY\020\n\022\017\n\013IM" +
+      "PORT_RULE\020\013\022\017\n\013XML_ELEMENT\020\014\"\'\n\tAttribut",
+      "e\022\013\n\003key\030\001 \002(\t\022\r\n\005value\030\002 \002(\t*\303\001\n\010TypeKi" +
+      "nd\022\t\n\005OTHER\020\000\022\t\n\005CLASS\020\001\022\r\n\tINTERFACE\020\002\022" +
+      "\r\n\tANONYMOUS\020\003\022\010\n\004ANON\020\003\022\n\n\006STRUCT\020\004\022\010\n\004" +
+      "ENUM\020\005\022\017\n\013ENUMERATION\020\005\022\016\n\nANNOTATION\020\006\022" +
+      "\014\n\010DELEGATE\020\007\022\013\n\007GENERIC\020\010\022\t\n\005TRAIT\020\t\022\r\n" +
+      "\tPRIMITIVE\020\n\022\t\n\005ARRAY\020\013\032\002\020\001B\002H\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -34908,7 +34151,7 @@ public final class Ast {
           internal_static_boa_types_Expression_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_Expression_descriptor,
-              new java.lang.String[] { "Kind", "Expressions", "VariableDecls", "NewType", "GenericParameters", "IsPostfix", "Literal", "Variable", "Method", "MethodArgs", "AnonDeclaration", "Annotation", "NoParens", "Key", "DeclaringType", "ReturnType", "Statements", "IsMemberAccess", });
+              new java.lang.String[] { "Kind", "Expressions", "VariableDecls", "NewType", "GenericParameters", "IsPostfix", "Literal", "Variable", "Method", "MethodArgs", "AnonDeclaration", "Annotation", "NoParens", "Statements", });
           internal_static_boa_types_Modifier_descriptor =
             getDescriptor().getMessageTypes().get(9);
           internal_static_boa_types_Modifier_fieldAccessorTable = new

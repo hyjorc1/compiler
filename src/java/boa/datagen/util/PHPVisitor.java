@@ -707,7 +707,7 @@ public class PHPVisitor extends AbstractVisitor {
 	public boolean visit(FieldAccess node) {
 		boa.types.Ast.Expression.Builder b = boa.types.Ast.Expression.newBuilder();
 		b.setKind(boa.types.Ast.Expression.ExpressionKind.VARACCESS);
-		b.setIsMemberAccess(true);
+//		b.setIsMemberAccess(true);
 		node.getDispatcher().accept(this);
 		b.addExpressions(expressions.pop());
 		node.getField().accept(this);
@@ -1423,7 +1423,7 @@ public class PHPVisitor extends AbstractVisitor {
 		Expression.Builder b = Expression.newBuilder();
 		b.setKind(ExpressionKind.VARACCESS);
 //		b.setIsStatic(true);
-		b.setIsMemberAccess(true);
+//		b.setIsMemberAccess(true);
 		org.eclipse.php.internal.core.ast.nodes.Expression qual = node.getClassName();
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		tb.setKind(TypeKind.OTHER);
@@ -1433,7 +1433,7 @@ public class PHPVisitor extends AbstractVisitor {
 //			qual.accept(this);
 //			tb.setComputedName(expressions.pop());
 //		}
-		b.setDeclaringType(tb);
+//		b.setDeclaringType(tb);
 		b.setVariable(node.getConstant().getName());
 		expressions.push(b.build());
 		return false;
@@ -1444,7 +1444,7 @@ public class PHPVisitor extends AbstractVisitor {
 		Expression.Builder b = Expression.newBuilder();
 		b.setKind(ExpressionKind.VARACCESS);
 //		b.setIsStatic(true);
-		b.setIsMemberAccess(true);
+//		b.setIsMemberAccess(true);
 		org.eclipse.php.internal.core.ast.nodes.Expression qual = node.getClassName();
 		boa.types.Ast.Type.Builder tb = boa.types.Ast.Type.newBuilder();
 		tb.setKind(TypeKind.OTHER);
@@ -1454,7 +1454,7 @@ public class PHPVisitor extends AbstractVisitor {
 //			qual.accept(this);
 //			tb.setComputedName(expressions.pop());
 //		}
-		b.setDeclaringType(tb);
+//		b.setDeclaringType(tb);
 //		if (node.getField().getName() instanceof Identifier)
 //			b.setVariable(((Identifier) node.getField().getName()).getName());
 //		else {
@@ -1479,7 +1479,7 @@ public class PHPVisitor extends AbstractVisitor {
 //			qual.accept(this);
 //			tb.setComputedName(expressions.pop());
 //		}
-		b.setDeclaringType(tb);
+//		b.setDeclaringType(tb);
 		FunctionName fn = node.getMethod().getFunctionName();
 //		if (fn.getName() instanceof Identifier)
 //			b.setMethod(((Identifier) fn.getName()).getName());
