@@ -380,14 +380,14 @@ message Expression {
 	/** */
 	optional int32 key = 18;
 	/** The type declaring this method call or field access */
-	optional Type declaring_type = 19;
+	optional Type declaring_type = 19; // not in 2015
 	/** Type of the return value */
-	optional Type return_type = 20;
+	optional Type return_type = 20; // not in 2015
 	/** Declared methods/functions */
 	//repeated Method methods = 21;
 	/** Inside statements */
-	repeated Statement statements = 22;
-	optional bool is_member_access = 23;
+	repeated Statement statements = 22; // not in 2015
+	optional bool is_member_access = 23; // not in 2015
 	//optional bool dollar_sign = 24;
 	//optional Expression computed_variable = 25;
 	//optional Expression computed_method = 26;
