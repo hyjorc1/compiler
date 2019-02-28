@@ -26880,42 +26880,6 @@ public final class Ast {
      */
     com.google.protobuf.ByteString
         getOtherBytes();
-
-    // optional int32 key = 10;
-    /**
-     * <code>optional int32 key = 10;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    boolean hasKey();
-    /**
-     * <code>optional int32 key = 10;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    int getKey();
-
-    // optional .boa.types.Modifier.Scope scope = 11;
-    /**
-     * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    boolean hasScope();
-    /**
-     * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    boa.types.Ast.Modifier.Scope getScope();
   }
   /**
    * Protobuf type {@code boa.types.Modifier}
@@ -27018,22 +26982,6 @@ public final class Ast {
             case 50: {
               bitField0_ |= 0x00000008;
               other_ = input.readBytes();
-              break;
-            }
-            case 80: {
-              bitField0_ |= 0x00000010;
-              key_ = input.readInt32();
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-              boa.types.Ast.Modifier.Scope value = boa.types.Ast.Modifier.Scope.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(11, rawValue);
-              } else {
-                bitField0_ |= 0x00000020;
-                scope_ = value;
-              }
               break;
             }
           }
@@ -27964,54 +27912,6 @@ public final class Ast {
       }
     }
 
-    // optional int32 key = 10;
-    public static final int KEY_FIELD_NUMBER = 10;
-    private int key_;
-    /**
-     * <code>optional int32 key = 10;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    public boolean hasKey() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int32 key = 10;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    public int getKey() {
-      return key_;
-    }
-
-    // optional .boa.types.Modifier.Scope scope = 11;
-    public static final int SCOPE_FIELD_NUMBER = 11;
-    private boa.types.Ast.Modifier.Scope scope_;
-    /**
-     * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    public boolean hasScope() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-     *
-     * <pre>
-     ** 
-     * </pre>
-     */
-    public boa.types.Ast.Modifier.Scope getScope() {
-      return scope_;
-    }
-
     private void initFields() {
       kind_ = boa.types.Ast.Modifier.ModifierKind.OTHER;
       visibility_ = boa.types.Ast.Modifier.Visibility.PUBLIC;
@@ -28019,8 +27919,6 @@ public final class Ast {
       annotationMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       annotationValues_ = java.util.Collections.emptyList();
       other_ = "";
-      key_ = 0;
-      scope_ = boa.types.Ast.Modifier.Scope.VAR;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -28062,12 +27960,6 @@ public final class Ast {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBytes(6, getOtherBytes());
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt32(10, key_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeEnum(11, scope_.getNumber());
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -28105,14 +27997,6 @@ public final class Ast {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getOtherBytes());
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, key_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, scope_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -28251,10 +28135,6 @@ public final class Ast {
         }
         other_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
-        key_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        scope_ = boa.types.Ast.Modifier.Scope.VAR;
-        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -28314,14 +28194,6 @@ public final class Ast {
           to_bitField0_ |= 0x00000008;
         }
         result.other_ = other_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.key_ = key_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.scope_ = scope_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -28389,12 +28261,6 @@ public final class Ast {
           bitField0_ |= 0x00000020;
           other_ = other.other_;
           onChanged();
-        }
-        if (other.hasKey()) {
-          setKey(other.getKey());
-        }
-        if (other.hasScope()) {
-          setScope(other.getScope());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -29170,107 +29036,6 @@ public final class Ast {
   }
   bitField0_ |= 0x00000020;
         other_ = value;
-        onChanged();
-        return this;
-      }
-
-      // optional int32 key = 10;
-      private int key_ ;
-      /**
-       * <code>optional int32 key = 10;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public boolean hasKey() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      /**
-       * <code>optional int32 key = 10;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public int getKey() {
-        return key_;
-      }
-      /**
-       * <code>optional int32 key = 10;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public Builder setKey(int value) {
-        bitField0_ |= 0x00000040;
-        key_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 key = 10;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public Builder clearKey() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        key_ = 0;
-        onChanged();
-        return this;
-      }
-
-      // optional .boa.types.Modifier.Scope scope = 11;
-      private boa.types.Ast.Modifier.Scope scope_ = boa.types.Ast.Modifier.Scope.VAR;
-      /**
-       * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public boolean hasScope() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      /**
-       * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public boa.types.Ast.Modifier.Scope getScope() {
-        return scope_;
-      }
-      /**
-       * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public Builder setScope(boa.types.Ast.Modifier.Scope value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000080;
-        scope_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .boa.types.Modifier.Scope scope = 11;</code>
-       *
-       * <pre>
-       ** 
-       * </pre>
-       */
-      public Builder clearScope() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        scope_ = boa.types.Ast.Modifier.Scope.VAR;
         onChanged();
         return this;
       }
@@ -37154,57 +36919,56 @@ public final class Ast {
       "RE_ONCE\020[\022\013\n\007INCLUDE\020\\\022\020\n\014INCLUDE_ONCE\020]" +
       "\022\010\n\004LIST\020^\022\r\n\tREFERENCE\020_\022\016\n\nREFLECTION\020" +
       "`\022\t\n\005CLONE\020a\022\017\n\013TRAIT_ALIAS\020b\022\024\n\020TRAIT_P" +
-      "RECEDENCE\020c\022\021\n\rNAMESPACENAME\020d\032\002\020\001\"\215\005\n\010M" +
+      "RECEDENCE\020c\022\021\n\rNAMESPACENAME\020d\032\002\020\001\"\326\004\n\010M" +
       "odifier\022.\n\004kind\030\001 \002(\0162 .boa.types.Modifi" +
       "er.ModifierKind\0222\n\nvisibility\030\002 \001(\0162\036.bo" +
       "a.types.Modifier.Visibility\022\027\n\017annotatio",
       "n_name\030\003 \001(\t\022\032\n\022annotation_members\030\004 \003(\t" +
       "\0220\n\021annotation_values\030\005 \003(\0132\025.boa.types." +
-      "Expression\022\r\n\005other\030\006 \001(\t\022\013\n\003key\030\n \001(\005\022(" +
-      "\n\005scope\030\013 \001(\0162\031.boa.types.Modifier.Scope" +
-      "\"\346\001\n\014ModifierKind\022\t\n\005OTHER\020\000\022\016\n\nVISIBILI" +
-      "TY\020\001\022\016\n\nANNOTATION\020\002\022\t\n\005FINAL\020\003\022\014\n\010CONST" +
-      "ANT\020\003\022\n\n\006STATIC\020\004\022\020\n\014SYNCHRONIZED\020\005\022\010\n\004S" +
-      "YNC\020\005\022\014\n\010ABSTRACT\020\006\022\t\n\005SCOPE\020\007\022\n\n\006GETTER" +
-      "\020\010\022\n\n\006SETTER\020\t\022\n\n\006NATIVE\020\n\022\014\n\010STRICTFP\020\013" +
-      "\022\r\n\tTRANSIENT\020\014\022\014\n\010VOLATILE\020\r\032\002\020\001\"a\n\nVis",
-      "ibility\022\n\n\006PUBLIC\020\001\022\013\n\007PRIVATE\020\002\022\r\n\tPROT" +
-      "ECTED\020\003\022\r\n\tNAMESPACE\020\004\022\013\n\007PACKAGE\020\004\022\013\n\007D" +
-      "EFAULT\020\005\032\002\020\001\"$\n\005Scope\022\007\n\003VAR\020\001\022\007\n\003LET\020\002\022" +
-      "\t\n\005CONST\020\003\"\352\001\n\007Comment\022,\n\004kind\030\001 \002(\0162\036.b" +
-      "oa.types.Comment.CommentKind\022\r\n\005value\030\002 " +
-      "\002(\t\022)\n\010position\030\003 \002(\0132\027.boa.types.Positi" +
-      "onInfo\022\013\n\003key\030\007 \001(\005\"j\n\013CommentKind\022\t\n\005OT" +
-      "HER\020\000\022\010\n\004LINE\020\001\022\t\n\005BLOCK\020\002\022\007\n\003DOC\020\003\022\021\n\rD" +
-      "OCUMENTATION\020\003\022\010\n\004SPEC\020\004\022\021\n\rSPECIFICATIO" +
-      "N\020\004\032\002\020\001\"{\n\014PositionInfo\022\021\n\tstart_pos\030\001 \002",
-      "(\005\022\016\n\006length\030\002 \002(\005\022\022\n\nstart_line\030\003 \002(\005\022\021" +
-      "\n\tstart_col\030\004 \002(\005\022\020\n\010end_line\030\005 \002(\005\022\017\n\007e" +
-      "nd_col\030\006 \002(\005\"\233\001\n\010Document\022\r\n\005title\030\001 \001(\t" +
-      "\022$\n\010elements\030\002 \003(\0132\022.boa.types.Element\022$" +
-      "\n\010doc_type\030\003 \001(\0132\022.boa.types.Element\0224\n\026" +
-      "processing_instruction\030\013 \003(\0132\024.boa.types" +
-      ".Attribute\"\267\004\n\007Element\022\013\n\003tag\030\001 \002(\t\022,\n\004k" +
-      "ind\030\002 \002(\0162\036.boa.types.Element.ElementKin" +
-      "d\022$\n\010elements\030\003 \003(\0132\022.boa.types.Element\022" +
-      "\014\n\004text\030\004 \003(\t\022\014\n\004data\030\005 \003(\t\022(\n\nattribute",
-      "s\030\006 \003(\0132\024.boa.types.Attribute\022$\n\006script\030" +
-      "\007 \001(\0132\024.boa.types.Namespace\022!\n\003php\030\010 \001(\013" +
-      "2\024.boa.types.Namespace\022%\n\010var_decl\030\t \003(\013" +
-      "2\023.boa.types.Variable\022\r\n\005title\030\n \001(\t\0224\n\026" +
-      "processing_instruction\030\013 \003(\0132\024.boa.types" +
-      ".Attribute\"\317\001\n\013ElementKind\022\t\n\005OTHER\020\000\022\t\n" +
-      "\005BLOCK\020\001\022\013\n\007IN_LINE\020\002\022\010\n\004FORM\020\003\022\014\n\010DOC_T" +
-      "YPE\020\004\022\017\n\013STYLE_SHEET\020\005\022\r\n\tPAGE_RULE\020\006\022\016\n" +
-      "\nSTYLE_RULE\020\007\022\022\n\016FONT_FACE_RULE\020\010\022\016\n\nMED" +
-      "IA_RULE\020\t\022\017\n\013MEDIA_QUERY\020\n\022\017\n\013IMPORT_RUL",
-      "E\020\013\022\017\n\013XML_ELEMENT\020\014\"\'\n\tAttribute\022\013\n\003key" +
-      "\030\001 \002(\t\022\r\n\005value\030\002 \002(\t*\303\001\n\010TypeKind\022\t\n\005OT" +
-      "HER\020\000\022\t\n\005CLASS\020\001\022\r\n\tINTERFACE\020\002\022\r\n\tANONY" +
-      "MOUS\020\003\022\010\n\004ANON\020\003\022\n\n\006STRUCT\020\004\022\010\n\004ENUM\020\005\022\017" +
-      "\n\013ENUMERATION\020\005\022\016\n\nANNOTATION\020\006\022\014\n\010DELEG" +
-      "ATE\020\007\022\013\n\007GENERIC\020\010\022\t\n\005TRAIT\020\t\022\r\n\tPRIMITI" +
-      "VE\020\n\022\t\n\005ARRAY\020\013\032\002\020\001B\002H\001"
+      "Expression\022\r\n\005other\030\006 \001(\t\"\346\001\n\014ModifierKi" +
+      "nd\022\t\n\005OTHER\020\000\022\016\n\nVISIBILITY\020\001\022\016\n\nANNOTAT" +
+      "ION\020\002\022\t\n\005FINAL\020\003\022\014\n\010CONSTANT\020\003\022\n\n\006STATIC" +
+      "\020\004\022\020\n\014SYNCHRONIZED\020\005\022\010\n\004SYNC\020\005\022\014\n\010ABSTRA" +
+      "CT\020\006\022\t\n\005SCOPE\020\007\022\n\n\006GETTER\020\010\022\n\n\006SETTER\020\t\022" +
+      "\n\n\006NATIVE\020\n\022\014\n\010STRICTFP\020\013\022\r\n\tTRANSIENT\020\014" +
+      "\022\014\n\010VOLATILE\020\r\032\002\020\001\"a\n\nVisibility\022\n\n\006PUBL" +
+      "IC\020\001\022\013\n\007PRIVATE\020\002\022\r\n\tPROTECTED\020\003\022\r\n\tNAME",
+      "SPACE\020\004\022\013\n\007PACKAGE\020\004\022\013\n\007DEFAULT\020\005\032\002\020\001\"$\n" +
+      "\005Scope\022\007\n\003VAR\020\001\022\007\n\003LET\020\002\022\t\n\005CONST\020\003\"\352\001\n\007" +
+      "Comment\022,\n\004kind\030\001 \002(\0162\036.boa.types.Commen" +
+      "t.CommentKind\022\r\n\005value\030\002 \002(\t\022)\n\010position" +
+      "\030\003 \002(\0132\027.boa.types.PositionInfo\022\013\n\003key\030\007" +
+      " \001(\005\"j\n\013CommentKind\022\t\n\005OTHER\020\000\022\010\n\004LINE\020\001" +
+      "\022\t\n\005BLOCK\020\002\022\007\n\003DOC\020\003\022\021\n\rDOCUMENTATION\020\003\022" +
+      "\010\n\004SPEC\020\004\022\021\n\rSPECIFICATION\020\004\032\002\020\001\"{\n\014Posi" +
+      "tionInfo\022\021\n\tstart_pos\030\001 \002(\005\022\016\n\006length\030\002 " +
+      "\002(\005\022\022\n\nstart_line\030\003 \002(\005\022\021\n\tstart_col\030\004 \002",
+      "(\005\022\020\n\010end_line\030\005 \002(\005\022\017\n\007end_col\030\006 \002(\005\"\233\001" +
+      "\n\010Document\022\r\n\005title\030\001 \001(\t\022$\n\010elements\030\002 " +
+      "\003(\0132\022.boa.types.Element\022$\n\010doc_type\030\003 \001(" +
+      "\0132\022.boa.types.Element\0224\n\026processing_inst" +
+      "ruction\030\013 \003(\0132\024.boa.types.Attribute\"\267\004\n\007" +
+      "Element\022\013\n\003tag\030\001 \002(\t\022,\n\004kind\030\002 \002(\0162\036.boa" +
+      ".types.Element.ElementKind\022$\n\010elements\030\003" +
+      " \003(\0132\022.boa.types.Element\022\014\n\004text\030\004 \003(\t\022\014" +
+      "\n\004data\030\005 \003(\t\022(\n\nattributes\030\006 \003(\0132\024.boa.t" +
+      "ypes.Attribute\022$\n\006script\030\007 \001(\0132\024.boa.typ",
+      "es.Namespace\022!\n\003php\030\010 \001(\0132\024.boa.types.Na" +
+      "mespace\022%\n\010var_decl\030\t \003(\0132\023.boa.types.Va" +
+      "riable\022\r\n\005title\030\n \001(\t\0224\n\026processing_inst" +
+      "ruction\030\013 \003(\0132\024.boa.types.Attribute\"\317\001\n\013" +
+      "ElementKind\022\t\n\005OTHER\020\000\022\t\n\005BLOCK\020\001\022\013\n\007IN_" +
+      "LINE\020\002\022\010\n\004FORM\020\003\022\014\n\010DOC_TYPE\020\004\022\017\n\013STYLE_" +
+      "SHEET\020\005\022\r\n\tPAGE_RULE\020\006\022\016\n\nSTYLE_RULE\020\007\022\022" +
+      "\n\016FONT_FACE_RULE\020\010\022\016\n\nMEDIA_RULE\020\t\022\017\n\013ME" +
+      "DIA_QUERY\020\n\022\017\n\013IMPORT_RULE\020\013\022\017\n\013XML_ELEM" +
+      "ENT\020\014\"\'\n\tAttribute\022\013\n\003key\030\001 \002(\t\022\r\n\005value",
+      "\030\002 \002(\t*\303\001\n\010TypeKind\022\t\n\005OTHER\020\000\022\t\n\005CLASS\020" +
+      "\001\022\r\n\tINTERFACE\020\002\022\r\n\tANONYMOUS\020\003\022\010\n\004ANON\020" +
+      "\003\022\n\n\006STRUCT\020\004\022\010\n\004ENUM\020\005\022\017\n\013ENUMERATION\020\005" +
+      "\022\016\n\nANNOTATION\020\006\022\014\n\010DELEGATE\020\007\022\013\n\007GENERI" +
+      "C\020\010\022\t\n\005TRAIT\020\t\022\r\n\tPRIMITIVE\020\n\022\t\n\005ARRAY\020\013" +
+      "\032\002\020\001B\002H\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -37270,7 +37034,7 @@ public final class Ast {
           internal_static_boa_types_Modifier_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_boa_types_Modifier_descriptor,
-              new java.lang.String[] { "Kind", "Visibility", "AnnotationName", "AnnotationMembers", "AnnotationValues", "Other", "Key", "Scope", });
+              new java.lang.String[] { "Kind", "Visibility", "AnnotationName", "AnnotationMembers", "AnnotationValues", "Other", });
           internal_static_boa_types_Comment_descriptor =
             getDescriptor().getMessageTypes().get(10);
           internal_static_boa_types_Comment_fieldAccessorTable = new

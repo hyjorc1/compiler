@@ -199,7 +199,7 @@ public class JavaScriptVisitor implements NodeVisitor {
 			Variable.Builder vb = Variable.newBuilder();
 			Modifier.Builder mb1 = Modifier.newBuilder();
 			mb1.setKind(Modifier.ModifierKind.SCOPE);
-			mb1.setScope(Modifier.Scope.LET);
+//			mb1.setScope(Modifier.Scope.LET);
 			vb.addModifiers(mb1.build());
 //			if (p instanceof Name) {
 //				vb.setName(((Name) p).getIdentifier());
@@ -281,7 +281,7 @@ public class JavaScriptVisitor implements NodeVisitor {
 		vb.setName(node.getVarName().getIdentifier());
 		Modifier.Builder mb = Modifier.newBuilder();
 		mb.setKind(Modifier.ModifierKind.SCOPE);
-		mb.setScope(Modifier.Scope.LET);
+//		mb.setScope(Modifier.Scope.LET);
 		vb.addModifiers(mb.build());
 		b.setVariableDeclaration(vb.build());
 		if (node.getCatchCondition() != null) {
@@ -738,12 +738,12 @@ public class JavaScriptVisitor implements NodeVisitor {
 		mb.setKind(Modifier.ModifierKind.SCOPE);
 		AstNode p = node.getParent();
 		if (p != null && p instanceof VariableDeclaration) {
-			if (((VariableDeclaration) p).isConst())
-				mb.setScope(Modifier.Scope.CONST);
-			else if (((VariableDeclaration) p).isLet())
-				mb.setScope(Modifier.Scope.LET);
-			else if (((VariableDeclaration) p).isVar())
-				mb.setScope(Modifier.Scope.VAR);
+//			if (((VariableDeclaration) p).isConst())
+//				mb.setScope(Modifier.Scope.CONST);
+//			else if (((VariableDeclaration) p).isLet())
+//				mb.setScope(Modifier.Scope.LET);
+//			else if (((VariableDeclaration) p).isVar())
+//				mb.setScope(Modifier.Scope.VAR);
 		}
 		b.addModifiers(mb.build());
 		if (node.getInitializer() != null) {
