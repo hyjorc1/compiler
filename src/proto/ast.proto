@@ -174,7 +174,7 @@ message Variable {
 	/** */
 	//optional Expression computed_name = 11;
 	//optional bool dollar_sign = 12;
-	repeated Expression expressions = 13; // not in 2015
+	repeated Expression expressions = 13; // enum with constructor
 }
 
 /** A single statement */
@@ -380,14 +380,14 @@ message Expression {
 	/** */
 	//optional int32 key = 18;
 	/** The type declaring this method call or field access */
-	//optional Type declaring_type = 19; // not in 2015
+	//optional Type declaring_type = 19; 
 	/** Type of the return value */
-	//optional Type return_type = 20; // not in 2015
+	//optional Type return_type = 20; 
 	/** Declared methods/functions */
 	//repeated Method methods = 21;
 	/** Inside statements */
-	repeated Statement statements = 22; // not in 2015
-	//optional bool is_member_access = 23; // not in 2015
+	repeated Statement statements = 22; // JLS8 LambdaExpression body statements
+	//optional bool is_member_access = 23; 
 	//optional bool dollar_sign = 24;
 	//optional Expression computed_variable = 25;
 	//optional Expression computed_method = 26;
