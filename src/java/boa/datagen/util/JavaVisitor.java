@@ -842,10 +842,10 @@ public class JavaVisitor extends ASTVisitor {
 		Variable.Builder b = Variable.newBuilder();
 		b.setName(node.getName().getIdentifier());
 		b.addAllModifiers(buildModifiers(node.modifiers()));
-		for (Object arg : node.arguments()) {
-			((org.eclipse.jdt.core.dom.Expression) arg).accept(this);
-			b.addExpressions(expressions.pop());
-		}
+//		for (Object arg : node.arguments()) {
+//			((org.eclipse.jdt.core.dom.Expression) arg).accept(this);
+//			b.addExpressions(expressions.pop());
+//		}
 		if (node.getAnonymousClassDeclaration() != null) {
 			// FIXME skip anonymous class declaration
 		}

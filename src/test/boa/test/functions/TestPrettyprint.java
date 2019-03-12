@@ -52,14 +52,14 @@ public class TestPrettyprint {
 				{ "abstract static final private class c extends d implements i1, i2, i3 {\n}\n" },
 				
 				/* enums */
-				{ "enum E {" 
-						+ indent(1) + "NONE(\"None\"),"
-						+ indent(1) + "ONE(\"One\"),"
-						+ indent(1) + "TWO(T.NAME);"
-						+ indent(1) + "String value;"
-						+ indent(1) + "E(final String value)"
-						+ indent(1) + "{" 
-							+ indent(2) + "this.value = value;" + STATEMENT_END }, 
+//				{ "enum E {" 
+//						+ indent(1) + "NONE(\"None\"),"
+//						+ indent(1) + "ONE(\"One\"),"
+//						+ indent(1) + "TWO(T.NAME);"
+//						+ indent(1) + "String value;"
+//						+ indent(1) + "E(final String value)"
+//						+ indent(1) + "{" 
+//							+ indent(2) + "this.value = value;" + STATEMENT_END }, 
 				
 				/* methods */
 				{ CLASS_START 

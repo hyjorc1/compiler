@@ -1006,8 +1006,8 @@ public class BoaAstIntrinsics {
 		
 		s += v.getName();
 		
-		if (v.getExpressionsCount() != 0)
-			s += "("+ prettyprint(v.getExpressions(0)) +")";
+//		if (v.getExpressionsCount() != 0)
+//			s += "("+ prettyprint(v.getExpressions(0)) +")";
 
 		if (v.hasInitializer())
 			s += " = " + prettyprint(v.getInitializer());
