@@ -1965,8 +1965,8 @@ public class JavaVisitor extends ASTVisitor {
 		
 		boa.types.Ast.Expression.Builder eb = boa.types.Ast.Expression.newBuilder();
 		eb.setKind(boa.types.Ast.Expression.ExpressionKind.LAMBDA);
-        if (!node.hasParentheses())
-            eb.setNoParens(true);
+//        if (!node.hasParentheses())
+//            eb.setNoParens(true);
 		for (Object o : node.parameters()) {
 			if (o instanceof SingleVariableDeclaration) {
 				SingleVariableDeclaration svd = (SingleVariableDeclaration)o;

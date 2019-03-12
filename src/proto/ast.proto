@@ -376,7 +376,7 @@ message Expression {
 	optional Modifier annotation = 12;
 	/** 13 used to be lambda */
 	/** @exclude */
-	optional bool no_parens = 14;
+	//optional bool no_parens = 14;
 	/** */
 	//optional int32 key = 18;
 	/** The type declaring this method call or field access */
