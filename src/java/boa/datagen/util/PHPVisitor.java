@@ -1178,12 +1178,12 @@ public class PHPVisitor extends AbstractVisitor {
 			p.accept(this);
 			eb.addMethodArgs(expressions.pop());
 		}
-		if (node.getBody() != null) {
-			statements.push(new ArrayList<boa.types.Ast.Statement>());
-			node.getBody().accept(this);
-			for (boa.types.Ast.Statement s : statements.pop())
-				eb.addStatements(s);
-		}
+//		if (node.getBody() != null) {
+//			statements.push(new ArrayList<boa.types.Ast.Statement>());
+//			node.getBody().accept(this);
+//			for (boa.types.Ast.Statement s : statements.pop())
+//				eb.addStatements(s);
+//		}
 		expressions.push(eb.build());
 		return false;
 	}

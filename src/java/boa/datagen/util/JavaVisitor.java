@@ -1992,10 +1992,10 @@ public class JavaVisitor extends ASTVisitor {
 				boa.types.Ast.Expression e = expressions.pop();
 				eb.addExpressions(e);
 			} else {
-				statements.push(new ArrayList<boa.types.Ast.Statement>());
-				node.getBody().accept(this);
-				for (boa.types.Ast.Statement s : statements.pop())
-					eb.addStatements(s);
+//				statements.push(new ArrayList<boa.types.Ast.Statement>());
+//				node.getBody().accept(this);
+//				for (boa.types.Ast.Statement s : statements.pop())
+//					eb.addStatements(s);
 			}
 		}
 		expressions.push(eb.build());

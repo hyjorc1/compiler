@@ -83,14 +83,14 @@ public class TestPrettyprint {
 				
 				/* expressions */
 				{ STATEMENT_START + "List<String> list = new ArrayList<String>();" + STATEMENT_END}, // NEW
-				{ STATEMENT_START + "Func f = (E) -> {" 
-							+ indent(3) + "x = 2 * x;" 
-							+ indent(3) + "System.out.println(x);" 
-						+ indent(2) + "};" + STATEMENT_END}, // LAMBDA 1
-				{ STATEMENT_START + "Func f = (int x, String y) -> {" 
-							+ indent(3) + "x = 2 * x;" 
-							+ indent(3) + "System.out.println(x);" 
-						+ indent(2) + "};" + STATEMENT_END}, // LAMBDA 2
+//				{ STATEMENT_START + "Func f = (E) -> {" 
+//							+ indent(3) + "x = 2 * x;" 
+//							+ indent(3) + "System.out.println(x);" 
+//						+ indent(2) + "};" + STATEMENT_END}, // LAMBDA 1
+//				{ STATEMENT_START + "Func f = (int x, String y) -> {" 
+//							+ indent(3) + "x = 2 * x;" 
+//							+ indent(3) + "System.out.println(x);" 
+//						+ indent(2) + "};" + STATEMENT_END}, // LAMBDA 2
 				{ STATEMENT_START + "for (String s : strs)"
 						+ indent(2) + "{" 
 							+ indent(3) + "System.out.println(s);" 

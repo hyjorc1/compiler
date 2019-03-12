@@ -386,7 +386,7 @@ message Expression {
 	/** Declared methods/functions */
 	//repeated Method methods = 21;
 	/** Inside statements */
-	repeated Statement statements = 22; // JLS8 LambdaExpression body statements
+	//repeated Statement statements = 22; // JLS8 LambdaExpression body statements
 	//optional bool is_member_access = 23; 
 	//optional bool dollar_sign = 24;
 	//optional Expression computed_variable = 25;
