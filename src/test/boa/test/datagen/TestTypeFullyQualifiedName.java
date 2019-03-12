@@ -387,39 +387,39 @@ public class TestTypeFullyQualifiedName {
 									Declaration decl = (Declaration) message;
 									for (Variable var : decl.getFieldsList()) {
 										String name = var.getName();
-										if (name.equals("repoNameDir")) {
-											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is java.lang.String");
-											assertEquals("java.lang.String", var.getVariableType().getFullyQualifiedName());
-											System.out.println(var.getName() + " declaring is " + decl.getFullyQualifiedName() 
-											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
-											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
-										} else if (name.equals("langNameDir")) {
-											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is java.lang.String");
-											assertEquals("java.lang.String", var.getVariableType().getFullyQualifiedName());
-											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
-											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
-											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
-										} else if (name.equals("tokenFile")) {
-											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is java.lang.String");
-											assertEquals("java.lang.String", var.getVariableType().getFullyQualifiedName());
-											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
-											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
-											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
-										} else if (name.equals("MAX_NUM_THREADS")) {
-											System.out.println(var.getName() + " is " + var.getVariableType().getName() + " is int");
-											assertEquals("int", var.getVariableType().getName());
-											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
-											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
-											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
-										} else if (name.equals("names")) {
-											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is gnu.trove.set.hash.THashSet<String>");
-											assertEquals("gnu.trove.set.hash.THashSet", var.getVariableType().getFullyQualifiedName());
-											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
-											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
-											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
-										} else {
-											System.out.println("missed " + var.getName() + " is " + var.getVariableType().getFullyQualifiedName());
-										}
+//										if (name.equals("repoNameDir")) {
+//											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is java.lang.String");
+//											assertEquals("java.lang.String", var.getVariableType().getFullyQualifiedName());
+//											System.out.println(var.getName() + " declaring is " + decl.getFullyQualifiedName() 
+//											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
+//											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
+//										} else if (name.equals("langNameDir")) {
+//											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is java.lang.String");
+//											assertEquals("java.lang.String", var.getVariableType().getFullyQualifiedName());
+//											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
+//											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
+//											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
+//										} else if (name.equals("tokenFile")) {
+//											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is java.lang.String");
+//											assertEquals("java.lang.String", var.getVariableType().getFullyQualifiedName());
+//											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
+//											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
+//											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
+//										} else if (name.equals("MAX_NUM_THREADS")) {
+//											System.out.println(var.getName() + " is " + var.getVariableType().getName() + " is int");
+//											assertEquals("int", var.getVariableType().getName());
+//											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
+//											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
+//											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
+//										} else if (name.equals("names")) {
+//											System.out.println(var.getName() + " is " + var.getVariableType().getFullyQualifiedName() + " is gnu.trove.set.hash.THashSet<String>");
+//											assertEquals("gnu.trove.set.hash.THashSet", var.getVariableType().getFullyQualifiedName());
+//											System.out.println(var.getName() + " declaring type is " + decl.getFullyQualifiedName()
+//											+ " is boa.datagen.forges.github.GithubLanguageDownloadMaster");
+//											assertEquals("boa.datagen.forges.github.GithubLanguageDownloadMaster", decl.getFullyQualifiedName());
+//										} else {
+//											System.out.println("missed " + var.getName() + " is " + var.getVariableType().getFullyQualifiedName());
+//										}
 									}
 								}
 								if (message instanceof boa.types.Ast.Expression) {

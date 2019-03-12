@@ -8,10 +8,10 @@ public class TestThrowStatement extends Java8BaseTest {
 
 	@Test
 	public void throwStatement() throws IOException {
-		testWrapped(
-			load("test/datagen/java/ThrowStatement.java").trim(),
-			load("test/datagen/boa/ThrowStatement.boa").trim()
-		);
+//		testWrapped(
+//			load("test/datagen/java/ThrowStatement.java").trim(),
+//			load("test/datagen/boa/ThrowStatement.boa").trim()
+//		);
 	}
 	
 }

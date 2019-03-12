@@ -221,7 +221,7 @@ public class JavaVisitor extends ASTVisitor {
 	public boolean visit(TypeDeclaration node) {
 		boa.types.Ast.Declaration.Builder b = boa.types.Ast.Declaration.newBuilder();
 		b.setName(node.getName().getIdentifier());
-		b.setFullyQualifiedName(getFullyQualifiedName(node));
+//		b.setFullyQualifiedName(getFullyQualifiedName(node));
 		setDeclaringClass(b, node.resolveBinding());
 		if (node.isInterface())
 			b.setKind(boa.types.Ast.TypeKind.INTERFACE);
@@ -340,7 +340,7 @@ public class JavaVisitor extends ASTVisitor {
 		boa.types.Ast.Declaration.Builder b = boa.types.Ast.Declaration.newBuilder();
 		b.setName(node.getName().getIdentifier());
 		b.setKind(boa.types.Ast.TypeKind.ENUM);
-		b.setFullyQualifiedName(getFullyQualifiedName(node));
+//		b.setFullyQualifiedName(getFullyQualifiedName(node));
 		setDeclaringClass(b, node.resolveBinding());
 		for (Object c : node.enumConstants()) {
 			fields.push(new ArrayList<boa.types.Ast.Variable>());
@@ -389,7 +389,7 @@ public class JavaVisitor extends ASTVisitor {
 		boa.types.Ast.Declaration.Builder b = boa.types.Ast.Declaration.newBuilder();
 		b.setName(node.getName().getFullyQualifiedName());
 		b.setKind(boa.types.Ast.TypeKind.ANNOTATION);
-		b.setFullyQualifiedName(getFullyQualifiedName(node));
+//		b.setFullyQualifiedName(getFullyQualifiedName(node));
 		setDeclaringClass(b, node.resolveBinding());
 		b.addAllModifiers(buildModifiers(node.modifiers()));
 		for (Object d : node.bodyDeclarations()) {
