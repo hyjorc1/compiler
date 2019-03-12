@@ -307,7 +307,7 @@
 		<fail message="Test failure detected." if="test.failed" />
 	</target>
 	<target name="test-inhattr" depends="-compile-tests" description="Run inherited attribute unit tests.">
-		<junit fork="yes" haltonfailure="no" failureproperty="test.failed">
+		<junit fork="yes" haltonfailure="no" failureproperty="test.failed" showoutput="yes">
 			<classpath refid="test.class.path" />
 			<test name="boa.test.compiler.TestInhAttr">
 				<formatter type="plain" usefile="false" />

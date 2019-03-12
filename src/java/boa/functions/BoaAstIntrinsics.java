@@ -840,8 +840,8 @@ public class BoaAstIntrinsics {
 			s += indent() + "package " + n.getName() + ";\n";
 		}
 
-		for (final String i : n.getImportsList())
-			s += indent() + "import " + i + "\n";
+//		for (final String i : n.getImportsList())
+//			s += indent() + "import " + i + "\n";
 
 		for (final Declaration d : n.getDeclarationsList())
 			s += prettyprint(d);

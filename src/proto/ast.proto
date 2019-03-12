@@ -39,7 +39,7 @@ message Namespace {
 	/** The nested namespaces */
 	//repeated Namespace namespaces = 11;
 	/** The imported namespaces and types */
-	repeated string imports = 12; // not in 2015
+	//repeated string imports = 12; // not in 2015
 	//repeated Variable variables = 13;
 }
 

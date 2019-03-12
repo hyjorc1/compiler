@@ -106,18 +106,18 @@ public class JavaVisitor extends ASTVisitor {
 			
 			b.addAllModifiers(visitAnnotationsList(pkg.annotations()));
 		}
-		for (Object i : node.imports()) {
-			ImportDeclaration id = (ImportDeclaration)i;
-			String imp = "";
-			if (id.isStatic()) {
-				setAstLevel(JLS3);
-				imp += "static ";
-			}
-			imp += id.getName().getFullyQualifiedName();
-			if (id.isOnDemand())
-				imp += ".*";
-			b.addImports(imp);
-		}
+//		for (Object i : node.imports()) {
+//			ImportDeclaration id = (ImportDeclaration)i;
+//			String imp = "";
+//			if (id.isStatic()) {
+//				setAstLevel(JLS3);
+//				imp += "static ";
+//			}
+//			imp += id.getName().getFullyQualifiedName();
+//			if (id.isOnDemand())
+//				imp += ".*";
+//			b.addImports(imp);
+//		}
 		for (Object t : node.types()) {
 			declarations.push(new ArrayList<boa.types.Ast.Declaration>());
 			((AbstractTypeDeclaration)t).accept(this);
