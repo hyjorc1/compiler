@@ -261,14 +261,29 @@ public class SeqRepoImporter {
 								Thread.currentThread().getId() + " Putting in sequence file: " + project.getId());
 
 					BytesWritable bw = new BytesWritable(project.toByteArray());
+					
 					if (bw.getLength() <= MAX_SIZE_FOR_PROJECT_WITH_COMMITS 
 							|| (project.getCodeRepositoriesCount() > 0 && project.getCodeRepositories(0).getRevisionKeysCount() > 0)) {
+						
+						
 						try {
 							projectWriter.append(new Text(project.getId()), bw);
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
+						
+						System.out.println(project.getName() + " choose strategy 1");
+						System.out.println("Project Name: " + project.getName());
+						System.out.println("Project Bytes Size: " + bw.getLength());
+						System.out.println("Commit Bytes Size: " + commitWriterLen);
+						System.out.println("Ast Bytes Size: " + astWriterLen);
+						System.out.println("getRevisionKeysCount: " + project.getCodeRepositories(0).getRevisionKeysCount());
+						System.out.println("MAX_SIZE_FOR_PROJECT_WITH_COMMITS: " + MAX_SIZE_FOR_PROJECT_WITH_COMMITS);
+						
+						
+						
 					} else {
+						
 						Project.Builder pb = Project.newBuilder(project);
 						for (CodeRepository.Builder cb : pb.getCodeRepositoriesBuilderList()) {
 							for (Revision.Builder rb : cb.getRevisionsBuilderList()) {
@@ -284,6 +299,18 @@ public class SeqRepoImporter {
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
+						
+						Project np = pb.build();
+						
+						System.out.println(project.getName() + " choose strategy 2");
+						System.out.println("Project Name: " + project.getName());
+						System.out.println("Project Bytes Size: " + new BytesWritable(np.toByteArray()).getLength());
+						System.out.println("Commit Bytes Size: " + commitWriterLen);
+						System.out.println("Ast Bytes Size: " + astWriterLen);
+						System.out.println("getRevisionKeysCount: " + project.getCodeRepositories(0).getRevisionKeysCount());
+						System.out.println("MAX_SIZE_FOR_PROJECT_WITH_COMMITS: " + MAX_SIZE_FOR_PROJECT_WITH_COMMITS);
+						
+						
 					}
 					counter++;
 					allCounter++;
@@ -292,6 +319,10 @@ public class SeqRepoImporter {
 						openWriters();
 						counter = 0;
 					}
+					
+					
+					
+					
 				} catch (Throwable e) {
 					e.printStackTrace();
 				}
