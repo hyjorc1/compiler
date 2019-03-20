@@ -121,8 +121,9 @@ public class GitConnector extends AbstractConnector {
 		RevWalk temprevwalk = new RevWalk(repository);
 		try {
 			revwalk.reset();
-			Set<RevCommit> heads = getHeads();
-			revwalk.markStart(heads);
+//			Set<RevCommit> heads = getHeads();
+			RevCommit head = revwalk.parseCommit(repository.resolve(Constants.HEAD));
+			revwalk.markStart(head);
 			revwalk.sort(RevSort.TOPO, true);
 			revwalk.sort(RevSort.COMMIT_TIME_DESC, true);
 			revwalk.sort(RevSort.REVERSE, true);
@@ -191,7 +192,7 @@ public class GitConnector extends AbstractConnector {
 			}
 			System.out.println(Thread.currentThread().getId() + " Process metadata of all commits");
 			
-			RevCommit head = revwalk.parseCommit(repository.resolve(Constants.HEAD));
+			
 			headCommitOffset = revisionMap.get(head.getName());
 			getBranches();
 			getTags();
