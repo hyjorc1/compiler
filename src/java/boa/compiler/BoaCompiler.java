@@ -51,6 +51,7 @@ import boa.compiler.ast.Program;
 import boa.compiler.ast.Start;
 import boa.compiler.transforms.InheritedAttributeTransformer;
 import boa.compiler.transforms.LocalAggregationTransformer;
+import boa.compiler.transforms.VariableDeclRenameTransformer;
 import boa.compiler.transforms.VisitorMergingTransformer;
 import boa.compiler.transforms.VisitorOptimizingTransformer;
 import boa.compiler.visitors.AbstractCodeGeneratingVisitor;
@@ -141,8 +142,6 @@ public class BoaCompiler extends BoaMain {
 				final File f = inputFiles.get(i);
 				try {
 					final BoaLexer lexer = new BoaLexer(new ANTLRFileStream(f.getAbsolutePath()));
-					// use the whole input string to seed the RNG
-					seeds.add(lexer._input.getText(new Interval(0, lexer._input.size())).hashCode());
 					lexer.removeErrorListeners();
 					lexer.addErrorListener(new LexerErrorListener());
 
@@ -159,6 +158,8 @@ public class BoaCompiler extends BoaMain {
 					final BoaErrorListener parserErrorListener = new ParserErrorListener();
 					final Start p = parse(tokens, parser, parserErrorListener);
 					if (cl.hasOption("ast")) new ASTPrintingVisitor().start(p);
+					// use the whole input string to seed the RNG
+					seeds.add(new PrettyPrintVisitor().startAndReturn(p).hashCode());
 
 					final String jobName = "" + i;
 
@@ -172,8 +173,8 @@ public class BoaCompiler extends BoaMain {
 							LOG.info(f.getName() + ": task complexity: " + (!simpleVisitor.isComplex() ? "simple" : "complex"));
 							isSimple &= !simpleVisitor.isComplex();
 							
+							new VariableDeclRenameTransformer().start(p);
 							new InheritedAttributeTransformer().start(p);
-
 							new LocalAggregationTransformer().start(p);
 
 							// if a job has no visitor, let it have its own method
