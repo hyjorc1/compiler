@@ -15,24 +15,29 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.sun.corba.se.impl.orbutil.RepIdDelegator;
 
 import boa.datagen.util.FileIO;
 
 public class GetReposByLanguage {
-
+	
+	// GET PROJECT WITH STARS LARGER OR EQUAL TO THIS NUMBER
 	static int stars = 0;
+	static long start, stop = 0;
 
 	public static void main(String[] args) {
 		TokenList tokens = new TokenList(args[0]);
 		String outDir = args[1];
-		String[] languages = args[2].split(",");
-		stars = 1;
+		stars = Integer.parseInt(args[2]);
+		String[] languages = new String[0];
 
-		if (args.length > 2) {
-			languages = new String[args.length - 2];
-			for (int i = 2; i < args.length; i++)
-				languages[i - 2] = args[i];
+		if (args.length > 3) {
+			String langArgs = "";
+			for (int i = 3; i < args.length; i++) {
+				langArgs += args[i];
+			}
+			languages = langArgs.split(",");
+			for (int i = 0; i < languages.length; i++)
+				languages[i] = languages[i].trim();
 		}
 		Thread[] workers = new Thread[languages.length];
 		for (int i = 0; i < languages.length; i++) {
@@ -75,6 +80,7 @@ public class GetReposByLanguage {
 
 		@Override
 		public void run() {
+			start = System.currentTimeMillis();
 			Calendar cal = Calendar.getInstance();
 			cal.setTime(new Date());
 			cal.add(Calendar.DATE, 1);
@@ -119,6 +125,9 @@ public class GetReposByLanguage {
 						// check if repository is already saved
 						int repID = item.get("id").getAsInt();
 						if (!processedRepID.contains(repID)) {
+							// Add language to repository, comment if language is not needed. It will massively improve performance of the program
+							addLanguageToRepo(item, parser);
+							
 							this.addRepo(item);
 							processedRepID.add(repID);
 							IDtoWrite.add(repID);
@@ -173,6 +182,9 @@ public class GetReposByLanguage {
 				} finally {
 					IDtoWrite.clear();
 				}
+				stop = System.currentTimeMillis();
+				System.out.println("Time taken: "  + (stop - start) / 1000.0 + "seconds");
+				start = stop;
 			}
 		}
 
@@ -188,5 +200,41 @@ public class GetReposByLanguage {
 				System.out.println(this.id + counter++);
 			}
 		}
+		
+		private void addLanguageToRepo(JsonObject repo, Gson parser) {
+			String langurl = "https://api.github.com/repos/" + repo.get("full_name").getAsString() + "/languages";
+			Token tok = this.tokens.getNextAuthenticToken("https://api.github.com/repositories");
+			MetadataCacher mc = null;
+			if (tok.getNumberOfRemainingLimit() <= 0) {
+				tok = this.tokens.getNextAuthenticToken("https://api.github.com/repositories");
+			}
+			for (int i = 0; i < 1; i++) {
+				mc = new MetadataCacher(langurl, tok.getUserName(), tok.getToken());
+				boolean authnticationResult = mc.authenticate();
+				if (authnticationResult) {
+					mc.getResponse();
+					String pageContent = mc.getContent();
+					JsonObject languages = parser.fromJson(pageContent, JsonElement.class).getAsJsonObject();
+					repo.add("language_list", languages);
+					tok.setLastResponseCode(mc.getResponseCode());
+					tok.setnumberOfRemainingLimit(mc.getNumberOfRemainingLimit());
+					tok.setResetTime(mc.getLimitResetTime());
+				} else {
+					final int responsecode = mc.getResponseCode();
+					System.err.println("authentication error " + responsecode);
+					mc = new MetadataCacher("https://api.github.com/repositories", tok.getUserName(), tok.getToken());
+					if (mc.authenticate()) {
+						tok.setnumberOfRemainingLimit(mc.getNumberOfRemainingLimit());
+					} else {
+						System.out.println("token: " + tok.getId() + " exhausted");
+						tok.setnumberOfRemainingLimit(0);
+						i--;
+					}
+				}
+			}
+
+		}
+		
+		
 	}
 }
