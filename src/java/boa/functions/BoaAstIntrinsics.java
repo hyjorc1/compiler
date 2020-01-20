@@ -29,6 +29,9 @@ import java.util.Map;
 import java.util.Stack;
 
 import org.apache.commons.lang.SerializationUtils;
+import com.google.protobuf.CodedInputStream;
+import com.google.protobuf.InvalidProtocolBufferException;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;

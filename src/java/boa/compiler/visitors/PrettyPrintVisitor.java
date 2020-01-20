@@ -18,7 +18,6 @@
 package boa.compiler.visitors;
 
 import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
 import java.io.PrintStream;
 
 import boa.compiler.ast.*;

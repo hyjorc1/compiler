@@ -311,6 +311,7 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 			final List<Component> members = n.getMembers();
 			final List<String> fields = new ArrayList<String>();
 			final List<String> types = new ArrayList<String>();
+			final List<Boolean> protos = new ArrayList<Boolean>();
 
 			int fieldCount = 0;
 			for (final Component c : members) {
@@ -320,12 +321,15 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 					fields.add("f" + fieldCount);
 				}
 				fieldCount++;
-				types.add(c.getType().type.toBoxedJavaType());
+				BoaType type = c.getType().type;
+				protos.add(type instanceof BoaProtoTuple);
+				types.add(type.toBoxedJavaType());
 			}
 
 			st.add("name", tupType.toJavaType());
 			st.add("fields", fields);
 			st.add("types", types);
+			st.add("protos", protos);
 
 			code.add(st.render());
 		}
@@ -564,9 +568,15 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 		st.add("combineTables", combineAggregatorStrings);
 		st.add("reduceTables", reduceAggregatorStrings);
 
+		final List<String> variableNames = new ArrayList<String>();
+		for (final String s : reduceAggregatorStrings)
+			variableNames.add(s.substring(s.indexOf('"'), s.indexOf(", new")));
+		Collections.sort(variableNames);
+
 		st.add("name", className);
 		st.add("splitsize", splitSize);
 		st.add("seed", seed);
+		st.add("outputVariableNames", variableNames);
 		if (isLocal) st.add("isLocal", true);
 
 		code.add(st.render());
@@ -1128,6 +1138,7 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 
 		if (indexees.size() > 0) {
 			final List<Node> array = new ArrayList<Node>(indexees);
+			final Set<String> seen = new LinkedHashSet<String>();
 			String src = "";
 			for (int i = 0; i < array.size(); i++) {
 				final Factor indexee = (Factor)array.get(i);
@@ -1136,6 +1147,9 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 				indexee.accept(this);
 				final String src2 = code.removeLast();
 				this.skipIndex = "";
+
+				if (seen.contains(src2)) continue;
+				seen.add(src2);
 
 				final BoaType indexeeType = this.indexeeFinder.getFactors().get(indexee).type;
 				final String func = (indexeeType instanceof BoaArray) ? ".length" : ".size()";
@@ -1324,7 +1338,8 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 							|| lhsType instanceof BoaQueue
 							|| lhsType instanceof BoaList
 							|| lhsType instanceof BoaSet)) {
-				code.add("");
+				st.add("rhs", n.type.defaultValue());
+				code.add(st.render());
 				return;
 			}
 
@@ -1488,11 +1503,9 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 
 		final CFGBuildingVisitor cfgBuilder = new CFGBuildingVisitor();
 		n.accept(cfgBuilder);
-		final CreateNodeId createNodeId = new CreateNodeId();
-		createNodeId.start(cfgBuilder);
+		new CreateNodeId().start(cfgBuilder);
 
-		final LocalMayAliasAnalysis localMayAliasAnalysis = new LocalMayAliasAnalysis();
-		final HashSet<Identifier> aliastSet = localMayAliasAnalysis.start(cfgBuilder, traversalId);
+		final HashSet<Identifier> aliastSet = new LocalMayAliasAnalysis().start(cfgBuilder, traversalId);
 
 		final DataFlowSensitivityAnalysis dataFlowSensitivityAnalysis = new DataFlowSensitivityAnalysis();
 		dataFlowSensitivityAnalysis.start(cfgBuilder, aliastSet);
@@ -1775,6 +1788,18 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 
 	/** {@inheritDoc} */
 	@Override
+	public void visit(final VisitorType n) {
+		code.add("");
+	}
+
+	/** {@inheritDoc} */
+	@Override
+	public void visit(final TraversalType n) {
+		code.add("");
+	}
+
+	/** {@inheritDoc} */
+	@Override
 	public void visit(final ArrayType n) {
 		final ST st = stg.getInstanceOf("ArrayType");
 
@@ -1819,16 +1844,7 @@ public class CodeGeneratingVisitor extends AbstractCodeGeneratingVisitor {
 	/** {@inheritDoc} */
 	@Override
 	public void visit(final FixPType n) {
-		final BoaFunction funcType = ((BoaFunction) n.type);
-
-		final BoaType[] paramTypes = funcType.getFormalParameters();
-		final List<String> args = new ArrayList<String>();
-		final List<String> types = new ArrayList<String>();
-
-		for (int i = 0; i < paramTypes.length; i++) {
-			args.add(((BoaName) paramTypes[i]).getId());
-			types.add(paramTypes[i].toJavaType());
-		}
+		code.add("");
 	}
 
 	/** {@inheritDoc} */
