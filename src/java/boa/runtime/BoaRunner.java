@@ -75,11 +75,15 @@ public abstract class BoaRunner extends Configured implements Tool {
 		// map output compression
 		configuration.setBoolean("mapred.compress.map.output", true);
 		configuration.set("mapred.map.output.compression.type", "BLOCK");
-		configuration.setClass("mapred.map.output.compression.codec", SnappyCodec.class, CompressionCodec.class);
+//		configuration.setClass("mapred.map.output.compression.codec", SnappyCodec.class, CompressionCodec.class);
+		configuration.setClass("mapreduce.map.output.compress.codec", SnappyCodec.class, CompressionCodec.class);
 
-		configuration.setBoolean("mapred.map.tasks.speculative.execution", false);
-		configuration.setBoolean("mapred.reduce.tasks.speculative.execution", false);
-		configuration.setLong("mapred.job.reuse.jvm.num.tasks", -1);
+//		configuration.setBoolean("mapred.map.tasks.speculative.execution", false);
+//		configuration.setBoolean("mapred.reduce.tasks.speculative.execution", false);
+//		configuration.setLong("mapred.job.reuse.jvm.num.tasks", -1);
+		configuration.setBoolean("mapreduce.map.speculative", false);
+		configuration.setBoolean("mapreduce.reduce.speculative", false);
+		configuration.setBoolean("mapreduce.job.ubertask.enable", true);
 		
 		// set the maximum percentage of map tasks that can fail without 
 		// the job being aborted. 
