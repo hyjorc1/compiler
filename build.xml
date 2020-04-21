@@ -442,6 +442,9 @@
 			<zipfileset excludes="META-INF/" src="lib/refactoring/guava-28.2-jre.jar" />
 			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-common-2.7.1.jar" />
 			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-mapreduce-client-core-2.7.1.jar" />
+			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/commons-collections-3.2.2.jar" />
+			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-auth-2.7.1.jar" />
+			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-mapreduce-client-common-2.7.1.jar" />
 		</jar>
 	</target>
 
@@ -471,6 +474,9 @@
 			<zipfileset excludes="META-INF/" src="lib/refactoring/guava-28.2-jre.jar" />
 			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-common-2.7.1.jar" />
 			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-mapreduce-client-core-2.7.1.jar" />
+			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/commons-collections-3.2.2.jar" />
+			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-auth-2.7.1.jar" />
+			<zipfileset excludes="META-INF/" src="lib/hadoop2.7/hadoop-mapreduce-client-common-2.7.1.jar" />
 		</jar>
 	</target>
 
