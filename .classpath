@@ -63,5 +63,8 @@
 	<classpathentry kind="lib" path="lib/hadoop2.7/commons-collections-3.2.2.jar"/>
 	<classpathentry kind="lib" path="lib/hadoop2.7/hadoop-auth-2.7.1.jar"/>
 	<classpathentry kind="lib" path="lib/hadoop2.7/hadoop-mapreduce-client-common-2.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/hadoop2.7/avro-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/hadoop2.7/hadoop-yarn-common-2.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/hadoop2.7/hadoop-yarn-api-2.7.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
