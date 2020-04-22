@@ -16,7 +16,7 @@ public class <name> extends boa.runtime.BoaRunner {
 		job.setCombinerClass(<name>BoaCombiner.class);
 		<endif>
 		<if(isLocal)>
-		job.getConfiguration().setClass("mapred.map.output.compression.codec", org.apache.hadoop.io.compress.DefaultCodec.class, org.apache.hadoop.io.compress.CompressionCodec.class);
+		job.getConfiguration().setClass("mapreduce.map.output.compress.codec", org.apache.hadoop.io.compress.DefaultCodec.class, org.apache.hadoop.io.compress.CompressionCodec.class);
 		<endif>
 		job.setReducerClass(<name>BoaReducer.class);
 
@@ -66,16 +66,16 @@ public class <name> extends boa.runtime.BoaRunner {
 			configuration.set("boa.comments.dir", line.getOptionValue("comments"));
 
 		if (line.hasOption("splitsize"))
-			configuration.setInt("mapred.max.split.size", Integer.parseInt(line.getOptionValue("splitsize")));
+			configuration.setInt("mapreduce.input.fileinputformat.split.maxsize", Integer.parseInt(line.getOptionValue("splitsize")));
 		else
-			configuration.setInt("mapred.max.split.size", <splitsize>);
+			configuration.setInt("mapreduce.input.fileinputformat.split.maxsize", <splitsize>);
 
 		if (line.hasOption("profile")) {
-			configuration.setBoolean("mapred.task.profile", true);
-			configuration.set("mapred.task.profile.maps", "1");
-			configuration.set("mapred.task.profile.reduces", "0");
-			//configuration.set("mapred.task.profile.params", "-agentlib:hprof=cpu=samples,heap=sites,force=n,thread=y,verbose=n,file=%s");
-			configuration.set("mapred.task.profile.params", "-agentlib:hprof=cpu=times,heap=sites,force=n,verbose=n,file=%s");
+			configuration.setBoolean("mapreduce.task.profile", true);
+			configuration.set("mapreduce.task.profile.maps", "1");
+			configuration.set("mapreduce.task.profile.reduces", "0");
+			//configuration.set("mapreduce.task.profile.params", "-agentlib:hprof=cpu=samples,heap=sites,force=n,thread=y,verbose=n,file=%s");
+			configuration.set("mapreduce.task.profile.params", "-agentlib:hprof=cpu=times,heap=sites,force=n,verbose=n,file=%s");
 		}
 
 		jb.setInputFormatClass(org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat.class);

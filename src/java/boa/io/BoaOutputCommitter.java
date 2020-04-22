@@ -65,21 +65,21 @@ public class BoaOutputCommitter extends FileOutputCommitter {
 	public void abortJob(final JobContext context, final JobStatus.State runState) throws java.io.IOException {
 		super.abortJob(context, runState);
 
-		final JobClient jobClient = new JobClient(new JobConf(context.getConfiguration()));
-		final RunningJob job = jobClient.getJob((org.apache.hadoop.mapred.JobID) JobID.forName(context.getConfiguration().get("mapred.job.id")));
-		String diag = "";
-		for (final TaskCompletionEvent event : job.getTaskCompletionEvents(0))
-			switch (event.getTaskStatus()) {
-				case SUCCEEDED:
-					break;
-				default:
-					diag += "Diagnostics for: " + event.getTaskTrackerHttp() + "\n";
-					for (final String s : job.getTaskDiagnostics(event.getTaskAttemptId()))
-						diag += s + "\n";
-					diag += "\n";
-					break;
-			}
-		updateStatus(diag, context.getConfiguration().getInt("boa.hadoop.jobid", 0));
+//		final JobClient jobClient = new JobClient(new JobConf(context.getConfiguration()));
+//		final RunningJob job = jobClient.getJob((org.apache.hadoop.mapred.JobID) JobID.forName(context.getConfiguration().get("mapred.job.id")));
+//		String diag = "";
+//		for (final TaskCompletionEvent event : job.getTaskCompletionEvents(0))
+//			switch (event.getTaskStatus()) {
+//				case SUCCEEDED:
+//					break;
+//				default:
+//					diag += "Diagnostics for: " + event.getTaskTrackerHttp() + "\n";
+//					for (final String s : job.getTaskDiagnostics(event.getTaskAttemptId()))
+//						diag += s + "\n";
+//					diag += "\n";
+//					break;
+//			}
+//		updateStatus(diag, context.getConfiguration().getInt("boa.hadoop.jobid", 0));
 	}
 
 	private final static String url = "jdbc:mysql://head:3306/drupal";
